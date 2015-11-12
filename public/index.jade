@@ -1,19 +1,34 @@
 .grid-fluid.l-space-bottom-8
   .c7
-    h3.text-headline Build Incredible Applications
-    p.text-body Angular is a development platform for creating applications using modern web standards. Angular includes a <a href="/features.html">wealth of essential features</a> such as mobile gestures, animations, filtering, routing, data binding, security, internationalization, and beautiful UI components. It's extremely modular, lightweight, and easy to learn.
+    // h3.text-headline Build Incredible Applications
+    h3.text-headline とてつもないアプリケーションを作りましょう
+    // p.text-body Angular is a development platform for creating applications using modern web standards. Angular includes a <a href="/features.html">wealth of essential features</a> such as mobile gestures, animations, filtering, routing, data binding, security, internationalization, and beautiful UI components. It's extremely modular, lightweight, and easy to learn.
+    p.text-body Angularは最新のWeb標準を使ってアプリケーションを構築するための開発環境です。Angularは次のような<a href="/features.html">豊富な基本機能</a>を持っています。ジェスチャー、アニメーション、フィルタ、ルーティング、データバインディング、セキュリティ、国際化、美しいコンポーネント。きわめてモジュール化されていて軽量で簡単に学ぶことができます。
   .c5.text-center
     img(src="/resources/images/logos/html5/html5.png" alt="Modern Web Standards")
 
 
 .grid-fluid.l-space-bottom-8
   .c6
-    h3.text-headline  Start Quick, Build Fast
-    p.text-body Express your ideas with clean, understandable code. Angular is simple to build on, easy to change, and friendly to the way UX designers work. Create a UI that is beautiful by default, with material design and support for web components. Get started in just minutes with our <a href="/docs/ts/latest/quickstart.html">QuickStart Guide</a>.
+    // h3.text-headline  Start Quick, Build Fast
+    h3.text-headline  とっとと始めましょう、とっとと作りましょう
+    // p.text-body Express your ideas with clean, understandable code. Angular is simple to build on, easy to change, and friendly to the way UX designers work. Create a UI that is beautiful by default, with material design and support for web components. Get started in just minutes with our <a href="/docs/ts/latest/quickstart.html">QuickStart Guide</a>.
+    p.text-body クリーンで理解可能なコードとともにアイデアをぶちまけましょう。Angularはシンプルに作れて、簡単に変更できて、UXデザイナーとの協業も簡単です。 デフォルトで美しく、マテリアルデザインで、WebコンポーネントをサポートしているUIを作りましょう。<a href="/docs/ts/latest/quickstart.html">クイックスタートガイド</a>を使って数分以内に始めましょう。
   .c6
+    //
+      code-example(language="javascript" format="linenums" showcase="true").
+        @Component({selector: 'my-app'})
+        @View({template: '&lt;h1&gt;Hi {{ name }}&lt;/h1&gt;'})
+
+        // Component controller
+        class MyAppComponent {
+          constructor() {
+            this.name = 'Ali';
+          }
+        }
     code-example(language="javascript" format="linenums" showcase="true").
       @Component({selector: 'my-app'})
-      @View({template: '&lt;h1&gt;Hi {{ name }}&lt;/h1&gt;'})
+      @View({template: '&lt;h1&gt;こんにちは {{ name }}&lt;/h1&gt;'})
 
       // Component controller
       class MyAppComponent {
@@ -25,7 +40,8 @@
 .grid-fluid.l-space-bottom-8
   .c7
     h3.text-headline Powered by the Open Source Community
-    p.text-body Angular is built by you, for you. Our community shapes Angular's direction: core contributions come from big companies, and small ones from students and independent experts. We do our work <a href="https://github.com/angular/angular.js">in the open</a> so that you can either help Angular improve or extend and modify what we've built.
+    // p.text-body Angular is built by you, for you. Our community shapes Angular's direction: core contributions come from big companies, and small ones from students and independent experts. We do our work <a href="https://github.com/angular/angular.js">in the open</a> so that you can either help Angular improve or extend and modify what we've built.
+    p.text-body Angularはあなたによるあなたのための製品です。私たちコミュニティはAngularの方向性を形作っています: コアとなる開発者は大企業だったり、中小企業だったり、学生、無所属のエキスパートです。私たちは成果物を<a href="https://github.com/angular/angular.js">オープンにしている</a>ため、Angularを改良したり、拡張したり変更したりすることができます。
   .c5.text-center
     img(src="/resources/images/logos/license/open-source.png" alt="Open Source Initiative")
 
@@ -33,6 +49,8 @@
 
 .grid-fluid.text-center
   .c12
-    h3.text-headline Loved by Millions of Developers
-    p.text-body Join millions of developers who use Angular. Ramp up in minutes, and build an app today.
+    // h3.text-headline Loved by Millions of Developers
+    h3.text-headline たっくさんの開発者に愛されてます
+    // p.text-body Join millions of developers who use Angular. Ramp up in minutes, and build an app today.
+    p.text-body Angularを使っているたっくさんの開発者にジョインしましょう。今日、数分で準備してアプリを作りましょう。
     != partial("/_includes/_cta-bar")
