@@ -1,0 +1,257 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><head><title>Hierarchical Injectors - ts</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl" class="l-offset-nav l-offset-side-nav"><md-toolbar class="main-nav background-regal l-pinned-top l-layer-5"><nav><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/about/" md-button>About</a></li><li class="l-left"><a class="main-nav-button" href="/contribute.html" md-button>Contribute</a></li><li class="l-right"><a class="main-nav-button has-icon" href="/download/" md-button> <span class="icon icon-cloud-download"></span> Install</a></li></ul></nav></md-toolbar><nav class="side-nav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="side-nav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><!-- PRIMARY NAVIGATION--><ul ng-class="showDocsNav ? 'is-visible' : ''" class="side-nav-primary"><li><a href="/docs/ts/latest/index.html" md-button><span class="side-nav-icon icon-home"></span> Docs Home</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/quickstart.html" md-button><span class="side-nav-icon icon-query-builder"></span> 5 Min Quickstart</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/tutorial/" md-button><span class="side-nav-icon icon-list"></span> Tutorial</a></li><!-- SECONDARY NAVIGATION--><li class="is-selected"><a href="/docs/ts/latest/guide/" md-button><span class="side-nav-icon icon-list"></span> Developer Guides</a></li><!-- SECONDARY NAVIGATION--><!--SECONDARY NAVIGATION--><ul class="side-nav-secondary is-ordered"><!-- DEFAULT LIST VALUES--><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/cheatsheet.html" md-button>1. Angular Cheat Sheet</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/displaying-data.html" md-button>2. Displaying Data</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/user-input.html" md-button>3. User Input</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/forms.html" md-button>4. Forms</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/pipes.html" md-button>5. Pipes</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/template-syntax.html" md-button>6. Template Syntax</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/dependency-injection.html" md-button>7. Dependency Injection</a></li><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li class="is-selected"><a href="/docs/ts/latest/guide/hierarchical-dependency-injection.html" md-button>8. Hierarchical Injectors</a></li><!-- TERTIARY NAVIGATION--><!-- TERTIARY NAVIGATION--><!-- DEFAULT LIST VALUES--><!-- API LIST VALUES--><!-- ORDERED LIST VALUES--><li><a href="/docs/ts/latest/guide/glossary.html" md-button>9. Glossary</a></li><!-- TERTIARY NAVIGATION--></ul><li><a href="/docs/ts/latest/testing/" md-button><span class="side-nav-icon icon-list"></span> Testing Guides</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/api/" md-button><span class="side-nav-icon icon-book"></span> API Preview</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/resources.html" md-button><span class="side-nav-icon icon-play-circle-fill"></span> Angular Resources</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/help.html" md-button><span class="side-nav-icon icon-chat"></span> Help &amp; Support</a></li><!-- SECONDARY NAVIGATION--></ul></nav><header class="hero background-sky"><h1 class="hero-title text-display-1 ">Hierarchical Injectors</h1><!-- Replace _ undscores with . dots --><!-- Replace _ undscores with . dots --><!-- VERSION TREE CREATOR MIXIN --><!-- BUTTON TITLE GENERATION  --><!-- DROPDOWN BUTTON --><nav class="hero-subtitle text-subhead dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="toggleVersionMenu($event)" class="dropdown-button">Angular 2 for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="toggleVersionMenu($event)" ng-show="showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><div ng-class="showMenu ? 'is-visible' : ''" class="dropdown-menu"><ul><li><a href="/docs/ts/latest/guide/" md-button>Angular 2 for TypeScript </a></li></ul><ul><li><a href="/docs/js/latest/guide/" md-button>Angular 2 for JavaScript </a></li></ul><ul><li><a href="/docs/dart/latest/guide/" md-button>Angular 2 for Dart </a></li></ul><ul><li><a href="https://angularjs.org/" md-button> Angular 1 for JavaScript</a></li><li><a href="https://docs.angulardart.org/" md-button> Angular 1 for Dart</a></li></ul></div></nav><div class="social-icons"><button aria-label="Share on G+" onClick="window.open('https://plus.google.com/share?url=http://angular.io', '', 'height=500, width=600')" class="googleplus"><span class="icon-google-plus2"></span></button><button aria-label="Share on Twitter" onClick="window.open('https://twitter.com/share?text=Angular%20-%20Angular is a development platform for building mobile and desktop web applications', '', 'height=250, width=600')"><span class="icon-twitter2"></span></button><button aria-label="Share on Facebook" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://angular.io', '', 'height=500, width=600')" data-href="http://angular.io" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="false"><span class="icon-facebook2"></span></button><button aria-label="Share on Linkedin" onClick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://angular.io&amp;title=Angular&amp;summary=Angular is a development platform for building mobile and desktop web applications.', '', 'height=625, width=500')"><span class="icon-linkedin"></span></button></div><p style="color: black;"></p></header><div class="banner"><p class="text-body">Angular's hierarchical dependency injection system supports nested injectors in parallel with the component tree.</p></div><article class="l-content-small grid-fluid docs-content"><p>We learned the basics of Angular Dependency injection in an
+<a href="./dependency-injection.html">earlier chapter</a>.</p>
+<p>In this chapter we learn that Angular has an
+Hierarchical Dependency Injection system that supports trees of injectors.</p>
+<p>In practice, there is a tree of injectors that parallel an application&#39;s component tree.
+We can re-configure the injectors at any level of that component tree with
+interesting and useful results.</p>
+<div class="l-main-section"></div><h2 id="the-injector-tree">The Injector Tree</h2>
+<p>In an <a href="./dependency-injection.html">earlier chapter</a>
+we learned how to configure a dependency injector in different ways and how to retrieve dependencies where we need them.</p>
+<p>What if we told you there is no such thing as <strong><em>the</em></strong> injector?
+In fact, each application has multiple injectors!</p>
+<p>We may have heard that an Angular application is a tree of components.
+It may surprise us to learn that there is a corresponding tree of injectors
+and each component instance in that tree has its own injector!</p>
+<div class="l-sub-section"><p>That isn&#39;t literally true. Angular is more efficient than that. What is true is that each component instance
+has an injector and that components at different levels in the tree have different injectors.</p>
+<p>It is helpful for our purposes to pretend that every component has its own injector.</p>
+</div><p>Consider a simple variation on the Tour of Heroes application consisting of three different components:
+<code>HeroesApp</code>, <code>HeroesListComponent</code> and <code>HeroesCardComponent</code>.
+The <code>HeroesApp</code> holds a single instance of <code>HeroesListComponent</code>.
+The new twist is that the <code>HeroesListComponent</code> may hold and manage multiple instances of the <code>HeroesCardComponent</code>.</p>
+<p>The following diagram represents the state of the component tree when there are three instances of <code>HeroesCardComponent</code>
+open simultaneously.</p>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/component-hierarchy.png" alt="injector tree"></figure><p>Each component instance gets its own injector and an injector at one level is a child injector of the injector above it in the tree.</p>
+<p>When a component at the bottom requests a dependency, Angular tries to satisfy that dependency with a provider registered in that component&#39;s own injector.
+If the component&#39;s injector lacks the provider, it passes the request up to its parent component&#39;s injector.
+If that injector can&#39;t satisfy the request, it passes it along to <em>its</em> parent component&#39;s injector.
+The requests keep bubbling up until we find an injector that can handle the request or run out of component ancestors.
+If we run out of ancestors, Angular throws an error.</p>
+<div class="l-sub-section"><p>There&#39;s a third possibililty. An intermediate component can declare that it is the &quot;host&quot; component.
+The hunt for providers will climb no higher than the injector for this host component.
+ We&#39;ll reserve discussion of this option for another day.</p>
+</div><p>Such a proliferation of injectors makes little sense until we consider the possiblity that injectors at different levels can be
+configured with different providers. We don&#39;t <em>have</em> to re-configure providers at every level. But we <em>can</em>.</p>
+<p>If we don&#39;t re-configure, the tree of injectors appears to be flat. All requests bubble up to the root injector that we
+configured with the <code>bootstrap</code> method.</p>
+<p>The ability to configure one or more providers at different levels opens up interesting and useful possibilities.</p>
+<p>Let’s return to our Car example.
+Suppose configured the root injector (marked as A) with providers for <code>Car</code>, <code>Engine</code> and <code>Tires</code>.
+We create a child component (B) that defines its own providers for <code>Car</code> and <code>Engine</code>
+This child is the parent of another component (C) that defines its own provider for <code>Car</code>.</p>
+<p>Behind the scenes each component sets up its own injector with one or more providers defined for that component itself.</p>
+<p>When we resolve an instance of <code>Car</code> at the deepest component (C),
+it&#39;s injector produces an instance of <code>Car</code> resolved by injector (C) with an <code>Engine</code> resolved by injector (B) and
+<code>Tires</code> resolved by the root injector (A).</p>
+<figure class="image-display"><img src="/resources/images/devguide/dependency-injection/injector-tree.png" alt="injector tree"></figure><div class="l-main-section"></div><h2 id="component-injectors">Component Injectors</h2>
+<p>In the previous section, we talked about injectors and how they are organized like a tree. Lookups follow the injector tree upwards until they found the requested thing to inject. But when do we actually want to provide bindings on the root injector and when do we want to provide them on a child injector?</p>
+<p>Consider you are building a component to show a list of super heroes that displays each super hero in a card with it’s name and superpower. There should also be an edit button that opens up an editor to change the name and superpower of our hero.</p>
+<p>One important aspect of the editing functionality is that we want to allow multiple heroes to be in edit mode at the same time and that one can always either commit or cancel the proposed changes.</p>
+<p>Let’s take a look at the <code>HeroesListComponent</code> which is the root component for this example.</p>
+<pre><code>import {Component, bootstrap, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
+import {HeroService} from &#39;./hero.service&#39;;
+import {HeroCardComponent} from &#39;./hero-card.component&#39;;
+import {HeroEditorComponent} from &#39;./hero-editor.component&#39;;
+import {Hero} from &#39;./hero&#39;;
+
+@Component({
+  selector: &#39;heroes-list-component&#39;,
+  template: `
+    &lt;div&gt;
+      &lt;ul&gt;
+        &lt;li *ng-for=&quot;#editItem of heroes&quot;&gt;
+          &lt;hero-card-component
+            [hidden]=&quot;editItem.editing&quot;
+            [hero]=&quot;editItem.item&quot;&gt;
+          &lt;/hero-card-component&gt;
+          &lt;button
+            [hidden]=&quot;editItem.editing&quot;
+            (click)=&quot;editItem.editing = true&quot;&gt;
+              edit
+          &lt;/button&gt;
+          &lt;hero-editor-component
+            (saved)=&quot;onSaved(editItem, $event)&quot;
+            (canceled)=&quot;onCanceled(editItem)&quot;
+            [hidden]=&quot;!editItem.editing&quot;
+            [hero]=&quot;editItem.item&quot;&gt;
+          &lt;/hero-editor-component&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;`,
+  directives: [CORE_DIRECTIVES, HeroCardComponent, HeroEditorComponent]
+})
+export class HeroesListComponent {
+  heroes: Array&lt;Hero&gt;;
+  constructor(HeroService: HeroService) {
+    this.heroes = HeroService.getHeroes()
+                              .map(item =&gt; new EditItem(item));
+  }
+
+  onSaved (editItem: EditItem&lt;Hero&gt;, updatedHero: Hero) {
+    editItem.item = updatedHero;
+    editItem.editing = false;
+  }
+
+  onCanceled (editItem: EditItem&lt;Hero&gt;) {
+    editItem.editing = false;
+  }
+}
+
+class EditItem&lt;T&gt; {
+  item: T;
+  editing: boolean
+  constructor (public item T) {}
+}
+
+bootstrap(HeroesListComponent, [HeroService]);
+</code></pre><p>Notice that it imports the <code>HeroService</code> that we’ve used before so we can skip its declaration. The only difference is that we’ve used a more formal approach for our <code>Hero</code>model and defined it upfront as such.</p>
+<pre><code>export class Hero {
+  name: string;
+  power: string;
+}
+</code></pre><p>Our <code>HeroesListComponent</code> defines a template that creates a list of <code>HeroCardComponents</code> and <code>HeroEditorComponents</code>, each bound to an instance of hero that is returned from the <code>HeroService</code>. Ok, that’s not entirely true. It actually binds to an <code>EditItem&lt;Hero&gt;</code> which is a simple generic datatype that can wrap any type and indicate if the item being wrapped is currently being edited or not.</p>
+<p>But how is <code>HeroCardComponent</code> implemented? Let’s take a look.</p>
+<pre><code>import {Component, bootstrap, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
+import {Hero} from &#39;./hero&#39;;
+
+@Component({
+  selector: &#39;hero-card.component&#39;,
+  properties: [&#39;hero&#39;],
+  template: `
+    &lt;div&gt;
+      &lt;span&gt;Name:&lt;/span&gt;
+      &lt;span&gt;{{hero.name}}&lt;/span&gt;
+    &lt;/div&gt;`,
+  directives: [CORE_DIRECTIVES]
+})
+export class HeroCardComponent {
+  hero: Hero;
+}
+</code></pre><p>The <code>HeroCardComponent</code> is basically a component that defines a template to render a hero. Nothing more.</p>
+<p>Let’s get to the interesting part and take a look at the <code>HeroEditComponent</code></p>
+<pre><code>import {Component, FORM_DIRECTIVES, EventEmitter, bootstrap, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
+import {RestoreService} from &#39;./restore.service&#39;;
+import {Hero} from &#39;./hero&#39;;
+
+@Component({
+  selector: &#39;hero-editor-component&#39;,
+  events: [&#39;canceled&#39;, &#39;saved&#39;],
+  properties: [&#39;hero&#39;],
+  providers: [RestoreService],
+  template: `
+    &lt;div&gt;
+      &lt;span&gt;Name:&lt;/span&gt;
+      &lt;input [(ng-model)]=&quot;hero.name&quot;/&gt;
+      &lt;div&gt;
+        &lt;button (click)=&quot;onSaved()&quot;&gt;save&lt;/button&gt;
+        &lt;button (click)=&quot;onCanceled()&quot;&gt;cancel&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;`,
+  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
+})
+export class HeroEditorComponent {
+  canceled = new EventEmitter();
+  saved = new EventEmitter();
+
+  constructor(private restoreService: RestoreService&lt;Hero&gt;) {}
+
+  set hero (hero: Hero) {
+    this.restoreService.setItem(hero);
+  }
+
+  get hero () {
+    return this.restoreService.getItem();
+  }
+
+  onSaved () {
+    this.saved.next(this.restoreService.getItem());
+  }
+
+  onCanceled () {
+    this.hero = this.restoreService.restoreItem();
+    this.canceled.next(this.hero);
+  }
+}
+</code></pre><p>Now here it’s getting interesting. The <code>HeroEditComponent</code>defines a template with an input to change the name of the hero and a <code>cancel</code> and a <code>save</code> button. Remember that we said we want to have the flexibility to cancel our editing and restore the old value? This means we need to maintain two copies of our <code>Hero</code> that we want to edit. Thinking ahead this is a perfect use case to abstract it into it’s own generic service since we have probably more cases like this in our app.</p>
+<p>And this is where the <code>RestoreService</code> enters the stage.</p>
+<pre><code>export class RestoreService&lt;T&gt; {
+  originalItem: T;
+  currentItem: T;
+
+  setItem (item: T) {
+    this.originalItem = item;
+    this.currentItem = this.clone(item);
+  }
+
+  getItem () :T {
+    return this.currentItem;
+  }
+
+  restoreItem () :T {
+    this.currentItem = this.originalItem;
+    return this.getItem();
+  }
+
+  clone (item: T) :T {
+    // super poor clone implementation
+    return JSON.parse(JSON.stringify(item));
+  }
+}
+</code></pre><p>All this tiny service does is define an API to set a value of any type which can be altered, retrieved or set back to it’s initial value. That’s exactly what we need to implement the desired functionality.</p>
+<p>Our <code>HeroEditComponent</code> uses this services under the hood for it’s <code>hero</code> property. It intercepts the <code>get</code> and <code>set</code> method to delegate the actual work to our <code>RestoreService</code> which in turn makes sure that we won’t work on the original item but on a copy instead.</p>
+<p>At this point we may be scratching our heads asking what this has to do with component injectors? If we look closely at our <code>HeroEditComponent</code> we’ll notice this piece of code</p>
+<pre><code>…
+providers: [RestoreService]
+…
+</code></pre><p>This creates a binding for the <code>RestoreService</code> in the injector of the <code>HeroEditComponent</code>. But couldn’t we simply alter our bootstrap call to this?</p>
+<pre><code>bootstrap(HeroesListComponent, [HeroService, RestoreService]);
+</code></pre><p>Technically we could, but our component wouldn’t quite behave the way it is supposed to. Remember that each injector treats the services that it provides as singletons. However, in order to be able to have multiple instances of <code>HeroEditComponent</code> edit multiple heroes at the same time we need to have multiple instances of the <code>RestoreService</code>. More specifically each instance of <code>HeroEditComponent</code> needs to be bound to it’s own instance of the <code>RestoreService</code>.</p>
+<p>By configuring a binding for the <code>RestoreService</code> on the <code>HeroEditComponent</code>, we get exactly one instance of the <code>RestoreService</code>per <code>HeroEditComponent</code>.</p>
+<p>Does that mean that services aren’t singletons anymore in Angular 2? Yes and no.
+While there’s only one instance per binding per injector there may be multiple instances of the same type across
+the entire application due to the fact that we can create multiple bindings for the same type on different components.</p>
+<p>If we had only defined a binding for <code>RestoreService</code> on the root component,
+we would have exactly one instance of the across the entire applicatoin. That’s clearly not what we want in this scenario.
+We don’t want to share an instance. We want each component to have its own instance of the <code>RestoreService</code>.</p>
+<!--
+  ## Advanced Dependency Injection in Angular 2
+
+  Restrict Dependency Lookups
+  [TODO] (@Host) This has been postponed for now until we come up with a decent use case
+
+
+  .l-main-section
+  :marked
+    ## Dependency Visibility
+
+  [TODO] (bindings vs viewBindings) This has been postponed for now until come up with a decent use case
+  --><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><div class="l-sub-section"><h3>Next Step</h3><a href="/docs/ts/latest/guide/glossary.html">Glossary</a></div><!--NEXT PAGE HAS NOW BEEN SET--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div class="main-footer"><nav class="background-silver grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">LIBRARIES</h3><ul class="text-body"><li><a href="/"> Angular 2.0</a></li><li><a href="https://angularjs.org/"> Angular 1 for JS</a></li><li><a href="https://angulardart.org/"> Angular 1 for Dart</a></li><li><a href="https://material.angularjs.org"> Angular Material</a></li><li><a href="https://www.firebase.com/docs/web/libraries/angular/"> AngularFire</a></li></ul></div><div class="c2"><h3 class="text-headline">LEARN</h3><ul class="text-body"><li><a href="/docs/ts/latest/quickstart.html"> 5 Min Quickstart</a></li><li><a href="/docs/ts/latest/guide/"> Step by Step Guide</a></li><li><a href="/docs/ts/latest/api/"> Full API</a></li><li><a href="/docs/ts/latest/resources.html"> Resources</a></li><li><a href="http://goo.gl/sj0Nk1">Design Docs &amp; Notes</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://gitter.im/angular/angular"> Chat Room</a></li><li><a href="https://github.com/angular/angular/issues"> Report an Issue</a></li></ul></div><div class="c3"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="https://blog.angularjs.org/"> Blog</a></li><li><a href="https://plus.sandbox.google.com/+AngularJS/posts"> Google+</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li></ul></div></nav><footer class="background-steel"><small class="text-caption">Powered by Google ©2010-2015. Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" class="text-snow">Apache License, Version 2.0</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small><a aria-label="View Style Guide" href="/docs/styleguide.html" title="Style Guide" md-button="md-button" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script><!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', ' UA-70058104-1', 'auto');
+ga('send', 'pageview')
+
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK');</script></body></html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html><html lang="en" ng-app="angularIOApp" itemscope itemtype="http://schema.org/Framework"><head><title>5 Min Quickstart - js</title><meta charset="utf-8"/><meta http-equiv="X-UA-Compatible" content="IE=edge"/><meta name="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta name="keywords" content="Angular, AngularJS, AngularDart, Javscript, Dart, Framework, JavaScript MVC, Google"/><meta name="robots" content="all"/><meta name="referrer" content="origin"/><meta name="viewport" id="viewport" content="width=device-width, initial-scale=1"/><meta property="og:title" content="Angular"/><meta property="og:image" content="/resources/images/logos/standard/shield-large.png"/><meta property="og:image:type" content="image/png"/><meta property="og:image:width" content="184"/><meta property="og:image:height" content="200"/><meta property="og:description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="name" content="Angular"/><meta itemprop="description" content="Angular is a development platform for building mobile and desktop web applications"/><meta itemprop="image" content="https://angular.io/resources/images/logos/standard/shield-large.png"/><link rel="icon" type="image/x-icon" href="/resources/images/icons/favicon.ico"/><link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.css"/><link href="https://fonts.googleapis.com/css?family=Roboto:400,300,500,400italic,700" rel="stylesheet" type="text/css"/><link rel="stylesheet" href="/resources/css/vendor/icomoon/style.css"/><link rel="stylesheet" href="/resources/css/vendor/animate.css"/><link rel="stylesheet" href="/resources/css/main.css"/><!-- MOBILE ICONS -->
+<link rel="apple-touch-icon" sizes="57x57" href="/resources/images/favicons/apple-touch-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="/resources/images/favicons/apple-touch-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="/resources/images/favicons/apple-touch-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="/resources/images/favicons/apple-touch-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="/resources/images/favicons/apple-touch-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="/resources/images/favicons/apple-touch-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="/resources/images/favicons/apple-touch-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="/resources/images/favicons/apple-touch-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/resources/images/favicons/apple-touch-icon-180x180.png">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-32x32.png" sizes="32x32">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-194x194.png" sizes="194x194">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
+<link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
+<link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl" class="l-offset-nav l-offset-side-nav"><md-toolbar class="main-nav background-regal l-pinned-top l-layer-5"><nav><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/about/" md-button>About</a></li><li class="l-left"><a class="main-nav-button" href="/contribute.html" md-button>Contribute</a></li><li class="l-right"><a class="main-nav-button has-icon" href="/download/" md-button> <span class="icon icon-cloud-download"></span> Install</a></li></ul></nav></md-toolbar><nav class="side-nav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="side-nav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><!-- PRIMARY NAVIGATION--><ul ng-class="showDocsNav ? 'is-visible' : ''" class="side-nav-primary"><li><a href="/docs/js/latest/index.html" md-button><span class="side-nav-icon icon-home"></span> Docs Home</a></li><!-- SECONDARY NAVIGATION--><li class="is-selected"><a href="/docs/js/latest/quickstart.html" md-button><span class="side-nav-icon icon-query-builder"></span> 5 Min Quickstart</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/js/latest/guide/" md-button><span class="side-nav-icon icon-list"></span> Developer Guide</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/js/latest/api/" md-button><span class="side-nav-icon icon-book"></span> API Preview</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/js/latest/resources.html" md-button><span class="side-nav-icon icon-play-circle-fill"></span> Angular Resources</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/js/latest/help.html" md-button><span class="side-nav-icon icon-chat"></span> Help &amp; Support</a></li><!-- SECONDARY NAVIGATION--></ul></nav><header class="hero background-sky"><h1 class="hero-title text-display-1 ">5 Min Quickstart</h1><!-- Replace _ undscores with . dots --><!-- Replace _ undscores with . dots --><!-- VERSION TREE CREATOR MIXIN --><!-- BUTTON TITLE GENERATION  --><!-- DROPDOWN BUTTON --><nav class="hero-subtitle text-subhead dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="toggleVersionMenu($event)" class="dropdown-button">Angular 2 for JavaScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="toggleVersionMenu($event)" ng-show="showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><div ng-class="showMenu ? 'is-visible' : ''" class="dropdown-menu"><ul><li><a href="/docs/ts/latest/quickstart.html" md-button>Angular 2 for TypeScript </a></li></ul><ul><li><a href="/docs/js/latest/quickstart.html" md-button>Angular 2 for JavaScript </a></li></ul><ul><li><a href="/docs/dart/latest/quickstart.html" md-button>Angular 2 for Dart </a></li></ul><ul><li><a href="https://angularjs.org/" md-button> Angular 1 for JavaScript</a></li><li><a href="https://docs.angulardart.org/" md-button> Angular 1 for Dart</a></li></ul></div></nav><div class="social-icons"><button aria-label="Share on G+" onClick="window.open('https://plus.google.com/share?url=http://angular.io', '', 'height=500, width=600')" class="googleplus"><span class="icon-google-plus2"></span></button><button aria-label="Share on Twitter" onClick="window.open('https://twitter.com/share?text=Angular%20-%20Angular is a development platform for building mobile and desktop web applications', '', 'height=250, width=600')"><span class="icon-twitter2"></span></button><button aria-label="Share on Facebook" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://angular.io', '', 'height=500, width=600')" data-href="http://angular.io" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="false"><span class="icon-facebook2"></span></button><button aria-label="Share on Linkedin" onClick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://angular.io&amp;title=Angular&amp;summary=Angular is a development platform for building mobile and desktop web applications.', '', 'height=625, width=500')"><span class="icon-linkedin"></span></button></div><p style="color: black;"></p></header><article class="l-content-small grid-fluid docs-content"><p>Let&#39;s start from zero and build a simple Angular 2 application in JavaScript.</p>
+<div class="callout is-helpful"><header>Don't want JavaScript?</header><p>Although we&#39;re getting started in JavaScript, you can also write Angular 2 apps
+in TypeScript and Dart by selecting either of those languages from the combo-box in the banner.</p>
+</div><p>We&#39;ll do it in six short steps</p>
+<ol>
+<li>Create a project folder</li>
+<li>Install essential libraries</li>
+<li>Write the root component for our application in <em>app.js</em></li>
+<li>Bootstrap the app</li>
+<li>Create an <em>index.html</em></li>
+<li>Run it</li>
+</ol>
+<div class="l-main-section"><h2 id="create-a-project-folder">Create a project folder</h2>
+<p><strong>Create a new folder</strong> to hold our application project, perhaps like this:</p>
+<pre><code>mkdir angular2-quickstart
+cd    angular2-quickstart
+</code></pre></div><div class="l-main-section"><h2 id="install-essential-libraries">Install essential libraries</h2>
+<p>We&#39;ll use the <strong>npm package manager</strong> to install packages for
+the libraries and development tools we need:</p>
+<blockquote>
+<p>angular2 - the Angular 2 library.</p>
+<p><a href="https://www.npmjs.com/package/live-server" title="Live-server">live-server</a>
+a static file server that reloads the browser when files change.</p>
+</blockquote>
+<p>We could reference the libraries on the web or download them to our project.
+That isn&#39;t a sustainable development process and package loading with npm is really
+easy once we have it installed.</p>
+<div class="alert is-helpful"><p>Don&#39;t have npm? <a href="https://docs.npmjs.com/getting-started/installing-node" title="Installing Node.js and updating npm">Get it now</a>
+because we&#39;re going to use it now and repeatedly throughout this documentation.</p>
+</div><p><strong>Open</strong> a terminal window and enter these commands:</p>
+<pre><code>npm init -y
+npm i angular2@2.0.0-alpha.44 --save --save-exact
+npm i live-server --save-dev
+</code></pre><p>These commands both <em>install</em> the packages and <em>create</em> an npm configuration
+file named <code>package.json</code>.
+The essence of our <code>package.json</code> should look like this:</p>
+<code-example language="json" format="linenums">{
+  "name": "angular2-getting-started",
+  "version": "1.0.0",
+  "dependencies": {
+    "angular2": "2.0.0-alpha.44"
+  },
+  "devDependencies": {
+    "live-server": "^0.8.1"
+  }
+}</code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
+<code-example language="json" format="linenums">{
+  "scripts": {
+    "start": "live-server"
+  }
+}</code-example><p>We&#39;ve just extended our project world with a script command that we&#39;ll be running very soon.</p>
+</div><div class="l-main-section"><h2 id="our-first-angular-component">Our first Angular component</h2>
+<p>Add a new file called <em>app.js</em> and paste the following lines:</p>
+<code-example language="js" format="linenums">var AppComponent = ng
+  .Component({
+    selector: &#39;my-app&#39;,
+    template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;
+  })
+  .Class({
+    constructor: function () { }
+  });
+</code-example><p>We&#39;re creating a visual component named <strong><code>AppComponent</code></strong> by chaining the
+<code>Component</code> and <code>Class</code> methods that belong to the <strong>global Angular namespace, <code>ng</code></strong>.</p>
+<pre><code>var AppComponent = ng
+    .Component({...})
+    .Class({...})
+</code></pre><p>The <strong><code>Component</code></strong> method takes a configuration object with two
+properties. The <code>selector</code> property tells Angular that this is a component
+controlling a host element named &quot;my-app&quot;.
+Angular creates and displays an instance of our <code>AppComponent</code>
+wherever it encounters a <code>my-app</code> element.</p>
+<p>The <code>template</code> property defines the visual appearance of the component.
+We&#39;re writing the HTML template inline in this example.
+Later we&#39;ll move the HTML to a view template file and
+assign the template&#39;s filename to the <code>templateUrl</code> property.
+We&#39;ll prefer that practice for all but the most trivial templates.</p>
+<p>The <strong><code>Class</code></strong> method is where we implement the component itself,
+giving it properties and methods that bind to the view and whatever
+behavior is appropriate for this part of the UI.</p>
+<p>This component class has the bare minimum implementation:
+a <em>no-op</em> constructor function that does nothing because there is nothing to do.
+We&#39;ll see more interesting component classes in future examples.</p>
+</div><div class="l-main-section"><h2 id="bootstrap-the-app">Bootstrap the app</h2>
+<p>We need to do something to put our application in motion.
+Add the following to the bottom of the <code>app.js</code> file:</p>
+<code-example language="js" format="linenums">document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  ng.bootstrap(AppComponent);
+});
+</code-example><p>We&#39;ll wait for the browser to tell us that it has finished loading
+all content and then we&#39;ll call the Angular <code>bootstrap</code> method.</p>
+<p>The <code>bootstrap</code> method tells Angular to start the application with our
+<code>AppComponent</code> at the application root.
+We&#39;d be correct to guess that someday our application will
+consist of more components arising in tree-like fashion from this root.</p>
+<h3 id="wrapped-in-an-iife">Wrapped in an IIFE</h3>
+<p>We don&#39;t want to pollute the global namespace.
+We don&#39;t need an application namespace yet.
+So we&#39;ll surround the code in a simple IIFE
+(&quot;Immediately Invoked Function Execution&quot;)
+wrapper.</p>
+<p>Here is the entire file:</p>
+<code-example language="js" format="linenums">(function() {
+
+var AppComponent = ng
+  .Component({
+    selector: &#39;my-app&#39;,
+    template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;
+  })
+  .Class({
+    constructor: function () { }
+  });
+
+document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
+  ng.bootstrap(AppComponent);
+});
+
+})();
+</code-example></div><div class="l-main-section"><h2 id="create-an-index-html-">Create an <em>index.html</em></h2>
+<p><strong>Add a new <code>index.html</code></strong> file to the project folder and enter the following HTML</p>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Angular 2 QuickStart&lt;/title&gt;
+    &lt;script src=&quot;node_modules/angular2/bundles/angular2.sfx.dev.js&quot;&gt;&lt;/script&gt;
+    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;my-app&gt;&lt;/my-app&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code-example><div class="l-sub-section"><p>Our app loads two script files in the <code>&lt;head&gt;</code> element:</p>
+<blockquote>
+<p><strong><em>angular2.sfx.dev.js</em></strong>, the Angular 2 development library that puts
+Angular in the global <code>ng</code> namespace.</p>
+<p><strong><em>app.js</em></strong>, the application JavaScript we just wrote.</p>
+</blockquote>
+<p>In the <code>&lt;body&gt;</code>, there&#39;s an element called <code>&lt;my-app&gt;</code>.
+This is the placeholder for the <em>root</em> of the
+application. Angular displays our application here.</p>
+</div></div><div class="l-main-section"><h2 id="run-it-">Run it!</h2>
+<p>We need a file server to serve the static assets of our application
+(<em>index.html</em> and <em>app.js</em>).</p>
+<p>For this example we&#39;ll use the <strong>live-server</strong> that we installed with <code>npm</code>
+because it performs a live reload by default and it&#39;s
+fun to watch the browser update as we make changes.</p>
+<p>Open a terminal (or Windows/Linux command line) and enter:</p>
+<pre class="prettyprint lang-bash"><code>npm start</code></pre><div class="alert is-helpful"><p>That&#39;s the <code>npm</code> command we added earlier to the <code>scripts</code> section of <code>package.json</code></p>
+</div><p><strong>live-server</strong> loads the browser for us and refreshes the page as we make
+changes to the application.</p>
+<p>In a few moments, a browser tab should open and display</p>
+<figure class="image-display"><img src="/resources/images/devguide/quickstart/my-first-app.png" alt="Output of quickstart app"></figure><h3 id="make-some-changes">Make some changes</h3>
+<p>The <code>live-server</code> detects changes to our files and refreshes the browser page for us automatically.</p>
+<p>Try changing the message to &quot;My SECOND Angular 2 app&quot;.
+The <code>live-server</code> sees that change and reloads the browser.</p>
+<p>Keep <code>live-server</code> running in this terminal window and keep trying changes.
+You can stop it anytime with <code>Ctrl-C</code>.</p>
+<p><strong>Congratulations!  We are in business</strong> ... and ready to take
+our app to the next level.</p>
+</div></article><div class="main-footer"><nav class="background-silver grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">LIBRARIES</h3><ul class="text-body"><li><a href="/"> Angular 2.0</a></li><li><a href="https://angularjs.org/"> Angular 1 for JS</a></li><li><a href="https://angulardart.org/"> Angular 1 for Dart</a></li><li><a href="https://material.angularjs.org"> Angular Material</a></li><li><a href="https://www.firebase.com/docs/web/libraries/angular/"> AngularFire</a></li></ul></div><div class="c2"><h3 class="text-headline">LEARN</h3><ul class="text-body"><li><a href="/docs/ts/latest/quickstart.html"> 5 Min Quickstart</a></li><li><a href="/docs/ts/latest/guide/"> Step by Step Guide</a></li><li><a href="/docs/ts/latest/api/"> Full API</a></li><li><a href="/docs/ts/latest/resources.html"> Resources</a></li><li><a href="http://goo.gl/sj0Nk1">Design Docs &amp; Notes</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://gitter.im/angular/angular"> Chat Room</a></li><li><a href="https://github.com/angular/angular/issues"> Report an Issue</a></li></ul></div><div class="c3"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="https://blog.angularjs.org/"> Blog</a></li><li><a href="https://plus.sandbox.google.com/+AngularJS/posts"> Google+</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li></ul></div></nav><footer class="background-steel"><small class="text-caption">Powered by Google ©2010-2015. Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" class="text-snow">Apache License, Version 2.0</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small><a aria-label="View Style Guide" href="/docs/styleguide.html" title="Style Guide" md-button="md-button" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script><!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+ga('create', ' UA-70058104-1', 'auto');
+ga('send', 'pageview')
+
+</script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
+(w[n].q=w[n].q||[]).push(arguments);};s=d.createElement(t);
+e=d.getElementsByTagName(t)[0];s.async=1;s.src=u;e.parentNode.insertBefore(s,e);
+})(window,document,'script','//s.swiftypecdn.com/install/v1/st.js','_st');
+
+_st('install','VsuU7kH5Hnnj9tfyNvfK');</script></body></html>
