@@ -18,6 +18,7 @@ module.exports = new Package('angular-v2-docs', [jsdocPackage, nunjucksPackage, 
 .processor(require('./processors/createOverviewDump'))
 .processor(require('./processors/checkUnbalancedBackTicks'))
 .processor(require('./processors/convertBackticksToCodeBlocks'))
+.processor(require('./processors/addNotYetDocumentedProperty'))
 
 // Configure the log service
 .config(function(log) {
@@ -26,6 +27,8 @@ module.exports = new Package('angular-v2-docs', [jsdocPackage, nunjucksPackage, 
 
 .config(function(parseTagsProcessor) {
   parseTagsProcessor.tagDefinitions.push({ name: 'internal', transforms: function() { return true; } });
+  parseTagsProcessor.tagDefinitions.push({ name: 'syntax' });
+  parseTagsProcessor.tagDefinitions.push({ name: 'noDescription', transforms: function() { return true; } });
 })
 
 .config(function(renderDocsProcessor, versionInfo) {
@@ -81,9 +84,6 @@ module.exports = new Package('angular-v2-docs', [jsdocPackage, nunjucksPackage, 
     variableStart: '{$',
     variableEnd: '$}'
   };
-
-  templateFinder.templateFolders
-      .unshift(path.resolve(__dirname, 'templates'));
 
   templateFinder.templatePatterns = [
     '${ doc.template }',

@@ -17,8 +17,10 @@
   .c6
     //
       code-example(language="javascript" format="linenums" showcase="true").
-        @Component({selector: 'my-app'})
-        @View({template: '&lt;h1&gt;Hi {{ name }}&lt;/h1&gt;'})
+        @Component({
+          selector: 'my-app',
+          template: '&lt;h1&gt;Hi {{ name }}&lt;/h1&gt;'
+        })
 
         // Component controller
         class MyAppComponent {
@@ -27,8 +29,10 @@
           }
         }
     code-example(language="javascript" format="linenums" showcase="true").
-      @Component({selector: 'my-app'})
-      @View({template: '&lt;h1&gt;こんにちは {{ name }}&lt;/h1&gt;'})
+      @Component({
+        selector: 'my-app',
+        template: '&lt;h1&gt;こんにちは {{ name }}&lt;/h1&gt;'
+      })
 
       // Component controller
       class MyAppComponent {

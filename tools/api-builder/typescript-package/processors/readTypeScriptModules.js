@@ -126,17 +126,6 @@ module.exports = function readTypeScriptModules(tsParser, modules, getFileInfo,
             }
           }
 
-          // NotYetDocumented means that no top level comments and no member level comments
-          var notYetDocumented = exportDoc.content.trim().length == 0;
-          exportDoc.notYetDocumented = notYetDocumented && exportDoc.members.every(function(member) {
-            var content = member.content.trim();
-            return content.length == 0;
-          });
-
-          if (exportDoc.notYetDocumented) {
-            log.warn(createDocMessage("Not yet documented", exportDoc));
-          }
-
           if (sortClassMembers) {
             exportDoc.members.sort(function(a, b) {
               if (a.name > b.name) return 1;
@@ -153,10 +142,12 @@ module.exports = function readTypeScriptModules(tsParser, modules, getFileInfo,
 
   function createModuleDoc(moduleSymbol, basePath) {
     var id = moduleSymbol.name.replace(/^"|"$/g, '');
+    var name = id.split('/').pop();
     var moduleDoc = {
       docType: 'module',
+      name: name,
       id: id,
-      aliases: [id],
+      aliases: [id, name],
       moduleTree: moduleSymbol,
       content: getContent(moduleSymbol),
       exports: [],
@@ -383,6 +374,14 @@ module.exports = function readTypeScriptModules(tsParser, modules, getFileInfo,
     var sourceFile = ts.getSourceFileOfNode(declaration);
     if (declaration.type) {
       return getType(sourceFile, declaration.type).trim();
+    } else if (declaration.initializer) {
+      // The symbol does not have a "type" but it is being initialized
+      // so we can deduce the type of from the initializer (mostly).
+      if (declaration.initializer.expression) {
+        return declaration.initializer.expression.text.trim();
+      } else {
+        return getType(sourceFile, declaration.initializer).trim();
+      }
     }
   }
 
