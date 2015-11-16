@@ -1,22 +1,29 @@
 {
   "index": {
     "hero": "home",
-    "title": "Angular is a development platform for building mobile and desktop applications"
+    "title": "Angular is a development platform for building mobile and desktop applications",
+    "title": "Angularはモバイル、デスクトップアプリケーションを構築するための開発プラットフォームです"
   },
 
   "features": {
     "title": "Features & Benefits",
-    "subtitle": "Powerful Features for Developing Apps"
+    "title": "機能と利益",
+    "subtitle": "Powerful Features for Developing Apps",
+    "subtitle": "アプリ開発のための強力な機能"
   },
 
   "contribute": {
     "title": "Contribute to Angular",
+    "title": "Angularへの貢献",
     "subtitle": "Help us build the framework of the future!",
+    "subtitle": "未来のフレームワークの構築を手伝ってください！",
     "autoformat": "true"
   },
 
   "download": {
     "title": "Download Angular",
-    "subtitle": "Setup & Installation"
+    "title": "Angularのダウンロード",
+    "subtitle": "Setup & Installation",
+    "subtitle": "セットアップとインストール"
   }
 }
