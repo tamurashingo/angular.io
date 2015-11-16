@@ -37,16 +37,8 @@ and put a file named <code>pubspec.yaml</code> in it.</p>
 specify the angular2 and browser packages as dependencies,
 as well as the angular2 transformer.
 Angular 2 is changing rapidly, so provide an exact version:
-<b>2.0.0-alpha.44</b>.
-</p><div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">name: angular2-getting-started
-version: 0.0.1
-dependencies:
-  angular2: 2.0.0-alpha.44
-  browser: ^0.10.0
-transformers:
-- angular2:
-    entry_points: web/main.dart
-</code-example><p>In the same directory, create a <code>web</code> directory, and then
+<b>2.0.0-alpha.45</b>.
+</p><div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">BAD FILENAME: ../../_fragments/quickstart/dart/ex1/pubspec.yaml.md   Current path: docs,dart,latest,quickstart PathToDocs: ../../</code-example><p>In the same directory, create a <code>web</code> directory, and then
 run <code>pub get</code> to install the angular2 and browser packages
 (along with the packages they depend on).
 </p><code-example language="sh">&gt; <span class="blk">mkdir web</span>
@@ -56,16 +48,7 @@ Resolving dependencies...
 </div><div class="l-main-section"><h2 id="section-transpile">Create a Dart file</h2><p>Create a file under <code>web</code> named <code>main.dart</code>.
 </p><code-example language="sh">&gt; <span class="blk">vim web/main.dart</span>  # Use your favorite editor!
 </code-example><p>Paste the following code into <code>web/main.dart</code>:
-</p><div class="example-title">web/main.dart</div><code-example language="dart" format="linenums">import &#39;package:angular2/angular2.dart&#39;;
-import &#39;package:angular2/bootstrap.dart&#39;;
-
-@Component(selector: &#39;my-app&#39;, template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;)
-class AppComponent {}
-
-main() {
-  bootstrap(AppComponent);
-}
-</code-example><p>You&#39;ve just defined an Angular 2 <strong>component</strong>,
+</p><div class="example-title">web/main.dart</div><code-example language="dart" format="linenums">BAD FILENAME: ../../_fragments/quickstart/dart/ex1/web/main.dart.md   Current path: docs,dart,latest,quickstart PathToDocs: ../../</code-example><p>You&#39;ve just defined an Angular 2 <strong>component</strong>,
 one of the most important Angular 2 features.
 Components are the primary way to create application views
 and support them with application logic.</p>
@@ -95,19 +78,7 @@ consist of more components arising in tree-like fashion from this root.</p>
 Only files that call <code>bootstrap()</code> import <code>bootstrap.dart</code>.</p>
 </div><div class="l-main-section"><h2 id="section-angular-create-account">Create an HTML file</h2><p>Create a file named <code>web/index.html</code> that contains
 the following code:
-</p><div class="example-title">web/index.html</div><code-example language="html" format="linenums">&lt;!DOCTYPE html&gt;
-&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Getting Started&lt;/title&gt;
-
-    &lt;script async src=&quot;main.dart&quot; type=&quot;application/dart&quot;&gt;&lt;/script&gt;
-    &lt;script async src=&quot;packages/browser/dart.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;my-app&gt;Loading...&lt;/my-app&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code-example><p>The <code>&lt;my-app&gt;</code> tag in the <code>&lt;body&gt;</code> is
+</p><div class="example-title">web/index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/dart/ex1/web/index.html.md   Current path: docs,dart,latest,quickstart PathToDocs: ../../</code-example><p>The <code>&lt;my-app&gt;</code> tag in the <code>&lt;body&gt;</code> is
 the custom HTML element defined in the Dart file.</p>
 </div><div class="l-main-section"><h2 id="section-angular-run-app">Run the app</h2><p>You have a few options for running your app.
 One is to launch a local HTTP server
@@ -130,17 +101,7 @@ HTML file to directly include the generated JavaScript;
 one way to do that is with dart_to_js_script_rewriter.</p>
 <p>Add the dart_to_js_script_rewriter package to your pubspec,
 in both the <code>dependencies</code> and <code>transformers</code> sections.</p>
-<div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">name: angular2-getting-started
-version: 0.0.1
-<span class="otl">dependencies:</span>
-  angular2: 2.0.0-alpha.44
-  browser: ^0.10.0
-  <span class="pnk">dart_to_js_script_rewriter: ^0.1.0</span>
-<span class="otl">transformers:</span>
-- angular2:
-    entry_points: web/main.dart
-<span class="pnk">- dart_to_js_script_rewriter</span>
-</code-example><p>Then compile your Dart code to JavaScript,
+<div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">BAD FILENAME: ../../_fragments/quickstart/dart/ex2/pubspec.yaml.md   Current path: docs,dart,latest,quickstart PathToDocs: ../../</code-example><p>Then compile your Dart code to JavaScript,
 using <code>pub build</code>.
 </p><code-example language="basic">&gt; <span class="blk">pub build</span>
 Loading source assets...
@@ -153,17 +114,7 @@ converting reflection-using code to static code
 that Dart's build tools can compile to faster, smaller JavaScript.
 The highlighted lines in <code>pubspec.yaml</code>
 configure the Angular transformer:
-</p><div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">name: angular2-getting-started
-version: 0.0.1
-dependencies:
-  angular2: 2.0.0-alpha.44
-  browser: ^0.10.0
-  dart_to_js_script_rewriter: ^0.1.0
-<span class="otl">transformers:</span>
-<span class="otl">- angular2:</span>
-    <span class="otl">entry_points: web/main.dart</span>
-- dart_to_js_script_rewriter
-</code-example><p>The <code>entry_points</code> item
+</p><div class="example-title">pubspec.yaml</div><code-example language="yaml" format="linenums">BAD FILENAME: ../../_fragments/quickstart/dart/ex2/pubspec.yaml.md   Current path: docs,dart,latest,quickstart PathToDocs: ../../</code-example><p>The <code>entry_points</code> item
 identifies the Dart file in your app
 that has a <code>main()</code> function.
 For more information, see the
@@ -188,7 +139,7 @@ to continue playing with Angular 2 for Dart.
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

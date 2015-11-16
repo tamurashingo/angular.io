@@ -47,9 +47,9 @@ for a hero named &quot;Windstorm&quot;.</p>
 </code></pre><p>Now we update the template in the <code>@Component</code> decoration with data bindings to these new properties.</p>
 <code-example format="">template: '&lt;h1>{{title}}&lt/h1>&lth2>{{hero}} details!&lt/h2>'</code-example><p>The browser should refresh and display our title and hero.</p>
 <p>The double curly braces tell our app to read the <code>title</code> and <code>hero</code> properties from the component and render them.
-This is the &quot;interpolation&quot; form of one-way data binding;
-we can learn more about interpolation in the <a href="displaying-data">Displaying Data chapter</a>.</p>
-<h3 id="hero-object">Hero object</h3>
+This is the &quot;interpolation&quot; form of one-way data binding.</p>
+<div class="l-sub-section"><p>Learn more about interpolation in the <a href="../guide/displaying-data">Displaying Data chapter</a>.</p>
+</div><h3 id="hero-object">Hero object</h3>
 <p>At the moment, our hero is just a name.  Our hero needs more properties.
 Let&#39;s convert the <code>hero</code> from a literal string to a class.</p>
 <p>Create a <code>Hero</code> class with <code>id</code> and <code>name</code> properties.
@@ -112,7 +112,7 @@ with a one-way binding to <code>&lt;input&gt;</code>.</p>
 and see those changes wherever we bind to the hero’s name.
 In short, we want two-way data binding.</p>
 <p>Let’s update the template to use the  <strong><code>ng-model</code></strong> built-in directive for two-way binding.</p>
-<div class="l-sub-section"><p>Learn more about <code>ng-model</code> in the <a href="../guide/template-syntax.html#ng-model">Template Syntax</a></p>
+<div class="l-sub-section"><p>Learn more about <code>ng-model</code> in the <a href="../guide/template-syntax.html#ng-model">Template Syntax chapter</a></p>
 </div><p>Replace the <code>&lt;input&gt;</code> with the following HTML</p>
 <code-example language="html">&lt;input [(ng-model)]="hero.name" placeholder="name">
 </code-example><p>Unfortunately, that change broke our application and we&#39;re no longer displaying the hero in the browser.
@@ -139,14 +139,9 @@ We need additional directives to enable two-way data binding with <code>NgModel<
 That&#39;s painful. No one wants to remember all of the necessary directives and
 type them correctly. Fortunately, there is a shortcut.</p>
 <p>The <code>ng-model</code> directive is one of many Forms directives which happen to be
-bundled in a convenient array called <code>FORM_DIRECTIVES</code>.
-<!-- TODO
-.alert.is-helpful
-  :marked
-    Learn more about Angular Forms in the [Forms chapter]()
-:marked
--->
-Let’s forget about importing <code>NgModel</code> and import the <code>FORM_DIRECTIVES</code> array instead:</p>
+bundled in a convenient array called <code>FORM_DIRECTIVES</code>.</p>
+<div class="l-sub-section"><p>Learn more about Angular Forms in the <a href="../guide/forms">Forms chapter</a></p>
+</div><p>Let’s forget about importing <code>NgModel</code> and import the <code>FORM_DIRECTIVES</code> array instead:</p>
 <pre><code>import {bootstrap, Component, FORM_DIRECTIVES} from &#39;angular2/angular2&#39;;
 </code></pre><p>Now we tell the component that our template can use <code>FORM_DIRECTIVES</code>
 by updating the <code>directives</code> property of the <code>@Component</code> decorator.</p>
@@ -212,7 +207,7 @@ template, and allow a user to select it in the
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

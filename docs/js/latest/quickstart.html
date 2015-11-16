@@ -49,32 +49,11 @@ npm i live-server --save-dev
 </code></pre><p>These commands both <em>install</em> the packages and <em>create</em> an npm configuration
 file named <code>package.json</code>.
 The essence of our <code>package.json</code> should look like this:</p>
-<code-example language="json" format="linenums">{
-  "name": "angular2-getting-started",
-  "version": "1.0.0",
-  "dependencies": {
-    "angular2": "2.0.0-alpha.44"
-  },
-  "devDependencies": {
-    "live-server": "^0.8.1"
-  }
-}</code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
-<code-example language="json" format="linenums">{
-  "scripts": {
-    "start": "live-server"
-  }
-}</code-example><p>We&#39;ve just extended our project world with a script command that we&#39;ll be running very soon.</p>
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>We&#39;ve just extended our project world with a script command that we&#39;ll be running very soon.</p>
 </div><div class="l-main-section"><h2 id="our-first-angular-component">Our first Angular component</h2>
 <p>Add a new file called <em>app.js</em> and paste the following lines:</p>
-<code-example language="js" format="linenums">var AppComponent = ng
-  .Component({
-    selector: &#39;my-app&#39;,
-    template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;
-  })
-  .Class({
-    constructor: function () { }
-  });
-</code-example><p>We&#39;re creating a visual component named <strong><code>AppComponent</code></strong> by chaining the
+<code-example language="js" format="linenums">BAD FILENAME: ../../_fragments/quickstart/js/app-class-w-annotations.js.md   Current path: docs,js,latest,quickstart PathToDocs: ../../</code-example><p>We&#39;re creating a visual component named <strong><code>AppComponent</code></strong> by chaining the
 <code>Component</code> and <code>Class</code> methods that belong to the <strong>global Angular namespace, <code>ng</code></strong>.</p>
 <pre><code>var AppComponent = ng
     .Component({...})
@@ -98,10 +77,7 @@ We&#39;ll see more interesting component classes in future examples.</p>
 </div><div class="l-main-section"><h2 id="bootstrap-the-app">Bootstrap the app</h2>
 <p>We need to do something to put our application in motion.
 Add the following to the bottom of the <code>app.js</code> file:</p>
-<code-example language="js" format="linenums">document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-  ng.bootstrap(AppComponent);
-});
-</code-example><p>We&#39;ll wait for the browser to tell us that it has finished loading
+<code-example language="js" format="linenums">BAD FILENAME: ../../_fragments/quickstart/js/app-bootstrap.js.md   Current path: docs,js,latest,quickstart PathToDocs: ../../</code-example><p>We&#39;ll wait for the browser to tell us that it has finished loading
 all content and then we&#39;ll call the Angular <code>bootstrap</code> method.</p>
 <p>The <code>bootstrap</code> method tells Angular to start the application with our
 <code>AppComponent</code> at the application root.
@@ -114,35 +90,9 @@ So we&#39;ll surround the code in a simple IIFE
 (&quot;Immediately Invoked Function Execution&quot;)
 wrapper.</p>
 <p>Here is the entire file:</p>
-<code-example language="js" format="linenums">(function() {
-
-var AppComponent = ng
-  .Component({
-    selector: &#39;my-app&#39;,
-    template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;
-  })
-  .Class({
-    constructor: function () { }
-  });
-
-document.addEventListener(&#39;DOMContentLoaded&#39;, function() {
-  ng.bootstrap(AppComponent);
-});
-
-})();
-</code-example></div><div class="l-main-section"><h2 id="create-an-index-html-">Create an <em>index.html</em></h2>
+<code-example language="js" format="linenums">BAD FILENAME: ../../_fragments/quickstart/js/app-dsl.js.md   Current path: docs,js,latest,quickstart PathToDocs: ../../</code-example></div><div class="l-main-section"><h2 id="create-an-index-html-">Create an <em>index.html</em></h2>
 <p><strong>Add a new <code>index.html</code></strong> file to the project folder and enter the following HTML</p>
-<div class="example-title">index.html</div><code-example language="html" format="linenums">&lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Angular 2 QuickStart&lt;/title&gt;
-    &lt;script src=&quot;node_modules/angular2/bundles/angular2.sfx.dev.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;app.js&quot;&gt;&lt;/script&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;my-app&gt;&lt;/my-app&gt;
-  &lt;/body&gt;
-&lt;/html&gt;
-</code-example><div class="l-sub-section"><p>Our app loads two script files in the <code>&lt;head&gt;</code> element:</p>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/js/index.html.md   Current path: docs,js,latest,quickstart PathToDocs: ../../</code-example><div class="l-sub-section"><p>Our app loads two script files in the <code>&lt;head&gt;</code> element:</p>
 <blockquote>
 <p><strong><em>angular2.sfx.dev.js</em></strong>, the Angular 2 development library that puts
 Angular in the global <code>ng</code> namespace.</p>
@@ -175,7 +125,7 @@ our app to the next level.</p>
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

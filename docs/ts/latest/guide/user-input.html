@@ -21,8 +21,7 @@ In this chapter we learn to bind to those events using the Angular Event Binding
 with an <a href="./template-syntax.html#event-binding">Angular Event Binding</a>.</p>
 <p>The syntax is simple. We assign a template expression to the DOM event name, surrounded in parentheses.
 A click Event Binding makes for a quick illustration.</p>
-<code-example language="html" format=".">&lt;button (click)=&quot;onClickMe()&quot;&gt;Click me!&lt;/button&gt;
-</code-example><p>The <code>(click)</code> to the left of the equal sign identifies the button&#39;s click event as the <strong>target of the binding</strong>.
+<code-example language="html" format=".">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-click-me-button.html.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>The <code>(click)</code> to the left of the equal sign identifies the button&#39;s click event as the <strong>target of the binding</strong>.
 The text within quotes on the right is the &quot;<strong>template expression</strong>&quot; in which we
 respond to the click event by calling the component&#39;s <code>onClickMe</code> method. A <a href="./template-syntax.html#template-expressions">template expression</a> is a subset
 of JavaScript with a few added tricks.</p>
@@ -33,36 +32,13 @@ in this case because that snippet of HTML belongs to the following component:
 <!--
 These sample can be found in http://plnkr.co/edit/mr63T5
 --></p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;click-me&#39;,
-  template: &#39;&lt;button (click)=&quot;onClickMe()&quot;&gt;Click me&lt;/button&gt;&#39;
-})
-class ClickMeComponent {
-  onClickMe(){
-    alert(&#39;You are my hero!&#39;)    
-  }
-}
-</code-example><p>The <code>onClickMe</code> in the template refers to the <code>onClickMe</code> method of the component.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-click-me-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>The <code>onClickMe</code> in the template refers to the <code>onClickMe</code> method of the component.
 When the user clicks the button, Angular calls the component&#39;s <code>onClickMe</code> method.</p>
 <div class="l-main-section"></div><h2 id="get-user-input-from-the-event-object">Get user input from the $event object</h2>
 <p>We can bind to all kinds of events. Let&#39;s bind to the &quot;keyup&quot; event of an input box and replay
 what the user types back onto the screen.</p>
 <p>This time we&#39;ll both listen to an event and grab the user&#39;s input.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;key-up&#39;,
-  template: `
-    &lt;h4&gt;Give me some keys!&lt;/h4&gt;
-    &lt;div&gt;&lt;input (keyup)=&quot;onKey($event)&quot;&gt;&lt;/div&gt;
-    &lt;div&gt;{{values}}&lt;/div&gt;
-  `
-})
-class KeyUpComponent {
-  values=&#39;&#39;;
-  onKey(event) {
-    this.values += event.target.value + &#39; | &#39;;  
-  }
-}
-</code-example><p>Angular makes an event object available in the <strong><code>$event</code></strong> variable. The user data we want is in that variable somewhere.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-key-up-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>Angular makes an event object available in the <strong><code>$event</code></strong> variable. The user data we want is in that variable somewhere.</p>
 <p>The shape of the <code>$event</code> object is determined by whatever raises the event.
 The <code>keyup</code> event comes from the DOM so <code>$event</code> must be a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Event">standard DOM event object</a>.
 The <code>$event.target</code> gives us the
@@ -80,13 +56,7 @@ These variables grant us direct access to an element.
 We declare a local template variable by preceding an identifier with a hash/pound character (#).</p>
 <p>Let&#39;s demonstrate with  a clever keystroke loopback in a single line of template HTML.
 We don&#39;t actually need a dedicated component to do this but we&#39;ll make one anyway.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;loop-back&#39;,
-  template: &#39;&lt;input #box (keyup)=&quot;0&quot;&gt; &lt;p&gt;{{box.value}}&lt;/p&gt;&#39;
-})
-class LoopbackComponent {
-}
-</code-example><p>We&#39;ve declared a template local variable named <code>box</code> on the <code>&lt;input&gt;</code> element.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-loop-back-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>We&#39;ve declared a template local variable named <code>box</code> on the <code>&lt;input&gt;</code> element.
 The <code>box</code> variable is a reference to the <code>&lt;input&gt;</code> element itself which means we can
 grab the input element&#39;s <code>value</code> and display it
 with interpolation between <code>&lt;p&gt;</code> tags. The display updates as we type. <em>Voila!</em></p>
@@ -100,21 +70,7 @@ like the number zero. That&#39;s all it takes to keep Angular happy. We said it 
 <p>That local template variable is intriguing. It&#39;s clearly easer to get to the textbox with that
 variable than to go through the <code>$event</code> object. Maybe we can re-write our previous
 &quot;key-up&quot; example using the variable to acquire the user&#39;s&#39; input. Let&#39;s give it a try.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;key-up2&#39;,
-  template: `
-    &lt;h4&gt;Give me some more keys!&lt;/h4&gt;
-    &lt;div&gt;&lt;input #box (keyup)=&quot;onKey(box.value)&quot;&gt;&lt;/div&gt;
-    &lt;div&gt;{{values}}&lt;/div&gt;
-  `
-})
-class KeyUpComponentV2 {
-  values=&#39;&#39;;
-  onKey(value) {
-    this.values += value + &#39; | &#39;;  
-  }
-}
-</code-example><p>That sure seems easier.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-key-up2-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>That sure seems easier.
 An especially nice aspect of this approach is that our component code gets clean data values from the view.
 It no longer requires knowledge of the <code>$event</code> and its structure.</p>
 <a id="key-event"></a><div class="l-main-section"></div><h2 id="key-event-filtering-with-key-enter-">Key event filtering (with <code>key.enter</code>)</h2>
@@ -127,38 +83,12 @@ We can listen for just the &quot;Enter&quot; key by binding to Angular&#39;s <co
 <p>Only then do we update the component&#39;s <code>values</code> property ...
 inside the event expression rather than in the component ...
 because we can ... even if it is a dubious practice.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;key-up3&#39;,
-  template: `
-    &lt;h4&gt;Type away! Press [enter] when done.&lt;/h4&gt;
-    &lt;div&gt;&lt;input #box (keyup.enter)=&quot;values=box.value&quot;&gt;&lt;/div&gt;
-    &lt;div&gt;{{values}}&lt;/div&gt;
-  `
-})
-class KeyUpComponentV3 {
-  values=&#39;&#39;;
-}
-</code-example><figure class="image-display"><img src="/resources/images/devguide/user-input/keyup3-anim.gif" alt="key up 3"></figure><div class="l-main-section"></div><h2 id="on-blur">On blur</h2>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-key-up3-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><figure class="image-display"><img src="/resources/images/devguide/user-input/keyup3-anim.gif" alt="key up 3"></figure><div class="l-main-section"></div><h2 id="on-blur">On blur</h2>
 <p>Our previous example won&#39;t transfer the current state of the input box if the user mouses away and clicks
 elsewhere on the page. We only update the component&#39;s <code>values</code> property when the user presses &quot;Enter&quot;
 inside the input box.</p>
 <p>Let&#39;s fix that by listening to the input box&#39;s blur event as well.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;key-up4&#39;,
-  template: `
-    &lt;h4&gt;Type away! Press [enter] or mouse away when done.&lt;/h4&gt;
-    &lt;div&gt;
-      &lt;input #box 
-        (keyup.enter)=&quot;values=box.value&quot; 
-        (blur)=&quot;values=box.value&quot;&gt;
-    &lt;div&gt;
-    &lt;div&gt;{{values}}&lt;/div&gt;
-  `
-})
-class KeyUpComponentV4 {
-  values=&#39;&#39;;
-}
-</code-example><div class="l-main-section"></div><h2 id="put-it-all-together">Put it all together</h2>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-key-up4-component.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><div class="l-main-section"></div><h2 id="put-it-all-together">Put it all together</h2>
 <p>We learned how to <a href="./displaying-data.html">display data</a> in the previous chapter.
 We&#39;ve acquired a small arsenal of event binding techniques in this chapter.</p>
 <p>Let&#39;s put it all together in a micro-app
@@ -170,33 +100,7 @@ We&#39;ll call out the highlights after we bask briefly in its minimalist glory.
 <!--
 This example in http://plnkr.co/edit/JWeIqq
 --></p>
-<code-example language="ts" format="linenums">import {bootstrap, Component, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
-
-@Component({
-  selector: &#39;little-tour&#39;,
-  template: `
-    &lt;h4&gt;Little Tour of Heroes&lt;/h4&gt;
-    &lt;input #new-hero 
-      (keyup.enter)=&quot;addHero(newHero)&quot;
-      (blur)=&quot;addHero(newHero)&quot;&gt;
-    &lt;button (click)=addHero(newHero)&gt;Add&lt;/button&gt;
-    &lt;ul&gt;&lt;li *ng-for=&quot;#hero of heroes&quot;&gt;{{hero}}&lt;/li&gt;&lt;/ul&gt;
-  `,
-  directives: [CORE_DIRECTIVES]
-})
-class LittleTour {
-  heroes=[&#39;Windstorm&#39;, &#39;Bombasto&#39;, &#39;Magneta&#39;, &#39;Tornado&#39;];
-
-  addHero(newHero) {
-    if (newHero.value) { 
-      this.heroes.push(newHero.value); 
-      newHero.value = null; // clear the newHero textbox
-    }
-  }
-}
-
-bootstrap(LittleTour);
-</code-example><p>We&#39;ve seen almost everything here before. A few things are new or bear repeating.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/user-input/ts/src/app/app-little-tour-of-heroes-app.ts.md   Current path: docs,ts,latest,guide,user-input PathToDocs: ../../../</code-example><p>We&#39;ve seen almost everything here before. A few things are new or bear repeating.</p>
 <h3 id="-beware-of-camelcase-variable-names-"><strong>Beware of camelCase variable names</strong></h3>
 <p>We enter new hero names in the <code>&lt;input&gt;</code> element so we chose <code>newHero</code> to be the name of the local template variable.</p>
 <p>Unfortunately, we can&#39;t use that name when we declare the variable with (#).
@@ -229,7 +133,7 @@ in the <code>Forms</code> chapter.</p><!-- CHECK IF CURRENT PAGE IS SET, THEN SE
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

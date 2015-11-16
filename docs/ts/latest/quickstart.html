@@ -29,16 +29,7 @@ exercise on your own machine later.</p>
 cd    angular2-quickstart
 </code></pre></div><div class="l-main-section"><h2 id="our-first-angular-component">Our first Angular component</h2>
 <p><strong>Add a new file</strong> called <strong><code>app.ts</code></strong> and paste the following lines:</p>
-<div class="example-title">app.ts</div><code-example language="ts" format="linenums">import {bootstrap, Component} from &#39;angular2/angular2&#39;;
-
-@Component({
-    selector: &#39;my-app&#39;,
-    template: &#39;&lt;h1&gt;My First Angular 2 App&lt;/h1&gt;&#39;
-})
-class AppComponent { }
-
-bootstrap(AppComponent);
-</code-example><p>We&#39;ve just defined an Angular 2 <strong>component</strong>,
+<div class="example-title">app.ts</div><code-example language="ts" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/app/app.ts.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p>We&#39;ve just defined an Angular 2 <strong>component</strong>,
 one of the most important Angular 2 features.
 Components are our primary means of creating application views
 and supporting them with application logic.</p>
@@ -70,28 +61,7 @@ We <code>import</code> exactly what we need, as we need it, from named file and 
 </div><div class="l-main-section"><h2 id="add-index-html-">Add <code>index.html</code></h2>
 <p><strong>Create</strong> an <code>index.html</code> file.</p>
 <p><strong>Paste</strong> the following lines into it ... and we&#39;ll discuss them:</p>
-<div class="example-title">index.html</div><code-example language="html" format="linenums">&lt;html&gt;
-
-  &lt;head&gt;
-    &lt;title&gt;Angular 2 QuickStart&lt;/title&gt;
-    &lt;script src=&quot;https://code.angularjs.org/tools/system.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://code.angularjs.org/tools/typescript.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;https://code.angularjs.org/2.0.0-alpha.44/angular2.dev.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      System.config({
-        transpiler: &#39;typescript&#39;,
-        typescriptOptions: { emitDecoratorMetadata: true }
-      });
-      System.import(&#39;./app.ts&#39;);
-    &lt;/script&gt;
-  &lt;/head&gt;
-
-  &lt;body&gt;
-    &lt;my-app&gt;loading...&lt;/my-app&gt;
-  &lt;/body&gt;
-
-&lt;/html&gt;
-</code-example><p>We see three noteworthy sections of HTML:</p>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.1.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p>We see three noteworthy sections of HTML:</p>
 <ol>
 <li><p>We load JavaScript libraries from the web.
 Let&#39;s take them on faith without further discussion.<br><br></p>
@@ -195,38 +165,14 @@ npm i typescript live-server --save-dev
 </code></pre><p>These commands both <em>install</em> the packages and <em>create</em> an npm <code>package.json</code> that will
 help us develop and maintain our application in future.
 The essence of our <code>package.json</code> should look like this:</p>
-<code-example language="json" format="linenums">{
-  "name": "angular2-getting-started",
-  "version": "1.0.0",
-  "dependencies": {
-    "angular2": "2.0.0-alpha.44",
-    "systemjs": "0.19.2"
-  },
-  "devDependencies": {
-    "live-server": "^0.8.1",
-    "typescript": "^1.6.2"
-  }
-}</code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
-<code-example language="json" format="linenums">{
-  "scripts": {
-    "tsc": "tsc -p src -w",
-    "start": "live-server --open=src"
-  }
-}</code-example><p>We&#39;ve just extended our project world with script commands
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>We&#39;ve just extended our project world with script commands
 that we&#39;ll be running very soon.</p>
 </div><div class="l-main-section"><h2 id="update-index-html-">Update <code>index.html</code></h2>
 <p><strong>Replace</strong> the library scripts section with references to
 scripts in the packages we just installed.</p>
-<code-example language="html" format="linenums">&lt;script src=&quot;../node_modules/systemjs/dist/system.src.js&quot;&gt;&lt;/script&gt;
-&lt;script src=&quot;../node_modules/angular2/bundles/angular2.dev.js&quot;&gt;&lt;/script&gt;
-</code-example><p><strong>Update</strong> the <code>System</code> configuration script as follows.</p>
-<code-example language="html" format="linenums">&lt;script&gt;
-  System.config({
-    packages: {&#39;app&#39;: {defaultExtension: &#39;js&#39;}}
-  });
-  System.import(&#39;app/app&#39;);
-&lt;/script&gt;
-</code-example><div class="l-sub-section"><p>We won&#39;t be transpiling TypeScript in the browser anymore.
+<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-libraries.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p><strong>Update</strong> the <code>System</code> configuration script as follows.</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-systemjs.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="l-sub-section"><p>We won&#39;t be transpiling TypeScript in the browser anymore.
 We&#39;ll do that on our machine and ship the generated JavaScript
 files to the server.</p>
 <p>We have to re-configure <code>system.js</code> to expect JavaScript files
@@ -238,43 +184,13 @@ file and import it like this</p>
 importing our main application file <code>app</code> (the generated <code>app.js</code> to be precise)
 from the <code>src/app/</code> folder (we moved it there, remember?)</p>
 </div><p>Here&#39;s the final version</p>
-<div class="example-title">index.html</div><code-example language="html" format="linenums">&lt;html&gt;
-
-  &lt;head&gt;
-    &lt;title&gt;Angular 2 QuickStart&lt;/title&gt;
-    &lt;script src=&quot;../node_modules/systemjs/dist/system.src.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;../node_modules/angular2/bundles/angular2.dev.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      System.config({
-        packages: {&#39;app&#39;: {defaultExtension: &#39;js&#39;}}
-      });
-      System.import(&#39;app/app&#39;);
-    &lt;/script&gt;
-  &lt;/head&gt;
-
-  &lt;body&gt;
-    &lt;my-app&gt;Loading...&lt;/my-app&gt;
-  &lt;/body&gt;
-
-&lt;/html&gt;
-</code-example></div><div class="l-main-section"><h2 id="prepare-for-typescript-compilation">Prepare for TypeScript Compilation</h2>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example></div><div class="l-main-section"><h2 id="prepare-for-typescript-compilation">Prepare for TypeScript Compilation</h2>
 <h3 id="add-the-typescript-configuration-file">Add the TypeScript configuration file</h3>
 <p>We&#39;ll add a configuration file named <strong><code>tsconfig.json</code></strong>
 to tell the editor how to interpret our TypeScript code and
 to simplify the TypeScript compilation command that we&#39;ll run very soon.</p>
 <p><strong>Change to the <code>src</code> folder and create a <code>tsconfig.json</code></strong> file with the following content:</p>
-<div class="example-title">tsconfig.json</div><code-example language="json" format="linenums">{
-  "compilerOptions": {
-    "target": "ES5",
-    "module": "commonjs",
-    "sourceMap": true,
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-    "removeComments": false,
-    "noImplicitAny": false
-  }
-}
-</code-example><div class="alert is-helpful"><p>See the <a href="#tsconfig">TypeScript configuration appendix</a> to learn more about
+<div class="example-title">tsconfig.json</div><code-example language="json" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/tsconfig.json.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="alert is-helpful"><p>See the <a href="#tsconfig">TypeScript configuration appendix</a> to learn more about
 this file and these settings.</p>
 </div></div><div class="l-main-section"><h2 id="final-structure">Final structure</h2>
 <p>Our final project folder structure should look like this:</p>
@@ -374,7 +290,7 @@ command to add a shim to the project:</p>
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

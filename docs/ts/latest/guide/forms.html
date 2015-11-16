@@ -74,17 +74,7 @@ We can&#39;t layout the form until we know what the model looks like.</p>
 That describes well our <code>Hero</code> class with its three required fields (<code>id</code>, <code>name</code>, <code>power</code>)
 and one optional field (<code>alterEgo</code>).</p>
 <p>Create a new file called <code>hero.ts</code> and give it the following class definition:</p>
-<code-example language="ts" format="linenums">export class Hero {
-
-  constructor(
-    public id: number,
-    public name: string,
-    public power: string,
-    public alterEgo?: string
-  ) {  }
-
-}
-</code-example><p>It&#39;s an anemic model with few requirements and no behavior. Perfect for our demo.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>It&#39;s an anemic model with few requirements and no behavior. Perfect for our demo.</p>
 <p>The TypeScript compiler generates a public field for each <code>public</code> constructor parameter and
 assigns the parameter’s value to that field automatically when we create new heroes like this:</p>
 <pre><code>let myHero = new Hero(42, &#39;SkyDog&#39;, &#39;Fetch any object at any distance&#39;, &#39;Leslie Rollover&#39;);
@@ -94,30 +84,7 @@ console.log(&#39;My hero is called &#39; + myHero.name); // &quot;My hero is cal
 <p>An Angular form has two parts: an HTML-based template and a code-based Component to handle data and user interactions.</p>
 <p>We begin with the Component because it states, in brief, what the Hero editor can do.</p>
 <p>Create a new file called <code>hero-form.component.ts</code> and give it the following definition:</p>
-<code-example language="ts" format="linenums">import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from &#39;angular2/angular2&#39;;
-
-import { Hero } from &#39;./hero&#39;;
-
-@Component({
-  selector: &#39;hero-form&#39;,
-  templateUrl: &#39;app/hero-form.component.html&#39;,
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
-})
-export class HeroFormComponent {
-
-  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;,
-            &#39;Super Hot&#39;, &#39;Weather Changer&#39;];
-
-  model = new Hero(18, &#39;Dr IQ&#39;, this.powers[0], &#39;Chuck Overstreet&#39;);
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-  // TODO: Remove this when we&#39;re done
-  get diagnostic() { return JSON.stringify(this.model); }
-}
-</code-example><p>There’s nothing special about this component, nothing to distinguish it from any component we&#39;ve written before,
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-first.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>There’s nothing special about this component, nothing to distinguish it from any component we&#39;ve written before,
 nothing form-specific about it ... except, perhaps, the tell-tale <code>FORM_DIRECTIVES</code> import.</p>
 <p>Understanding this component requires only the Angular 2 concepts we’ve learned in previous chapters</p>
 <ol>
@@ -148,18 +115,7 @@ We also like short files with a clear and obvious purpose like this one.</p>
 <div class="l-main-section"></div><h2 id="revise-the-app-ts-">Revise the <em>app.ts</em></h2>
 <p><code>app.ts</code> is the application&#39;s root component. It will host our new <code>HeroFormComponent</code>.</p>
 <p>Replace the contents of the &quot;QuickStart&quot; version with the following:</p>
-<code-example language="ts" format="linenums">import {bootstrap, Component} from &#39;angular2/angular2&#39;
-import {HeroFormComponent} from &#39;./hero-form.component&#39;
-
-@Component({
-  selector: &#39;my-app&#39;,
-  template: &#39;&lt;hero-form&gt;&lt;/hero-form&gt;&#39;,
-  directives: [HeroFormComponent]
-})
-class AppComponent { }
-
-bootstrap(AppComponent);
-</code-example><div class="l-sub-section"><p>There are only three changes:</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/app.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><div class="l-sub-section"><p>There are only three changes:</p>
 <ol>
 <li><p>We import the new <code>HeroFormComponent</code>.</p>
 </li>
@@ -171,23 +127,7 @@ which is itself a Directive (as are all Components).</p>
 </ol>
 </div><div class="l-main-section"></div><h2 id="create-an-initial-html-form-template">Create an initial HTML Form Template</h2>
 <p>Create a new template file called <code>hero-form.component.html</code> and give it the following definition:</p>
-<code-example language="html" format="linenums">&lt;div class=&quot;container&quot;&gt;
-    &lt;h1&gt;Hero Form&lt;/h1&gt;
-    &lt;form&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;alterEgo&quot;&gt;Alter Ego&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot;&gt;
-      &lt;/div&gt;
-
-      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;&gt;Submit&lt;/button&gt;
-    &lt;/form&gt;
-&lt;/div&gt;
-</code-example><p>That is plain old HTML 5. We&#39;re presenting two of the <code>Hero</code> fields, <code>name</code> and <code>alterEgo</code>, and
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-start.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>That is plain old HTML 5. We&#39;re presenting two of the <code>Hero</code> fields, <code>name</code> and <code>alterEgo</code>, and
 opening them up for user input in input boxes.</p>
 <p>The &quot;Name&quot; <code>&lt;input&gt;</code> control has the HTML5 <code>required</code> attribute;
 the &quot;Alter Ego&quot; <code>&lt;input&gt;</code> control does not because <code>alterEgo</code> is optional.</p>
@@ -201,8 +141,7 @@ now might be a good time to install it into our project.
 We can do that with npm.</p>
 <p>Open a terminal window and enter the command:</p>
 <code-example language="html" escape="html">npm install bootstrap</code-example><p><br>Open the <code>index.html</code> and add the following line wherever we like to put our CSS</p>
-<code-example language="html" format=".">&lt;link rel=&quot;stylesheet&quot; href=&quot;../node_modules/bootstrap/dist/css/bootstrap.min.css&quot;&gt;
-</code-example></div><div class="callout is-important"><header>Angular Forms Does Not Require A Style Library</header><p>Angular makes no use of the <code>container</code>, <code>form-group</code>, <code>form-control</code>, and <code>btn</code> classes or
+<code-example language="html" format=".">BAD FILENAME: ../../../_fragments/forms/ts/src/index-bootstrap.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example></div><div class="callout is-important"><header>Angular Forms Does Not Require A Style Library</header><p>Angular makes no use of the <code>container</code>, <code>form-group</code>, <code>form-control</code>, and <code>btn</code> classes or
 the styles of any external library. We are welcome to use the CSS library we choose
 ... or none at all.</p>
 </div><div class="l-main-section"></div><h2 id="add-powers-with-ng-for-">Add Powers with <strong>*ng-for</strong></h2>
@@ -212,13 +151,7 @@ We maintain that list internally (in <code>HeroFormComponent</code>).</p>
 form and bind the options to the <code>powers</code> list using <code>NgFor</code>,
 a technique we might have seen before in the <a href="./displaying-data.html">&quot;Displaying Data&quot;</a> chapter.</p>
 <p>Add the following HTML <em>immediately below</em> the &quot;Alter Ego&quot; group.</p>
-<code-example language="html" format="linenums">&lt;div class=&quot;form-group&quot;&gt;
-  &lt;label for=&quot;power&quot;&gt;Hero Power&lt;/label&gt;
-  &lt;select class=&quot;form-control&quot; required&gt;
-    &lt;option *ng-for=&quot;#p of powers&quot; [value]=&quot;p&quot;&gt;{{p}}&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
-</code-example><p>We are repeating the <code>&lt;options&gt;</code> tag for each power in the list of Powers.
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-powers.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>We are repeating the <code>&lt;options&gt;</code> tag for each power in the list of Powers.
 The <code>#p</code> local template variable is a different power in each iteration;
 we display its name using the interpolation syntax with the double-curly-braces.</p>
 <div class="l-main-section"></div><h2 id="two-way-data-binding-with-ng-model-">Two-way data binding with <strong>*ng-model</strong></h2>
@@ -234,10 +167,7 @@ in &quot;<a href="./user-input.html">User Input</a>&quot;.</p>
 Instead we&#39;ll introduce something new, the <code>NgModel</code> directive, that
 makes binding our form to the model super-easy.</p>
 <p>Find the <code>&lt;input&gt;</code> tag for the &quot;Name&quot; and update it like this</p>
-<code-example language="html" format="linenums">&lt;input type=&quot;text&quot;  class=&quot;form-control&quot; required
-  [(ng-model)]=&quot;model.name&quot; &gt;
-  TODO: remove this: {{model.name}}
-</code-example><div class="l-sub-section"><p>We appended a diagnostic interpolation after the input tag
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-model-1.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><div class="l-sub-section"><p>We appended a diagnostic interpolation after the input tag
 so we can see what we&#39;re doing.
 We left ourselves a note to throw it way when we&#39;re done.</p>
 </div><p>Focus on the binding syntax: <code>[(ng-model)]=&quot;...&quot;</code>.</p>
@@ -253,27 +183,7 @@ and add a new binding at the top to the component&#39;s <code>diagnostic</code> 
 Then we can confirm that we are in fact two-way data binding <em>to the entire Hero model</em>.</p>
 <p>After revision the core of our form should have three <code>[(ng-model)]</code> bindings that
 look much like this:</p>
-<code-example language="html" format="linenums">{{diagnostic}}
-&lt;div class=&quot;form-group&quot;&gt;
-  &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-  &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-    [(ng-model)]=&quot;model.name&quot; &gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;form-group&quot;&gt;
-  &lt;label for=&quot;alterEgo&quot;&gt;Alter Ego&lt;/label&gt;
-  &lt;input type=&quot;text&quot;  class=&quot;form-control&quot;
-    [(ng-model)]=&quot;model.alterEgo&quot;&gt;
-&lt;/div&gt;
-
-&lt;div class=&quot;form-group&quot;&gt;
-  &lt;label for=&quot;power&quot;&gt;Hero Power&lt;/label&gt;
-  &lt;select class=&quot;form-control&quot;  required
-    [(ng-model)]=&quot;model.power&quot; &gt;
-    &lt;option *ng-for=&quot;#p of powers&quot; [value]=&quot;p&quot;&gt;{{p}}&lt;/option&gt;
-  &lt;/select&gt;
-&lt;/div&gt;
-</code-example><p>If we ran the app right now and made a bunch of changes at some point it might look like this.</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-model-2.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>If we ran the app right now and made a bunch of changes at some point it might look like this.</p>
 <figure class="image-display"><img src="/resources/images/devguide/forms/ng-model-in-action-2.png" alt="ng-model in super action"></figure><p>We&#39;ve changed every Hero model property and the diagnostic near the top of the form
 confirms that our changes are reflected in the model.</p>
 <p><strong> We&#39;re done with the diagnostic binding. Delete it now.</strong></p>
@@ -292,11 +202,7 @@ This is a one-way data binding in the opposite direction <strong>from the view t
 to signify a two-way data binding and a <strong>flow of data in both directions</strong>.</p>
 <p>In fact, we can break the <code>NgModel</code> binding into its two separate modes
 as we do in this re-write of the &quot;Name&quot; <code>&lt;input&gt;</code> binding:</p>
-<code-example language="html" format="linenums">&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-  [ng-model]=&quot;model.name&quot;
-  (ng-model-change)=&quot;model.name = $event&quot; &gt;
-  TODO: remove this: {{model.name}}
-</code-example><p><br>The Property Binding should feel familiar. The Event Binding might seem strange.</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-model-3.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p><br>The Property Binding should feel familiar. The Event Binding might seem strange.</p>
 <p>The name <code>ng-model-change</code> is not an event we recognize.
 It is a real event property ... of the <code>NgModel</code> directive.
 When Angular sees a binding target in the form <span style="font-family:courier">[(abc)]</span>,
@@ -329,10 +235,7 @@ control and make messages appear or disappear.</p>
 <p>We&#39;ll explore those effects soon. Right now
 we should <strong>add <code>ng-control</code>to all three of our form controls</strong>,
 starting with the &quot;Name&quot; input box</p>
-<code-example language="html" format="linenums">&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-  [(ng-model)]=&quot;model.name&quot;
-    ng-control=&quot;name&quot; &gt;
-</code-example><p>Be sure to assign a unique name to each <code>ng-control</code> directive.</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-control-1.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>Be sure to assign a unique name to each <code>ng-control</code> directive.</p>
 <div class="l-sub-section"><p>Angular registers controls under their <code>ng-control</code> names
 with the <code>NgForm</code>.
 We didn&#39;t add the <code>NgForm</code> directive explicitly but it&#39;s here
@@ -347,11 +250,7 @@ each from the following pairs of Angular form CSS classes.</p>
 </ul>
 <p>Let&#39;s add a temporary <a href="./template-syntax.html#local-vars">local template variable</a> named <strong>spy</strong>
 to the &quot;Name&quot; <code>&lt;input&gt;</code> tag and use the spy to display those classes with an interpolation binding.</p>
-<code-example language="html" format="linenums">&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-  [(ng-model)]=&quot;model.name&quot;
-    ng-control=&quot;name&quot;  #spy &gt;
-TODO: remove this: {{spy.className}}
-</code-example><p>If we ran the app, focused our attention on the &quot;Name&quot; input box, and followed the next four steps <em>precisely</em></p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-control-2.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>If we ran the app, focused our attention on the &quot;Name&quot; input box, and followed the next four steps <em>precisely</em></p>
 <ol>
 <li>Look but don&#39;t touched</li>
 <li>Click in the input box, then click outside the text input box</li>
@@ -364,17 +263,9 @@ strong visual signal when the data are invalid and we want to mark required fiel
 <p>We realize we can do both at the same time with a colored bar on the left of the input box:</p>
 <figure class="image-display"><img src="/resources/images/devguide/forms/validity-required-indicator.png" alt="Invalid Form"></figure><p>We achieve this effect by adding two styles to a new <code>styles.css</code> file
 that we add to our project as a sibling to <code>index.html</code>.</p>
-<code-example language="css" format="linenums">.ng-valid[required] {
-  border-left: 5px solid #42A948; /* green */
-}
-
-.ng-invalid {
-  border-left: 5px solid #a94442; /* red */
-}
-</code-example><p>These styles select for the two Angular validity classes and the HTML 5 &quot;required&quot; attribute.</p>
+<code-example language="css" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/styles.css.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>These styles select for the two Angular validity classes and the HTML 5 &quot;required&quot; attribute.</p>
 <p>We update the <code>&lt;head&gt;</code> of the <code>index.html</code> to include this style sheet.</p>
-<code-example language="html" format=".">&lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
-</code-example><h2 id="show-and-hide-validation-error-messages">Show and Hide Validation Error messages</h2>
+<code-example language="html" format=".">BAD FILENAME: ../../../_fragments/forms/ts/src/index-styles.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><h2 id="show-and-hide-validation-error-messages">Show and Hide Validation Error messages</h2>
 <p>We can do better.</p>
 <p>The &quot;Name&quot; input box is required. Clearing it turns the bar red. That says <em>something</em> is wrong but we
 don&#39;t know <em>what</em> is wrong or what to do about it.
@@ -386,13 +277,7 @@ We can leverage the <code>ng-invalid</code> class to reveal a helpful message.</
 <li>the &quot;<em>is required</em>&quot; message in a nearby <code>&lt;div&gt;</code> which we&#39;ll display only if the control is invalid.</li>
 </ol>
 <p>Here&#39;s how we do it for the &quot;name&quot; input box:</p>
-<code-example language="html" format="linenums">&lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-  [(ng-model)]=&quot;model.name&quot;
-    ng-control=&quot;name&quot;  #name=&quot;form&quot; &gt;
-&lt;div [hidden]=&quot;name.valid&quot; class=&quot;alert alert-danger&quot;&gt;
-  Name is required
-&lt;/div&gt;
-</code-example><p>We initialized the template local variable with the word &quot;form&quot; (<code>#name=&quot;form&quot;</code>)</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-name-with-error-msg.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>We initialized the template local variable with the word &quot;form&quot; (<code>#name=&quot;form&quot;</code>)</p>
 <p>Angular recognizes that syntax and sets the <code>name</code> varable
 to the <code>Control</code> object identified by the <code>ng-control</code> directive which,
 not coincidentally, we called &quot;name&quot;.</p>
@@ -404,8 +289,7 @@ if it becomes invalid, the message is revealed.</p>
 <p>We didn&#39;t add the <strong><a href="../api/core/NgForm-class.html"><code>NgForm</code></a> directive</strong> explicitly.
 Angular added it surreptiously, wrapping it around the <code>&lt;form&gt;</code> element when we
 told the <code>HeroFormComponent</code> to use the <code>FORM_DIRECTIVES</code> like this</p>
-<code-example language="ts" format="linenums">directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
-</code-example><br><p>The <code>NgForm</code> directive  supplements the the <code>form</code> element with additional features.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-directives.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><br><p>The <code>NgForm</code> directive  supplements the <code>form</code> element with additional features.
 It collects <code>Controls</code> (elements identified by an <code>ng-control</code> directive)
 and monitors their properties including their validity.
 It has its own <code>valid</code> property which is true only if every contained
@@ -426,8 +310,7 @@ trigger a form submit because of its type (<code>type=&quot;submit&quot;</code>)
 <p>A &quot;form submit&quot; is meaningless at the moment.
 We&#39;ll update the <code>&lt;form&gt;</code> tag with another Angular directive, <code>NgSubmit</code>,
 and bind it to our <code>HeroFormComponent.submit()</code> method with an EventBinding</p>
-<code-example language="html" format="linenums">    &lt;form (ng-submit)=&quot;onSubmit()&quot; #hf=&quot;form&quot;&gt;
-</code-example><p>We slipped in something extra there at the end!  We defined a
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-ng-submit.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>We slipped in something extra there at the end!  We defined a
 template local variable, <strong><code>#hf</code></strong>, and initialized it with the value, &quot;form&quot;.</p>
 <p>The variable <code>hf</code> is now a handle to the <code>NgForm</code> as we <a href="#ng-form">discussed earlier</a>
 with respect to <code>ng-control</code> although this time we have a reference to the form
@@ -435,9 +318,7 @@ rather than a control.</p>
 <p>We&#39;ll bind the Form&#39;s over-all validity via
 the <code>hf</code> variable to the button&#39;s <code>disabled</code> property
 using an Event Binding. Here&#39;s the code:</p>
-<code-example language="html" format="linenums">&lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
-        [disabled]=&quot;!hf.form.valid&quot;&gt;Submit&lt;/button&gt;
-</code-example><p>If we run the application now, we find that the button is enabled.
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-submit-button.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>If we run the application now, we find that the button is enabled.
 It doesn&#39;t do anything useful yet but it&#39;s alive.</p>
 <p>Now if we delete the &quot;Name&quot;, we violate the &quot;required&quot; rule which
 is duely noted in our error message.</p>
@@ -461,42 +342,14 @@ and not miss a thing.</p>
 Let&#39;s hide the data entry area and display something else.</p>
 <p>Start by wrapping the form in a <code>&lt;div&gt;</code> and binding
 its <code>hidden</code> property to the <code>HeroFormComponent.submitted</code> property.</p>
-<code-example language="html" format="linenums">  &lt;div [hidden]=&quot;submitted&quot;&gt;
-    &lt;h1&gt;Hero Form&lt;/h1&gt;
-    &lt;form (ng-submit)=&quot;onSubmit()&quot; #hf=&quot;form&quot;&gt;
-
-       &lt;!-- ... all of the form ... --&gt;
-
-    &lt;/form&gt;
-  &lt;/div&gt;
-</code-example><p>The main form is visible from the start because the
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-edit-div.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>The main form is visible from the start because the
 the <code>submitted</code> property is false until we submit the form
 ... as this fragment from the <code>HeroFormComponent</code> reminds us:</p>
-<code-example language="ts" format="linenums">submitted = false;
-
-onSubmit() { this.submitted = true; }
-</code-example><p>When we click the &quot;Submit&quot; button, the <code>submitted</code> flag becomes true and the form disappears
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-submitted.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>When we click the &quot;Submit&quot; button, the <code>submitted</code> flag becomes true and the form disappears
 as planned.</p>
 <p>Now we need to show something else while the form is in the submitted state.
 Add the following block of HTML below the <code>&lt;div&gt;</code> wrapper we just wrote:</p>
-<code-example language="html" format="linenums">&lt;div [hidden]=&quot;!submitted&quot;&gt;
-  &lt;h2&gt;You submitted the following:&lt;/h2&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-xs-3&quot;&gt;Name&lt;/div&gt;
-    &lt;div class=&quot;col-xs-9  pull-left&quot;&gt;{{ model.name }}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-xs-3&quot;&gt;Alter Ego&lt;/div&gt;
-    &lt;div class=&quot;col-xs-9 pull-left&quot;&gt;{{ model.alterEgo }}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-xs-3&quot;&gt;Power&lt;/div&gt;
-    &lt;div class=&quot;col-xs-9 pull-left&quot;&gt;{{ model.power }}&lt;/div&gt;
-  &lt;/div&gt;
-  &lt;br&gt;
-  &lt;button class=&quot;btn btn-default&quot; (click)=&quot;submitted=false&quot;&gt;Edit&lt;/button&gt;
-&lt;/div&gt;
-</code-example><p>There&#39;s our hero again, displayed read-only with interpolation bindings.
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-submitted.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-example><p>There&#39;s our hero again, displayed read-only with interpolation bindings.
 This slug of HTML only appears while the component is in the submitted state.</p>
 <p>There&#39;s an &quot;Edit&quot; button whose click event we bound to an expression
 that clears the <code>submitted</code> flag.</p>
@@ -516,134 +369,7 @@ that clears the <code>submitted</code> flag.</p>
 <li>Custom CSS classes that provide visual feedback to users about required invalid controls.</li>
 </ul>
 <p>Here’s the final version of the application includes all of these framework features:</p>
-<code-tabs><code-pane language="html" name="hero-form.component.html" format="linenums">&lt;div class=&quot;container&quot;&gt;
-  &lt;div [hidden]=&quot;submitted&quot;&gt;
-    &lt;h1&gt;Hero Form&lt;/h1&gt;
-    &lt;form (ng-submit)=&quot;onSubmit()&quot; #hf=&quot;form&quot;&gt;
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;name&quot;&gt;Name&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot; required
-          [(ng-model)]=&quot;model.name&quot;
-            ng-control=&quot;name&quot;  #name=&quot;form&quot; &gt;
-        &lt;div [hidden]=&quot;name.valid&quot; class=&quot;alert alert-danger&quot;&gt;
-          Name is required
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;alterEgo&quot;&gt;Alter Ego&lt;/label&gt;
-        &lt;input type=&quot;text&quot; class=&quot;form-control&quot;
-          [(ng-model)]=&quot;model.alterEgo&quot;
-            ng-control=&quot;alterEgo&quot; &gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;form-group&quot;&gt;
-        &lt;label for=&quot;power&quot;&gt;Hero Power&lt;/label&gt;
-        &lt;select class=&quot;form-control&quot; required
-          [(ng-model)]=&quot;model.power&quot;
-            ng-control=&quot;power&quot; #power=&quot;form&quot; &gt;
-          &lt;option *ng-for=&quot;#p of powers&quot; [value]=&quot;p&quot;&gt;{{p}}&lt;/option&gt;
-        &lt;/select&gt;
-        &lt;div [hidden]=&quot;power.valid&quot; class=&quot;alert alert-danger&quot;&gt;
-          Power is required
-        &lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;button type=&quot;submit&quot; class=&quot;btn btn-default&quot;
-              [disabled]=&quot;!hf.form.valid&quot;&gt;Submit&lt;/button&gt;
-    &lt;/form&gt;
-  &lt;/div&gt;
-
-  &lt;div [hidden]=&quot;!submitted&quot;&gt;
-    &lt;h2&gt;You submitted the following:&lt;/h2&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-xs-3&quot;&gt;Name&lt;/div&gt;
-      &lt;div class=&quot;col-xs-9  pull-left&quot;&gt;{{ model.name }}&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-xs-3&quot;&gt;Alter Ego&lt;/div&gt;
-      &lt;div class=&quot;col-xs-9 pull-left&quot;&gt;{{ model.alterEgo }}&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;div class=&quot;row&quot;&gt;
-      &lt;div class=&quot;col-xs-3&quot;&gt;Power&lt;/div&gt;
-      &lt;div class=&quot;col-xs-9 pull-left&quot;&gt;{{ model.power }}&lt;/div&gt;
-    &lt;/div&gt;
-    &lt;br&gt;
-    &lt;button class=&quot;btn btn-default&quot; (click)=&quot;submitted=false&quot;&gt;Edit&lt;/button&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code-pane><code-pane language="ts" name="hero-form.component.ts" format="linenums">import {Component, CORE_DIRECTIVES, FORM_DIRECTIVES} from &#39;angular2/angular2&#39;;
-
-import { Hero } from &#39;./hero&#39;;
-
-@Component({
-  selector: &#39;hero-form&#39;,
-  templateUrl: &#39;app/hero-form.component.html&#39;,
-  directives: [CORE_DIRECTIVES, FORM_DIRECTIVES]
-})
-export class HeroFormComponent {
-
-  powers = [&#39;Really Smart&#39;, &#39;Super Flexible&#39;,
-            &#39;Super Hot&#39;, &#39;Weather Changer&#39;];
-
-  model = new Hero(18, &#39;Dr IQ&#39;, this.powers[0], &#39;Chuck Overstreet&#39;);
-
-  submitted = false;
-
-  onSubmit() { this.submitted = true; }
-
-}
-</code-pane><code-pane language="ts" name="hero.ts" format="linenums">export class Hero {
-
-  constructor(
-    public id: number,
-    public name: string,
-    public power: string,
-    public alterEgo?: string
-  ) {  }
-
-}
-</code-pane><code-pane language="ts" name="app.ts" format="linenums">import {bootstrap, Component} from &#39;angular2/angular2&#39;
-import {HeroFormComponent} from &#39;./hero-form.component&#39;
-
-@Component({
-  selector: &#39;my-app&#39;,
-  template: &#39;&lt;hero-form&gt;&lt;/hero-form&gt;&#39;,
-  directives: [HeroFormComponent]
-})
-class AppComponent { }
-
-bootstrap(AppComponent);
-</code-pane><code-pane language="html" name="index.html" format="linenums">&lt;html&gt;
-
-  &lt;head&gt;
-    &lt;title&gt;Hero Form&lt;/title&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;../node_modules/bootstrap/dist/css/bootstrap.min.css&quot;&gt;
-    &lt;link rel=&quot;stylesheet&quot; href=&quot;styles.css&quot;&gt;
-
-    &lt;script src=&quot;../node_modules/systemjs/dist/system.src.js&quot;&gt;&lt;/script&gt;
-    &lt;script src=&quot;../node_modules/angular2/bundles/angular2.dev.js&quot;&gt;&lt;/script&gt;
-    &lt;script&gt;
-      System.config({
-        packages: {&#39;app&#39;: {defaultExtension: &#39;js&#39;}}
-      });
-      System.import(&#39;app/app&#39;);
-    &lt;/script&gt;
-  &lt;/head&gt;
-
-  &lt;body&gt;
-    &lt;my-app&gt;Loading...&lt;/my-app&gt;
-  &lt;/body&gt;
-
-&lt;/html&gt;
-</code-pane><code-pane language="css" name="styles.css" format="linenums">.ng-valid[required] {
-  border-left: 5px solid #42A948; /* green */
-}
-
-.ng-invalid {
-  border-left: 5px solid #a94442; /* red */
-}
-</code-pane></code-tabs><p>Our final project folder structure should look like this:</p>
+<code-tabs><code-pane language="html" name="hero-form.component.html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-final.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane><code-pane language="ts" name="hero-form.component.ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero-form.component-final.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane><code-pane language="ts" name="hero.ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/hero.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane><code-pane language="ts" name="app.ts" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/app/app.ts.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane><code-pane language="html" name="index.html" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/index.html.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane><code-pane language="css" name="styles.css" format="linenums">BAD FILENAME: ../../../_fragments/forms/ts/src/styles.css.md   Current path: docs,ts,latest,guide,forms PathToDocs: ../../../</code-pane></code-tabs><p>Our final project folder structure should look like this:</p>
 <pre><code>angular2-forms
 ├── node_modules
 ├── src
@@ -661,7 +387,7 @@ bootstrap(AppComponent);
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

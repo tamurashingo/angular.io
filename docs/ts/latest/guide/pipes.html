@@ -34,21 +34,9 @@ a human-friendly date.</p>
   All date samples are in my plunker
   http://plnkr.co/edit/RDlOma?p=preview
 --></p>
-<code-example language="ts" format="linenums">import {bootstrap, Component} from &#39;angular2/angular2&#39;
-
-@Component({ 
-  selector: &#39;hero-birthday&#39;,
-  template: `&lt;p&gt;The hero&#39;s birthday is {{ birthday | date }}&lt;/p&gt;`
-})
-export class HeroBirthday {
-  birthday = new Date(1988,3,15); // April 15, 1988
-}
-
-bootstrap(HeroBirthday);
-</code-example><p>Focus on the component&#39;s template to see how we applied the built-in <code>DatePipe</code>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-hero-birthday.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>Focus on the component&#39;s template to see how we applied the built-in <code>DatePipe</code>
 while binding the <code>birthday</code> property.</p>
-<code-example language="html" format=".">&lt;p&gt;The hero&#39;s birthday is {{ birthday | date }}&lt;/p&gt;
-</code-example><p>Angular <a href="./template-syntax.html#pipe">template syntax</a> includes a pipe operator ( | ) which we&#39;re
+<code-example language="html" format=".">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-hero-birthday-template.html.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>Angular <a href="./template-syntax.html#pipe">template syntax</a> includes a pipe operator ( | ) which we&#39;re
 using to flow the birthday value on the left through to the <code>Date</code> pipe function on the right.
 All pipes work this way.</p>
 <div class="l-main-section"></div><h2 id="built-in-pipes">Built-in pipes</h2>
@@ -63,26 +51,12 @@ filter for entries that include the word &quot;pipe&quot;.</p>
 (e.g., <code>currency:&#39;EUR&#39;</code>). If our pipe accepts multiple parameters, we separate the values with colons (e.g. <code>slice:1:5</code>)</p>
 <p>We&#39;ll modify our birthday example to give the date pipe a format parameter.
 The formatted date should display as <strong><span style="font-family:courier">04/15/88</span></strong>.</p>
-<code-example language="html" format=".">&lt;p&gt;The hero&#39;s birthday is {{ birthday | date:&quot;MM/dd/yy&quot; }} /p&gt;
-</code-example><p>The parameter value can be any valid
+<code-example language="html" format=".">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-format-birthday.html.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>The parameter value can be any valid
 <a href="./template-expression.html#template-expressions">template expression</a>
 such as a string literal or a component property.</p>
 <p>Let&#39;s revise our example to bind the pipe&#39;s format parameter
 to the component&#39;s <code>format</code> property.</p>
-<code-example language="ts" format="linenums">@Component({ 
-  selector: &#39;hero-birthday&#39;,
-  template: `
-    &lt;p&gt;The hero&#39;s birthday is {{ birthday | date:format }}&lt;/p&gt;
-    &lt;button (click)=&quot;toggleFormat()&quot;&gt;Toggle Format&lt;/button&gt;
-  ` 
-})
-export class HeroBirthday {
-  birthday = new Date(1988,3,15); // April 15, 1988
-  get format() { return this.toggle ? &#39;shortDate&#39; : &#39;fullDate&#39;}
-  toggle = true;
-  toggleFormat() { this.toggle = !this.toggle; }  
-}
-</code-example><p>We also added a button to the template and bound its click event to the component&#39;s <code>toggleFormat</code> method.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/hero-birthday.2-hero-birthday2.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>We also added a button to the template and bound its click event to the component&#39;s <code>toggleFormat</code> method.
 That method toggles the component&#39;s <code>format</code> property between a short form
 (&#39;shortDate&#39;) and a longer form (&#39;fullDate&#39;).</p>
 <p>As we click the button, the displayed date alternates between
@@ -94,19 +68,11 @@ That method toggles the component&#39;s <code>format</code> property between a s
 In the following example, we chain the birthday to the <code>DatePipe</code> and on to the <code>UpperCasePipe</code>
 so we can display the birthday in uppercase. The following birthday displays as
 <strong><span style="font-family:courier">APR 15, 1988</span></strong></p>
-<code-example language="html" format="linenums">&lt;p&gt;
-  The chained hero&#39;s birthday is
-  {{ birthday | date | uppercase}}
-&lt;/p&gt;
-</code-example><p>If we pass a parameter to a filter, we have to add parentheses
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-chained-birthday.html.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>If we pass a parameter to a filter, we have to add parentheses
 to help the template compiler with the evaluation order.
 The following example displays
 <strong><span style="font-family:courier">FRIDAY, APRIL 15, 1988</span></strong></p>
-<code-example language="html" format="linenums">&lt;p&gt;
-  The chained hero&#39;s birthday is
-  {{ ( birthday | date:&#39;fullDate&#39; ) | uppercase}}
-&lt;/p&gt;
-</code-example><div class="l-sub-section"><p>Future improvements in the template compiler may eliminate the need for parentheses.</p></div><div class="l-main-section"></div><h2 id="custom-pipes">Custom Pipes</h2>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-chained-parameter-birthday.html.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><div class="l-sub-section"><p>Future improvements in the template compiler may eliminate the need for parentheses.</p></div><div class="l-main-section"></div><h2 id="custom-pipes">Custom Pipes</h2>
 <p>We can write our own custom pipes.</p>
 <p>Let&#39;s make a custom pipe named <code>ExponentialStrengthPipe</code>
 that can boost a hero&#39;s powers.</p>
@@ -115,26 +81,7 @@ that can boost a hero&#39;s powers.</p>
   The exponential pipe samples are in my plunker
   http://plnkr.co/edit/8Nnnwf?p=preview
 --></p>
-<code-example language="ts" format="linenums">import {Pipe} from &#39;angular2/angular2&#39;;
-/* 
- * Raise the value exponentially
- * Takes an exponent argument that defaults to 1.
- * Usage: 
- *   value | exponentialStrength:exponent
- * Example:
- *   {{ 2 |  exponentialStrength:10}}
- *   formats to: 1024
-*/ 
-@Pipe({
-  name: &#39;exponentialStrength&#39;
-})
-export class ExponentialStrengthPipe {
-
-  transform(value:number, args:string[]) : any {
-    return Math.pow(value, parseInt(args[0] || &#39;1&#39;, 10));
-  }
-}
-</code-example><p>This pipe definition reveals several few key points</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/exponential-strength-pipe.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>This pipe definition reveals several few key points</p>
 <ul>
 <li>We import the <code>Pipe</code> decorator from the Angular library (while getting the usual symbols)</li>
 <li>A pipe is a class</li>
@@ -149,21 +96,7 @@ export class ExponentialStrengthPipe {
 <li><code>transform</code> returns a modified value that Angular converts to a string.</li>
 </ul>
 <p>Now let&#39;s create a component to demonstrate our pipe.</p>
-<code-example language="ts" format="linenums">import {Component} from &#39;angular2/angular2&#39;
-import {ExponentialStrengthPipe} from &#39;./exponential-strength-pipe&#39;
-
-@Component({ 
-  selector: &#39;power-booster&#39;,
-  template: `
-    &lt;h2&gt;Power Booster&lt;/h2&gt;
-    &lt;p&gt;
-      Super power boost: {{2 | exponentialStrength: 10}}
-    &lt;/p&gt;
-  `,
-  pipes: [ExponentialStrengthPipe]
-})
-export class PowerBooster { }
-</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/power-booster.png" alt="Power Booster"></figure><p>Two things to note:</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/power-booster.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/power-booster.png" alt="Power Booster"></figure><p>Two things to note:</p>
 <ol>
 <li><p>We use the pipe in the template expression exactly as we described in the pipe&#39;s comments.
 We pass the value to transform from the left and give our pipe an exponent parameter of <code>10</code>.</p>
@@ -181,27 +114,7 @@ we can probe its behavior by changing the value and the optional exponent in the
 <p>It&#39;s not much fun updating the template to test our custom pipe.
 We could upgrade the example to a &quot;Power Boost Calculator&quot; that combines
 our pipe and two-way data binding with <code>ng-model</code>.</p>
-<code-example language="ts" format="linenums">import {Component, FORM_DIRECTIVES} from &#39;angular2/angular2&#39;
-import {ExponentialStrengthPipe} from &#39;./exponential-strength-pipe&#39;
-
-@Component({ 
-  selector: &#39;power-boost-calculator&#39;,
-  template: `
-    &lt;h2&gt;Power Boost Calculator&lt;/h2&gt;
-    &lt;div&gt;Normal power: &lt;input [(ng-model)]=&quot;power&quot;&gt;&lt;/div&gt;
-    &lt;div&gt;Boost factor: &lt;input [(ng-model)]=&quot;factor&quot;&gt;&lt;/div&gt;
-    &lt;p&gt;
-      Super Hero Power: {{power | exponentialStrength: factor}}
-    &lt;/p&gt;
-  `,
-  pipes: [ExponentialStrengthPipe],
-  directives: [FORM_DIRECTIVES]
-})
-export class PowerBoostCalculator { 
-  power = 5;
-  factor = 1;
-}
-</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/power-boost-calculator.png" alt="Power Boost Calculator"></figure><div class="l-main-section"></div><h2 id="stateful-pipes">Stateful Pipes</h2>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/power-boost-calculator.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/power-boost-calculator.png" alt="Power Boost Calculator"></figure><div class="l-main-section"></div><h2 id="stateful-pipes">Stateful Pipes</h2>
 <p>There are two categories of pipes, stateless and stateful.</p>
 <p>Stateless pipes are pure functions that flow input data
 through without remembering anything or causing detectable side-effects.</p>
@@ -215,19 +128,7 @@ The Async pipe can receive a Promise or Observable as input
 and subscribe to the input automatically, eventually returning the emitted value(s).</p>
 <p>It is stateful because the pipe maintains a subscription to the input and its returned values depend on that subscription.</p>
 <p>In the next example, we bind a simple promise to a view with the async pipe.</p>
-<code-example language="ts" format="linenums">@Component({
-  selector: &#39;my-hero&#39;,
-  template: &#39;Message: {{delayedMessage | async}}&#39;,
-})
-class MyHeroAsyncMessageComponent {
-  delayedMessage:Promise&lt;string&gt; = new Promise((resolve, reject) =&gt; {
-    setTimeout(() =&gt; resolve(&#39;You are my Hero!&#39;), 500);
-  });
-}
-
-// Initial view: &quot;Message: &quot;
-// After 500ms: Message: You are my Hero!&quot;
-</code-example><p>The Async pipe saves boilerplate in the component code.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/app-async-message.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>The Async pipe saves boilerplate in the component code.
 The component doesn&#39;t have to subscribe to the async data source,
 it doesn&#39;t extract the resolved values and expose them for binding,
 and (in the case of Obsevable stream sources like <code>EventEmitter</code>)
@@ -241,64 +142,15 @@ This setting tells Angular’s change detection system to
 check the output of this pipe each cycle, whether its input has changed or not.</p>
 <p>Here&#39;s how we&#39;ll decorate our new stateful <code>FetchJsonPipe</code> that
 makes an HTTP <code>fetch</code> request and (eventually) displays the data in the server&#39;s response:</p>
-<code-example language="ts" format="linenums">@Pipe({
-  name: &#39;fetch&#39;,
-  pure: false
-})
-</code-example><p>Immediately below we have the finished pipe. Its input value is an url to an endpoint that returns a JSON file.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/fetch-json-pipe-pipe-metadata.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>Immediately below we have the finished pipe. Its input value is an url to an endpoint that returns a JSON file.
 The pipe makes a one-time async request to the server and eventually receives the JSON response.</p>
-<code-example language="ts" format="linenums">import {Pipe} from &#39;angular2/angular2&#39;;
-
-@Pipe({
-  name: &#39;fetch&#39;,
-  pure: false
-})
-export class FetchJsonPipe {
-  private fetchedValue:any;
-  private fetchPromise:Promise&lt;any&gt;;
-  transform(value:string, args:string[]):any {
-    if (!this.fetchPromise) {
-      this.fetchPromise = window.fetch(value)
-        .then(result =&gt; result.json())
-        .then(json =&gt; {
-          this.fetchedValue = json;
-        });
-    }
-
-    return this.fetchedValue;
-  }
-}
-</code-example><p>Next we use this pipe in two template bindings where we</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/fetch-json-pipe.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><p>Next we use this pipe in two template bindings where we</p>
 <ol>
 <li>display hero names in an <code>ng-for</code> repeater</li>
 <li>chain the fetched results to the built-in <code>JsonPipe</code> that renders
 the data in JSON format</li>
 </ol>
-<code-example language="ts" format="linenums">import {bootstrap, Component, 
-        CORE_DIRECTIVES, FORM_DIRECTIVES} from &#39;angular2/angular2&#39;
-
-import {FetchJsonPipe} from &#39;./fetch-json-pipe&#39;
-
-@Component({
-  selector: &#39;hero-list&#39;,
-  template: `
-    &lt;h4&gt;Heroes from JSON File&lt;/h4&gt;
-
-    &lt;div *ng-for=&quot;#hero of (&#39;heroes.json&#39; | fetch) &quot;&gt;
-      {{hero.name}}
-    &lt;/div&gt;
-
-    &lt;p&gt;Heroes as JSON: 
-    {{&#39;heroes.json&#39; | fetch | json}}
-    &lt;/p&gt;
-  `,
-  directives:[CORE_DIRECTIVES],
-  pipes: [FetchJsonPipe]
-})
-export class HeroListComponent { 
-  /* I&#39;ve got nothing to do ;-) */ 
-}
-</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/hero-list.png" alt="Hero List"></figure><div class="l-main-section"></div><h2 id="next-steps">Next Steps</h2>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/pipes/ts/src/app/hero-list-component.ts.md   Current path: docs,ts,latest,guide,pipes PathToDocs: ../../../</code-example><figure class="image-display"><img src="/resources/images/devguide/pipes/hero-list.png" alt="Hero List"></figure><div class="l-main-section"></div><h2 id="next-steps">Next Steps</h2>
 <p>Pipes are a great way to encapsulate and share common display-value
 transformations. We use them like styles, dropping them
 into our templates expressions to enrich the appeal and usability
@@ -309,7 +161,7 @@ Try writing a custom pipe and perhaps contributing it to the community.</p><!-- 
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

@@ -234,7 +234,8 @@ We simply create a bew <code>HeroesComponent</code> with a mock service and poke
 <p>What if it had a dependency? What if it reported its activities through a logging service?
 We&#39;d apply the same &quot;constructor injection&quot; pattern.</p>
 <p>Here&#39;s a rewrite of <code>HeroService</code> with a new constructor that takes a <code>logger</code> parameter.</p>
-<pre><code>import {Hero} from &#39;./hero&#39;;
+<pre><code>import {Injectable} from &#39;angular2/angular2&#39;;
+import {Hero} from &#39;./hero&#39;;
 import {HEROES} from &#39;./mock-heroes&#39;;
 import {Logger} from &#39;./logger&#39;;
 
@@ -458,7 +459,7 @@ in this <a href="http://blog.thoughtram.io/angular/2015/09/03/forward-references
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

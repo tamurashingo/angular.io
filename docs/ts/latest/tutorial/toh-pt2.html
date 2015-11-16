@@ -89,7 +89,7 @@ and make it available to the corresponding template instance</em>”.</p>
 <p>The <code>#</code> prefix before &quot;hero&quot; identifies the <code>hero</code> as a local template variable.
 We can reference this variable within the template to access a hero’s properties.</p>
 <p>Learn more about <code>ng-for</code> and local template variables in the
-<a href="../guide/template-syntax.html#ng-for">Template Syntax</a> chapter.</p>
+<a href="../guide/template-syntax.html#ng-for">Template Syntax chapter</a>.</p>
 </div><p>With this background in mind, we now insert some content between the <code>&lt;li&gt;</code> tags
 that uses the <code>hero</code> template variable to display the hero’s properties.</p>
 <code-example format="linenums" language="html">&lt;li *ng-for="#hero of heroes">
@@ -158,7 +158,7 @@ In our case, the master is the heroes list and the detail is the selected hero.<
 The expression to the right of the equal sign calls the  <code>AppComponent</code> method, <code>onSelect()</code>,
 passing the local template variable <code>hero</code> as an argument.
 That’s the same <code>hero</code> variable we defined previously in the <code>ng-for</code>.</p>
-<div class="l-sub-section"><p>Learn more about Event Binding in the <a href="../guide/template-syntax.html#event-binding">Templating Syntax</a> chapter.</p>
+<div class="l-sub-section"><p>Learn more about Event Binding in the <a href="../guide/template-syntax.html#event-binding">Templating Syntax chapter</a>.</p>
 </div><h3 id="add-the-click-handler">Add the click handler</h3>
 <p>Our event binding refers to an <code>onSelect</code> method that doesn’t exist yet.
 We’ll add that method to our component now.</p>
@@ -208,7 +208,7 @@ There will be no hero detail elements and no bindings to worry about.</p>
 structure of portions of the DOM.
 In other words, they give structure to the way Angular displays content in the DOM.</p>
 <p>Learn more about <code>ng-if</code>, <code>ng-for</code> and other structural directives in the
-<a href="../guide/template-syntax.html#directives">Template Syntax</a> chapter</p>
+<a href="../guide/template-syntax.html#directives">Template Syntax chapter</a>.</p>
 </div><p>We learned previously with <code>NgFor</code> that we must declare every directive we use in the component’s <code>@Component</code> decorator.
 Let’s do that again for <code>NgIf</code>.</p>
 <p>Add the <code>NgIf</code> symbol to our imports at the top of our <code>app.ts</code> file, keeping them sorted
@@ -248,7 +248,7 @@ This is the syntax for a Property Binding, a binding in which data flows one way
 from the data source (the <code>getSelectedClass</code>) to a property of the <code>ng-class</code> directive.</p>
 <div class="l-sub-section"><p>Learn more about <a href="../guide/template-syntax.html#ng-class">ng-class</a>
 and <a href="../guide/template-syntax.html#property-binding">Property Binding</a>
-in the Template Syntax chapter</p>
+in the Template Syntax chapter.</p>
 </div><p>We&#39;ve added yet another new directive to our template that we have to import and declare
 in the component’s <code>directives</code> array as we’ve done twice before.</p>
 <pre><code>import {bootstrap, Component,
@@ -289,7 +289,7 @@ We’ll learn more about these tasks in the coming tutorial chapters.</p>
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){

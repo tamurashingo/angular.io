@@ -28,29 +28,10 @@ With interpolation, we put the property name in the view template enclosed in do
 <p>Create a new project folder (<code>displaying-data</code>) and follow the steps in the <a href="../quickstart.html">QuickStart</a>.</p>
 <p>Then modify the <code>app.ts</code> file by changing the template and the body of the component.
 When we&#39;re done, it should look like this:</p>
-<code-example language="ts" format="linenums">import {Component, bootstrap} from &#39;angular2/angular2&#39;;
-
-@Component({
-  selector: &#39;my-app&#39;,
-  template: `
-    &lt;h1&gt;{{title}}&lt;/h1&gt;
-    &lt;h2&gt;My favorite hero is: {{myHero}}&lt;/h2&gt;
-    `
-})
-export class AppComponent {
-  title = &#39;Tour of Heroes&#39;;
-  myHero = &#39;Windstorm&#39;;
-}
-
-bootstrap(AppComponent);
-</code-example><p>We added two properties to the formerly empty component: <code>title</code> and <code>myHero</code>.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.1.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>We added two properties to the formerly empty component: <code>title</code> and <code>myHero</code>.</p>
 <p>Our revised template displays the two component properties using the double curly brace
 interpolation:</p>
-<code-example language="ts" format="linenums">template: `
-  &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;h2&gt;My favorite hero is: {{myHero}}&lt;/h2&gt;
-  `
-</code-example><div class="l-sub-section"><p>The template is a multi-line string within ECMAScript 2015 back-tics (`).
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.1-template.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><div class="l-sub-section"><p>The template is a multi-line string within ECMAScript 2015 back-tics (`).
 The back-tick (`) is not the same character as a single quote (&#39;).
 It has many nice features. The feature we&#39;re exploiting is
 the ability to compose the string over several lines which
@@ -66,8 +47,7 @@ But then the properties aren&#39;t changing on their own either. For the moment 
 Angular is creating an instance for us. How?</p>
 <p>Notice the CSS <code>selector</code> in the <code>@Component</code> decorator that specifies an element named &quot;my-app&quot;.
 Remember back in QuickStart that we added the <code>&lt;my-app&gt;</code> element to the body of our <code>index.html</code></p>
-<code-example language="html" format="linenums">&lt;my-app&gt;loading...&lt;/my-app&gt;
-</code-example><p>When we bootstrap with the <code>AppComponent</code> class (see the bottom of <code>app.ts</code>), Angular looks for a <code>&lt;my-app&gt;</code>
+<code-example language="html" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/index-my-app.html.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>When we bootstrap with the <code>AppComponent</code> class (see the bottom of <code>app.ts</code>), Angular looks for a <code>&lt;my-app&gt;</code>
 in the <code>index.html</code>, finds it, instantiates an instance of <code>AppComponent</code>, and renders it
 inside the <code>&lt;my-app&gt;</code> tag.</p>
 <h2 id="template-inline-or-template-file-">Template inline or template file?</h2>
@@ -82,43 +62,16 @@ The choice between them is a matter of taste, circumstances, and organization po
 <p>We initialized our component properties using variable assignment.
 This is a wonderfully concise and compact technique.</p>
 <p>Some folks prefer to declare the properties and initialize them within a constructor like this:</p>
-<code-example language="ts" format="linenums">export class AppCtorComponent {
-  title: string;
-  myHero: string;
-
-  constructor() {
-    this.title = &#39;Tour of Heroes&#39;;
-    this.myHero = &#39;Windstorm&#39;;
-  }
-}
-</code-example><p>That&#39;s fine too. The choice between them is a matter of taste and organization policy.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app-ctor-app-ctor.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>That&#39;s fine too. The choice between them is a matter of taste and organization policy.
 We&#39;ll adopt the more terse &quot;variable assignment&quot; style in this chapter simply because
 there will be less code to read.</p>
 <div class="l-main-section"></div><h2 id="showing-an-array-property-with-ngfor">Showing an array property with NgFor</h2>
 <p>We want to display a list of heroes. We begin by adding a mock heroes name array to the component,
 just above <code>myHero</code> and redefine <code>myHero</code> to be the first name in the array.</p>
-<code-example language="ts" format="linenums">export class AppComponent {
-  title = &#39;Tour of Heroes&#39;;
-  heroes = [&#39;Windstorm&#39;, &#39;Bombasto&#39;, &#39;Magneta&#39;, &#39;Tornado&#39;];
-  myHero = this.heroes[0];
-}
-</code-example><p>Now we use the Angular <code>NgFor</code> &quot;repeater&quot; Directive in the template to display
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.2-mock-heroes.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Now we use the Angular <code>NgFor</code> &quot;repeater&quot; Directive in the template to display
 each item in the <code>heroes</code> list.</p>
-<code-example language="ts" format="linenums">  template: `
-    &lt;h1&gt;{{title}}&lt;/h1&gt;
-    &lt;h2&gt;My favorite hero is: {{myHero}}&lt;/h2&gt;
-    &lt;p&gt;Heroes:&lt;/p&gt;
-    &lt;ul&gt;
-      &lt;li *ng-for=&quot;#hero of heroes&quot;&gt;
-        {{ hero }}
-      &lt;/li&gt;
-    &lt;/ul&gt;
-  `,
-</code-example><p>Our presentation is the familiar HTML unordered list with <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags. Let&#39;s focus on the <code>&lt;li&gt;</code> tag.</p>
-<code-example language="ts" format="linenums">&lt;li *ng-for=&quot;#hero of heroes&quot;&gt;
-  {{ hero }}
-&lt;/li&gt;
-</code-example><p>We added a somewhat mysterious <code>*ng-for</code> to the <code>&lt;li&gt;</code> element.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.2-template.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Our presentation is the familiar HTML unordered list with <code>&lt;ul&gt;</code> and <code>&lt;li&gt;</code> tags. Let&#39;s focus on the <code>&lt;li&gt;</code> tag.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.2-li-repeater.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>We added a somewhat mysterious <code>*ng-for</code> to the <code>&lt;li&gt;</code> element.
 That&#39;s the Angular &quot;repeater&quot; directive.
 It&#39;s presence on the <code>&lt;li&gt;</code> tag marks that <code>&lt;li&gt;</code> element (and its children) as the &quot;repeater template&quot;.</p>
 <div class="alert is-important"><p>Don&#39;t forget the leading asterisk (*) in front of <code>*ng-for</code>. It is an essential part of the syntax.
@@ -138,11 +91,9 @@ Our application will not run right now. Angular will complain that it doesn&#39;
 <p>We have to register the <code>NgFor</code> directive with the component metadata by making two changes to the app.ts file.</p>
 <p>First, we import the <code>NgFor</code> symbol from the Angular library by extending the existing <code>import</code> statement.
 Look for it in the following:</p>
-<code-example language="ts" format="linenums">import {Component, bootstrap, NgFor} from &#39;angular2/angular2&#39;;
-</code-example><p>Second, we register <code>NgFor</code> as a directive accessible to the template by updating the
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.2-imports.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Second, we register <code>NgFor</code> as a directive accessible to the template by updating the
 <code>@Component</code> decorator with a <code>directives</code> array property whose only item is <code>NgFor</code>:</p>
-<code-example language="ts" format="linenums">directives: [NgFor]
-</code-example><p>Now the heroes will appear in the view as an unordered list.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.2-directives.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Now the heroes will appear in the view as an unordered list.</p>
 <figure class="image-display"><img src="/resources/images/devguide/displaying-data/hero-names-list.png" alt="After ngfor"></figure><div class="l-main-section"></div><h2 id="creating-a-class-for-the-data">Creating a class for the data</h2>
 <p>We are defining our data directly inside our component.
 That&#39;s fine for a demo but certainly isn&#39;t a best practice. It&#39;s not even a good practice.
@@ -151,17 +102,11 @@ We won&#39;t do anything about that in this chapter.</p>
 most of the time we&#39;re displaying objects, potentially instances of classes.</p>
 <p>Let&#39;s turn our array of hero names into an array of <code>Hero</code> objects. For that we&#39;ll need a `Hero&#39; class.</p>
 <p>Create a new file called <code>hero.ts</code> and add the following short snippet to it.</p>
-<code-example language="ts" format="linenums">export class Hero {
-  constructor(
-    public id:number,
-    public name:string) { }
-}
-</code-example><p>We&#39;ve defined a class with a constructor and two properties: <code>id</code> and <code>name</code>.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/hero.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>We&#39;ve defined a class with a constructor and two properties: <code>id</code> and <code>name</code>.</p>
 <p>If we are new to TypeScript, it may not look like we have properties. But we do. We&#39;re taking
 advantage of a TypeScript short-cut in our declaration of the constructor parameters.</p>
 <p>Consider the first parameter:</p>
-<code-example language="ts" format="linenums">public id:number,
-</code-example><p>That brief syntax simultaneously</p>
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/hero-id-parameter.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>That brief syntax simultaneously</p>
 <ul>
 <li>declares a constructor parameter and its type</li>
 <li>declare a public property of the same name</li>
@@ -170,48 +115,28 @@ advantage of a TypeScript short-cut in our declaration of the constructor parame
 <div class="l-main-section"></div><h2 id="use-the-hero-class">Use the Hero class</h2>
 <p>Let&#39;s redefine the heroes property in our component to return an array of these Heroes
 and also set the <code>myHero</code> property with the first of these mock heroes.</p>
-<code-example language="ts" format="linenums">heroes = [
-  new Hero(1, &#39;Windstorm&#39;),
-  new Hero(13, &#39;Bombasto&#39;),
-  new Hero(15, &#39;Magneta&#39;),
-  new Hero(20, &#39;Tornado&#39;)
-];
-myHero = this.heroes[0];
-</code-example><p>We&#39;ll have to update the template.
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.3-heroes.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>We&#39;ll have to update the template.
 At the moment it displays the entire hero object which used to be a string value.
 Let&#39;s fix that so we interpolate the <code>hero.name</code> property</p>
-<code-example language="ts" format="linenums">template: `
-  &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;h2&gt;My favorite hero is: {{myHero}}&lt;/h2&gt;
-  &lt;p&gt;Heroes:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li *ng-for=&quot;#hero of heroes&quot;&gt;
-      {{ hero.name }}
-    &lt;/li&gt;
-  &lt;/ul&gt;
-`,
-</code-example><p>Our display looks the same but we know how much better it is under the hood.</p>
+<code-example language="ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.3-template.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Our display looks the same but we know how much better it is under the hood.</p>
 <div class="l-main-section"></div><h2 id="conditional-display-with-ngif">Conditional display with NgIf</h2>
 <p>Sometimes the app should display a view or a portion of a view only under prescribed circumstances.</p>
 <p>In our example, we&#39;d like to display a message if we have a large number of heroes ... say more than 3.</p>
 <p>The Angular <code>NgIf</code> directive will insert or remove an element based on a truthy/falsey condition.
 We can see it in action by adding the following paragraph at the bottom of the template:</p>
-<code-example language="ts" format="linenums">&lt;p *ng-if=&quot;heroes.length &gt; 3&quot;&gt;There are many heroes!&lt;/p&gt;
-</code-example><div class="alert is-important"><p>Don&#39;t forget the leading asterisk (*) in front of <code>*ng-if</code>. It is an essential part of the syntax.
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.final-message.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><div class="alert is-important"><p>Don&#39;t forget the leading asterisk (*) in front of <code>*ng-if</code>. It is an essential part of the syntax.
 Learn more about this and <code>NgIf</code> in the <a href="./template-syntax.html#ng-if">Template Syntax</a> chapter.</p>
 </div><p>The <a href="./template-syntax.html#template-expressions">template expression</a> inside the double quotes
 looks much like JavaScript and it is much like JavaScript.
 When the component&#39;s list of heroes has more than 3 items, Angular adds the paragraph to the DOM and the message appears.
-If there were 3 or fewer items, Angular omits the the paragraph and there is no message.</p>
+If there were 3 or fewer items, Angular omits the paragraph and there is no message.</p>
 <div class="alert is-helpful"><p>Angular isn&#39;t showing and hiding the message. It is adding and removing the paragraph element from the DOM.
 That hardly matters here. It would matter a great deal from a performance perspective if
 we were conditionally including or excluding a big chunk of HTML with many data bindings.</p>
 </div><p>As with the <code>NgFor</code>, we must add the <code>NgIf</code> directive to the component&#39;s metadata.</p>
 <p>We should extend our <code>import</code> statement as before ...</p>
-<code-example language="ts" format="linenums">import {Component, bootstrap, NgFor, NgIf} from &#39;angular2/angular2&#39;;
-</code-example><p>... and add it to the directives array:</p>
-<code-example language="ts" format="linenums">directives: [NgFor, NgIf]
-</code-example><p>Try it out. We have four items in the array so the message should appear.
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.3-import-ng-if.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>... and add it to the directives array:</p>
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.3-directives.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Try it out. We have four items in the array so the message should appear.
 Delete one of the elements from the array, refresh the browser, and the message should no longer appear.</p>
 <div class="l-main-section"></div><h2 id="use-the-core_directives-constant">Use the CORE_DIRECTIVES Constant</h2>
 <p>There are other core Angular directives, such as <code>NgClass</code> and <code>NgSwitch</code>,
@@ -221,10 +146,8 @@ Extending the <code>import</code> statement and adding to the <code>directives</
 that includes many of the directives that we use all the time.</p>
 <p>Let&#39;s simplify our lives, discard the <code>NgFor</code> and <code>NgIf</code>, use the constant for all of them.</p>
 <p>We&#39;ll revise our <code>import</code> statement one last time.</p>
-<code-example language="ts" format="linenums">import {Component, bootstrap, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
-</code-example><p>and update the <code>directives</code> metadata</p>
-<code-example language="ts" format="linenums">directives: [CORE_DIRECTIVES]
-</code-example><p>Pro tip: we register this constant in almost every template we write.</p>
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.final-imports.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>and update the <code>directives</code> metadata</p>
+<code-example language="ts" format=".">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.final-directives.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-example><p>Pro tip: we register this constant in almost every template we write.</p>
 <div class="l-main-section"></div><h2 id="summary">Summary</h2>
 <p>Now we know how to</p>
 <ul>
@@ -235,50 +158,14 @@ that includes many of the directives that we use all the time.</p>
 <li>register common component directives with <strong><code>CORE_DIRECTIVES</code> constant</strong></li>
 </ul>
 <p>Our final code:</p>
-<code-tabs><code-pane language="ts" name="app.ts" format="linenums">import {Component, bootstrap, CORE_DIRECTIVES} from &#39;angular2/angular2&#39;;
-import {Hero} from &#39;./hero&#39;
-
-@Component({
-  selector: &#39;my-app&#39;,
-  template: `
-  &lt;h1&gt;{{title}}&lt;/h1&gt;
-  &lt;h2&gt;My favorite hero is: {{myHero.name}}&lt;/h2&gt;
-  &lt;p&gt;Heroes:&lt;/p&gt;
-  &lt;ul&gt;
-    &lt;li *ng-for=&quot;#hero of heroes&quot;&gt;
-      {{ hero.name }}
-      &lt;/li&gt;
-  &lt;/ul&gt;
-  &lt;p *ng-if=&quot;heroes.length &gt; 3&quot;&gt;There are many heroes!&lt;/p&gt;
-`,
-  directives: [CORE_DIRECTIVES]
-})
-
-export class AppComponent {
-  title = &#39;Tour of Heroes&#39;;
-  heroes = [
-    new Hero(1, &#39;Windstorm&#39;),
-    new Hero(13, &#39;Bombasto&#39;),
-    new Hero(15, &#39;Magneta&#39;),
-    new Hero(20, &#39;Tornado&#39;)
-  ];
-  myHero = this.heroes[0];
-}
-
-bootstrap(AppComponent);
-</code-pane><code-pane language="ts" name="hero.ts" format="linenums">export class Hero {
-  constructor(
-    public id:number,
-    public name:string) { }
-}
-</code-pane></code-tabs><div class="l-main-section"></div><h2 id="next-steps">Next Steps</h2>
+<code-tabs><code-pane language="ts" name="app.ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/app.final-final.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-pane><code-pane language="ts" name="hero.ts" format="linenums">BAD FILENAME: ../../../_fragments/displaying-data/ts/src/app/hero.ts.md   Current path: docs,ts,latest,guide,displaying-data PathToDocs: ../../../</code-pane></code-tabs><div class="l-main-section"></div><h2 id="next-steps">Next Steps</h2>
 <p>In addition to displaying data, most applications need to respond to user input.
 Learn about that in the <a href="./user-input.html">User Input</a> chapter.</p><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><div class="l-sub-section"><h3>Next Step</h3><a href="/docs/ts/latest/guide/user-input.html">User Input</a></div><!--NEXT PAGE HAS NOW BEEN SET--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--><!-- CHECK IF CURRENT PAGE IS SET, THEN SET NEXT PAGE--><!-- SET CURRENT PAGE FLAG WHEN YOU PASS IT--></article><div class="main-footer"><nav class="background-silver grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">LIBRARIES</h3><ul class="text-body"><li><a href="/"> Angular 2.0</a></li><li><a href="https://angularjs.org/"> Angular 1 for JS</a></li><li><a href="https://angulardart.org/"> Angular 1 for Dart</a></li><li><a href="https://material.angularjs.org"> Angular Material</a></li><li><a href="https://www.firebase.com/docs/web/libraries/angular/"> AngularFire</a></li></ul></div><div class="c2"><h3 class="text-headline">LEARN</h3><ul class="text-body"><li><a href="/docs/ts/latest/quickstart.html"> 5 Min Quickstart</a></li><li><a href="/docs/ts/latest/guide/"> Step by Step Guide</a></li><li><a href="/docs/ts/latest/api/"> Full API</a></li><li><a href="/docs/ts/latest/resources.html"> Resources</a></li><li><a href="http://goo.gl/sj0Nk1">Design Docs &amp; Notes</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://gitter.im/angular/angular"> Chat Room</a></li><li><a href="https://github.com/angular/angular/issues"> Report an Issue</a></li></ul></div><div class="c3"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="https://blog.angularjs.org/"> Blog</a></li><li><a href="https://plus.sandbox.google.com/+AngularJS/posts"> Google+</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li></ul></div></nav><footer class="background-steel"><small class="text-caption">Powered by Google ©2010-2015. Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" class="text-snow">Apache License, Version 2.0</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small><a aria-label="View Style Guide" href="/docs/styleguide.html" title="Style Guide" md-button="md-button" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script><!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
 })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-ga('create', ' UA-70058104-1', 'auto');
+ga('create', 'UA-70058104-1', 'auto');
 ga('send', 'pageview')
 
 </script><!-- SWIFTYPE --><script>(function(w,d,t,u,n,s,e){w['SwiftypeObject']=n;w[n]=w[n]||function(){
