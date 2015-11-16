@@ -1,11 +1,16 @@
 {
   "index": {
     "title": "Moving the Web Forward",
-    "subtitle": "The Angular Core Team"
+    "title": "ウェブを前進させる",
+    "subtitle": "The Angular Core Team",
+    "subtitle": "Angularコアチーム"
   },
 
   "presskit": {
     "title": "Features & Benefits",
-    "subtitle": "Production Grade Features"
+    "title": "機能と利益",
+    "subtitle": "Production Grade Features",
+    "subtitle": "製品レベルの機能"
   }
 }
+
