@@ -1,19 +1,25 @@
 {
   "index": {
     "title": "Angular Docs",
+    "title": "Angularドキュメント",
     "subtitle": "Choose a language for Angular",
+    "subtitle": "Angularの言語を選択してください",
     "layout": "../_layout"
   },
 
   "search": {
     "title": "Docs Search Results",
+    "title": "ドキュメント検索結果",
     "layout": "../_layout"
   },
 
   "styleguide": {
     "title": "Docs Style Guide",
+    "title": "ドキュメントスタイルガイド",
     "subtitle": "Design & Layout Patterns For Documentation",
+    "subtitle": "ドキュメントの設計とレイアウトパターン",
     "layout": "../_layout",
     "autoformat": "true"
   }
 }
+
