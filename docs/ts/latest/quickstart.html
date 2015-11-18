@@ -13,187 +13,493 @@
 <link rel="icon" type="image/png" href="/resources/images/favicons/favicon-96x96.png" sizes="96x96">
 <link rel="icon" type="image/png" href="/resources/images/favicons/android-chrome-192x192.png" sizes="192x192">
 <link rel="icon" type="image/png" href="/resources/images/favicons/favicon-16x16.png" sizes="16x16">
-<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl" class="l-offset-nav l-offset-side-nav"><md-toolbar class="main-nav background-regal l-pinned-top l-layer-5"><nav><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/about/" md-button>About</a></li><li class="l-left"><a class="main-nav-button" href="/contribute.html" md-button>Contribute</a></li><li class="l-right"><a class="main-nav-button has-icon" href="/download/" md-button> <span class="icon icon-cloud-download"></span> Install</a></li></ul></nav></md-toolbar><nav class="side-nav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="side-nav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><!-- PRIMARY NAVIGATION--><ul ng-class="showDocsNav ? 'is-visible' : ''" class="side-nav-primary"><li><a href="/docs/ts/latest/index.html" md-button><span class="side-nav-icon icon-home"></span> Docs Home</a></li><!-- SECONDARY NAVIGATION--><li class="is-selected"><a href="/docs/ts/latest/quickstart.html" md-button><span class="side-nav-icon icon-query-builder"></span> 5 Min Quickstart</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/tutorial/" md-button><span class="side-nav-icon icon-list"></span> Tutorial</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/guide/" md-button><span class="side-nav-icon icon-list"></span> Developer Guides</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/testing/" md-button><span class="side-nav-icon icon-list"></span> Testing Guides</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/api/" md-button><span class="side-nav-icon icon-book"></span> API Preview</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/resources.html" md-button><span class="side-nav-icon icon-play-circle-fill"></span> Angular Resources</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/help.html" md-button><span class="side-nav-icon icon-chat"></span> Help &amp; Support</a></li><!-- SECONDARY NAVIGATION--></ul></nav><header class="hero background-sky"><h1 class="hero-title text-display-1 ">5 Min Quickstart</h1><!-- Replace _ undscores with . dots --><!-- Replace _ undscores with . dots --><!-- VERSION TREE CREATOR MIXIN --><!-- BUTTON TITLE GENERATION  --><!-- DROPDOWN BUTTON --><nav class="hero-subtitle text-subhead dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="toggleVersionMenu($event)" class="dropdown-button">Angular 2 for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="toggleVersionMenu($event)" ng-show="showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><div ng-class="showMenu ? 'is-visible' : ''" class="dropdown-menu"><ul><li><a href="/docs/ts/latest/quickstart.html" md-button>Angular 2 for TypeScript </a></li></ul><ul><li><a href="/docs/js/latest/quickstart.html" md-button>Angular 2 for JavaScript </a></li></ul><ul><li><a href="/docs/dart/latest/quickstart.html" md-button>Angular 2 for Dart </a></li></ul><ul><li><a href="https://angularjs.org/" md-button> Angular 1 for JavaScript</a></li><li><a href="https://docs.angulardart.org/" md-button> Angular 1 for Dart</a></li></ul></div></nav><div class="social-icons"><button aria-label="Share on G+" onClick="window.open('https://plus.google.com/share?url=http://angular.io', '', 'height=500, width=600')" class="googleplus"><span class="icon-google-plus2"></span></button><button aria-label="Share on Twitter" onClick="window.open('https://twitter.com/share?text=Angular%20-%20Angular is a development platform for building mobile and desktop web applications', '', 'height=250, width=600')"><span class="icon-twitter2"></span></button><button aria-label="Share on Facebook" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://angular.io', '', 'height=500, width=600')" data-href="http://angular.io" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="false"><span class="icon-facebook2"></span></button><button aria-label="Share on Linkedin" onClick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://angular.io&amp;title=Angular&amp;summary=Angular is a development platform for building mobile and desktop web applications.', '', 'height=625, width=500')"><span class="icon-linkedin"></span></button></div><p style="color: black;"></p></header><article class="l-content-small grid-fluid docs-content"><p>Let&#39;s start from zero and build a super simple Angular 2 application in TypeScript.</p>
-<div class="callout is-helpful"><header>Don't want TypeScript?</header><p>Although we&#39;re getting started in TypeScript, you can also write Angular 2 apps
-in JavaScript and Dart by selecting either of those languages from the combo-box in the banner.</p>
-</div><div class="l-main-section"><h2 id="the-shortest-quickest-">The shortest, quickest ...</h2>
-<p>Let&#39;s put something on the screen in Angular 2 as quickly as we can.</p>
-<div class="l-sub-section"><p>While we are about to describe steps to take on your development machine,
+<link rel="manifest" href="/resources/images/favicons/manifest.json"></head><body ng-controller="AppCtrl" class="l-offset-nav l-offset-side-nav"><md-toolbar class="main-nav background-regal l-pinned-top l-layer-5"><nav><h1><a href="/" md-button>Angular <sup>by Google</sup></a></h1><button aria-label="View Menu" ng-click="toggleMainMenu($event)" md-button="md-button" class="main-nav-button main-nav-mobile-trigger l-right">Site Menu <span class="icon icon-arrow-drop-down"></span></button><ul ng-class="showMainNav ? 'is-visible' : ''"><li class="l-left"><a class="main-nav-button" href="/features.html" md-button>Features</a></li><li class="l-left"><a class="main-nav-button" href="/docs/ts/latest/" md-button>Docs</a></li><li class="l-left"><a class="main-nav-button" href="/about/" md-button>About</a></li><li class="l-left"><a class="main-nav-button" href="/contribute.html" md-button>Contribute</a></li><li class="l-right"><a class="main-nav-button has-icon" href="/download/" md-button> <span class="icon icon-cloud-download"></span> Install</a></li></ul></nav></md-toolbar><nav class="side-nav l-pinned-left l-layer-4 l-offset-nav"><!-- SEARCH BAR--><header class="side-nav-search st-input-wrapper"><form class="st-input-inner"><label for="search-io" class="is-hidden">Search Docs</label><input type="search" id="search-io" placeholder="SEARCH DOCS..."/></form><button aria-label="View Docs Menu" ng-click="toggleDocsMenu($event)" md-button="md-button" class="mobile-trigger button">Docs <span class="icon icon-arrow-drop-down"></span></button></header><!-- PRIMARY NAVIGATION--><ul ng-class="showDocsNav ? 'is-visible' : ''" class="side-nav-primary"><li><a href="/docs/ts/latest/index.html" md-button><span class="side-nav-icon icon-home"></span> Docs Home</a></li><!-- SECONDARY NAVIGATION--><li class="is-selected"><a href="/docs/ts/latest/quickstart.html" md-button><span class="side-nav-icon icon-query-builder"></span> 5 Min Quickstart</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/tutorial/" md-button><span class="side-nav-icon icon-list"></span> Tutorial</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/guide/" md-button><span class="side-nav-icon icon-list"></span> Developer Guides</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/testing/" md-button><span class="side-nav-icon icon-list"></span> Testing Guides</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/api/" md-button><span class="side-nav-icon icon-book"></span> API Preview</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/resources.html" md-button><span class="side-nav-icon icon-play-circle-fill"></span> Angular Resources</a></li><!-- SECONDARY NAVIGATION--><li><a href="/docs/ts/latest/help.html" md-button><span class="side-nav-icon icon-chat"></span> Help &amp; Support</a></li><!-- SECONDARY NAVIGATION--></ul></nav><header class="hero background-sky"><h1 class="hero-title text-display-1 ">5 Min Quickstart</h1><!-- Replace _ undscores with . dots --><!-- Replace _ undscores with . dots --><!-- VERSION TREE CREATOR MIXIN --><!-- BUTTON TITLE GENERATION  --><!-- DROPDOWN BUTTON --><nav class="hero-subtitle text-subhead dropdown"><button aria-label="Select a version of Angular" md-button="md-button" ng-click="toggleVersionMenu($event)" class="dropdown-button">Angular 2 for TypeScript  <span class="icon icon-arrow-drop-down"></span></button><div ng-click="toggleVersionMenu($event)" ng-show="showMenu" class="overlay ng-hide"></div><!-- DROPDOWN MENU --><div ng-class="showMenu ? 'is-visible' : ''" class="dropdown-menu"><ul><li><a href="/docs/ts/latest/quickstart.html" md-button>Angular 2 for TypeScript </a></li></ul><ul><li><a href="/docs/js/latest/quickstart.html" md-button>Angular 2 for JavaScript </a></li></ul><ul><li><a href="/docs/dart/latest/quickstart.html" md-button>Angular 2 for Dart </a></li></ul><ul><li><a href="https://angularjs.org/" md-button> Angular 1 for JavaScript</a></li><li><a href="https://docs.angulardart.org/" md-button> Angular 1 for Dart</a></li></ul></div></nav><div class="social-icons"><button aria-label="Share on G+" onClick="window.open('https://plus.google.com/share?url=http://angular.io', '', 'height=500, width=600')" class="googleplus"><span class="icon-google-plus2"></span></button><button aria-label="Share on Twitter" onClick="window.open('https://twitter.com/share?text=Angular%20-%20Angular is a development platform for building mobile and desktop web applications', '', 'height=250, width=600')"><span class="icon-twitter2"></span></button><button aria-label="Share on Facebook" onClick="window.open('https://www.facebook.com/sharer/sharer.php?u=http://angular.io', '', 'height=500, width=600')" data-href="http://angular.io" data-colorscheme="dark" data-layout="button_count" data-action="like" data-show-faces="false"><span class="icon-facebook2"></span></button><button aria-label="Share on Linkedin" onClick="window.open('http://www.linkedin.com/shareArticle?mini=true&amp;url=http://angular.io&amp;title=Angular&amp;summary=Angular is a development platform for building mobile and desktop web applications.', '', 'height=625, width=500')"><span class="icon-linkedin"></span></button></div><p style="color: black;"></p></header><article class="l-content-small grid-fluid docs-content"><!---
+Let's start from zero and build a super simple Angular 2 application in TypeScript.
+--->
+<p>ごくシンプルなAngular2アプリケーションをTypeScriptでゼロから作ってみましょう。</p>
+<div class="callout is-helpful"><!-- header Don't want TypeScript?--><header>TypeScriptは欲しくない？</header><!---
+Although we're getting started in TypeScript, you can also write Angular 2 apps
+in JavaScript and Dart by selecting either of those languages from the combo-box in the banner.
+--->
+<p>ここではTypeScriptで始めますが、バナーのコンボボックスから言語を選択することで、
+JavaScriptやDartでAngular2アプリを書くことができます。</p>
+</div><div class="l-main-section"><!---
+## The shortest, quickest ...
+--->
+<h2 id="-">もっとも短くて、もっとも早く ...</h2>
+<!---
+Let's put something on the screen in Angular 2 as quickly as we can.
+--->
+<p>できるだけ早くAngular2で画面に何か表示してみましょう。</p>
+<div class="l-sub-section"><!---
+While we are about to describe steps to take on your development machine,
 you could take these same steps in an interactive, online coding environment
-such as <a href="http://plnkr.co/" title="Plunker">plunker</a>. You won&#39;t have to
-install a static server to run the app there.</p>
-<p>If you like what you see - and we think you will - you can repeat this
-exercise on your own machine later.</p>
-</div><p><strong>Create a new folder</strong> to hold our application project, perhaps like this:</p>
+such as [plunker](http://plnkr.co/ "Plunker"). You won't have to
+install a static server to run the app there.
+--->
+<p>今まさに開発マシン上で行う手順について説明しようとしていますが、
+同じ手順を<a href="http://plnkr.co/" title="Plunker">plunker</a>のようなインタラクティブで、
+オンラインな環境で行うことができます。
+アプリを動かすためにサーバをインストールする必要はありません。</p>
+<!---
+If you like what you see - and we think you will - you can repeat this
+exercise on your own machine later.
+--->
+<p>もし気に入った場合は、そして気に入るだろうと思いますが、後で実際のマシン上で繰り返して行うことができます。</p>
+</div><!---
+**Create a new folder** to hold our application project, perhaps like this:
+--->
+<p>アプリケーションプロジェクトのための<strong>新しいフォルダを作ります</strong>。
+こんな感じです。</p>
 <pre><code>mkdir angular2-quickstart
 cd    angular2-quickstart
-</code></pre></div><div class="l-main-section"><h2 id="our-first-angular-component">Our first Angular component</h2>
-<p><strong>Add a new file</strong> called <strong><code>app.ts</code></strong> and paste the following lines:</p>
-<div class="example-title">app.ts</div><code-example language="ts" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/app/app.ts.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p>We&#39;ve just defined an Angular 2 <strong>component</strong>,
+</code></pre></div><div class="l-main-section"><!---
+## Our first Angular component
+--->
+<h2 id="-angular-">最初のAngularコンポーネント</h2>
+<!---
+**Add a new file** called **`app.ts`** and paste the following lines:
+--->
+<p><strong><code>app.ts</code></strong>という<strong>新しいファイルを作成し</strong>、以下のコードをコピペします。</p>
+<div class="example-title">app.ts</div><code-example language="ts" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/app/app.ts.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><!---
+We've just defined an Angular 2 **component**,
 one of the most important Angular 2 features.
 Components are our primary means of creating application views
-and supporting them with application logic.</p>
-<p>Ours is an empty, do-nothing class class named <code>AppComponent</code>.
+and supporting them with application logic.
+--->
+<p>最も重要なAngular2の機能の一つであるAngular2<strong>コンポーネント</strong>を定義しました。
+コンポーネントは
+アプリケーションビューを作って、アプリケーションロジックでサポートする、
+基本的な手法です。</p>
+<!---
+Ours is an empty, do-nothing class class named `AppComponent`.
 It would expand with properties and application
-logic when we&#39;re ready to build a substantive application.</p>
-<p>Above the class we see the <code>@Component</code> decoration.</p>
-<div class="l-sub-section"><p>The <code>@</code> symbol before the method name identifies <code>Component</code> as a decoration.
-A &quot;decoration&quot; is a TypeScript language feature
+logic when we're ready to build a substantive application.
+--->
+<p>空の何もしないクラス<code>AppComponent</code>です。
+実際のアプリケーション開発をする準備ができたら、
+プロパティとアプリケーションロジックで膨らんでいくでしょう。</p>
+<!---
+Above the class we see the `@Component` decoration.
+--->
+<p>上記のクラスで、<code>@Component</code>デコレータを確認できます。</p>
+<div class="l-sub-section"><!---
+The `@` symbol before the method name identifies `Component` as a decoration.
+A "decoration" is a TypeScript language feature
 for creating metadata about the class. Angular finds this metadata
-in the transpiled JavaScript and responds appropriately.</p>
-</div><p><code>@Component</code> tells Angular that this class <em>is an Angular component</em>.
-The configuration object passed to the <code>@Component</code> method has two
-field, a <code>selector</code> and a <code>template</code>.</p>
-<p>The <code>selector</code> specifies a CSS selector for a host HTML element named <code>my-app</code>.
-Angular creates and displays an instance of our <code>AppComponent</code>
-wherever it encounters a <code>my-app</code> element.</p>
-<p>The <code>template</code> field is the component&#39;s companion template
+in the transpiled JavaScript and responds appropriately.
+--->
+<p>メソッド名の前にある<code>@</code>は、<code>Component</code>をデコレータとしてみなします。
+&quot;デコレータ&quot;はTypeScriptの機能で、クラスのメタデータを作るためにあります。
+AngularはコンパイルされたJavaScriptからこのメタデータを探し、適切に応答します。</p>
+</div><!---
+`@Component` tells Angular that this class *is an Angular component*.
+The configuration object passed to the `@Component` method has two
+field, a `selector` and a `template`.
+--->
+<p><code>@Component</code>はこのクラスが<em>Angularのコンポーネントである</em>ことをAngularに教えます。
+<code>@Component</code>メソッドに移動した設定オブジェクトは、2つのフィールド、
+<code>selector</code>と<code>template</code>を持ちます。</p>
+<!---
+The `selector` specifies a CSS selector for a host HTML element named `my-app`.
+Angular creates and displays an instance of our `AppComponent`
+wherever it encounters a `my-app` element.
+--->
+<p><code>selector</code>は、<code>my-app</code>と名づけられたHTML要素のためのCSSセレクタを定義します。
+Angularは<code>my-app</code>要素に出くわしたら、<code>AppComponent</code>インスタンスを作成し、表示します。</p>
+<!---
+The `template` field is the component's companion template
 that tells Angular how to render a view.
-Our template is a single line of HTML announcing &quot;My First Angular App&quot;.</p>
-<p>The <code>bootstrap</code> method tells Angular to start the application with this
+Our template is a single line of HTML announcing "My First Angular App".
+--->
+<p><code>template</code>フィールドはコンポーネントの仲間のテンプレートで、
+Angularへどのようにビューをレンダリングするのかを伝えます。
+このテンプレートは &quot;My First Angular App&quot; と話す一行のHTMLです。</p>
+<!---
+The `bootstrap` method tells Angular to start the application with this
 component at the application root.
-We&#39;d be correct to guess that someday our application will
-consist of more components arising in tree-like fashion from this root.</p>
-<p>In the top line we imported the <code>Component</code> and <code>bootstrap</code> symbols
-from the Angular 2 library. That&#39;s the way we do things now.
+We'd be correct to guess that someday our application will
+consist of more components arising in tree-like fashion from this root.
+--->
+<p><code>bootstrap</code>メソッドは、アプリケーションルートでこのコンポーネントを使ってアプリケーションを開始することを、
+Angularに伝えます。
+そのうち、アプリケーションはこのルートからツリー状に発生するコンポーネントで構成されるであろうことが推測できるでしょう。</p>
+<!---
+In the top line we imported the `Component` and `bootstrap` symbols
+from the Angular 2 library. That's the way we do things now.
 We no longer expect to find our code or any library code in a global namespace.
-We <code>import</code> exactly what we need, as we need it, from named file and library resources.</p>
-</div><div class="l-main-section"><h2 id="add-index-html-">Add <code>index.html</code></h2>
-<p><strong>Create</strong> an <code>index.html</code> file.</p>
-<p><strong>Paste</strong> the following lines into it ... and we&#39;ll discuss them:</p>
-<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.1.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p>We see three noteworthy sections of HTML:</p>
+We `import` exactly what we need, as we need it, from named file and library resources.
+--->
+<p>先頭行で、<code>Component</code>と<code>bootstrap</code>をAngular2ライブラリからインポートしました。
+今はそういうものです。
+もはやグローバルな名前空間から自分のコードやライブラリのコードを探し出さなくてよいのです。
+ファイルやライブラリから必要なときに必要なものを<code>import</code>します。</p>
+</div><div class="l-main-section"><!---
+## Add `index.html`
+--->
+<h2 id="-index-html-"><code>index.html</code>の追加</h2>
+<!---
+**Create** an `index.html` file.
+--->
+<p><code>index.html</code>ファイルの<strong>作成</strong></p>
+<!---
+**Paste** the following lines into it ... and we'll discuss them:
+--->
+<p>下記のコードをコピペして ... 議論しましょう:</p>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.1.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><!---
+We see three noteworthy sections of HTML:
+--->
+<p>3つの特筆すべきHTMLのセクションを見ていきます:</p>
+<!---
+1. We load JavaScript libraries from the web.
+Let's take them on faith without further discussion.<br/><br/>
+
+2. We configure something called `System` and ask it to import the
+application file with our `AppComponent` that we just wrote.
+`System` is the module loader (from the `system.js` library),
+a tool that can `import` code;
+remember the `import` statement in our `AppComponent`?
+
+  We're also asking `system.js` to "transpile" (AKA "compile") our
+  TypeScript source code into JavaScript ... right here in the browser.<br/><br/>
+
+3. We note the `<my-app>` tag in the `<body>`.
+That's the custom HTML element we identified in the `@Component` decoration
+adorning our `AppComponent` class.
+--->
 <ol>
-<li><p>We load JavaScript libraries from the web.
-Let&#39;s take them on faith without further discussion.<br><br></p>
+<li><p>ウェブからJavaScriptライブラリを読み込みます。
+議論なしでそのまま信用しましょう。<br><br></p>
 </li>
-<li><p>We configure something called <code>System</code> and ask it to import the
-application file with our <code>AppComponent</code> that we just wrote.
-<code>System</code> is the module loader (from the <code>system.js</code> library),
-a tool that can <code>import</code> code;
-remember the <code>import</code> statement in our <code>AppComponent</code>?</p>
-<p>We&#39;re also asking <code>system.js</code> to &quot;transpile&quot; (AKA &quot;compile&quot;) our
-TypeScript source code into JavaScript ... right here in the browser.<br><br></p>
+<li><p><code>System</code>と呼ばれるもので設定を行い、
+先ほど書いた<code>AppComponent</code>のアプリケーションファイルをインポートするよう依頼しています。
+<code>System</code>はモジュールローダー(<code>system.js</code>ライブラリから読み込み)で、
+コードを<code>import</code>できるツールです;
+<code>import</code>文が<code>AppComponent</code>にあったのを覚えていますか？</p>
+<p>また、ブラウザのまさしくここでTypeScriptソースコードからJavaScriptへ&quot;トランスパイル&quot; (別名&quot;コンパイル&quot;) 
+するよう<code>system.js</code>に依頼しています。</p>
 </li>
-<li><p>We note the <code>&lt;my-app&gt;</code> tag in the <code>&lt;body&gt;</code>.
-That&#39;s the custom HTML element we identified in the <code>@Component</code> decoration
-adorning our <code>AppComponent</code> class.</p>
+<li><p><code>&lt;body&gt;</code>の<code>&lt;my-app&gt;</code>タグに気付きます。
+それはカスタムHTML要素であり、
+先ほど定義した<code>@Component</code>デコレータで装飾された<code>AppComponent</code>クラスです。</p>
 </li>
 </ol>
-</div><div class="l-main-section"><h2 id="run-it-">Run it!</h2>
-<p>We need a static file server to serve our application to the browser.</p>
-<div class="l-sub-section"><p>Don&#39;t have a static file server handy?  Let&#39;s install one of our favorites
-called <a href="https://www.npmjs.com/package/live-server" title="Live-server">live-server</a>
-with the <strong>npm package manager</strong>.</p>
-<p>Don&#39;t have npm?
-<a href="https://docs.npmjs.com/getting-started/installing-node" title="Installing Node.js and updating npm">Get it now</a>
-because we&#39;re going to use it now and repeatedly throughout this documentation.</p>
-<p>Once you have <code>npm</code> installed, open a terminal window and enter</p>
-<pre class="prettyprint lang-bash"><code>npm install -g live-server</code></pre></div><p>Open a terminal window and enter</p>
-<pre class="prettyprint lang-bash"><code>live-server</code></pre><p>In a few moments, a browser tab should open and display</p>
-<figure class="image-display"><img src="/resources/images/devguide/quickstart/my-first-app.png" alt="Output of quickstart app"></figure><p>Congratulations!  We are in business.</p>
-<div class="alert is-helpful"><p>If you see <code>Loading...</code> displayed instead, see the
-<a href="#es6support">Browser ES6 support appendix</a>.</p>
-</div></div><div class="l-main-section"><h2 id="what-s-wrong-with-this-">What&#39;s wrong with this?</h2>
-<p>We were up and running in a hurry and we could explore Angular
-in this manner for quite some time.</p>
-<p>For a number of reasons this isn&#39;t a good approach for building an application.
-<!-- TODO The formatting here is a little weird. Should improve readability. --></p>
+</div><div class="l-main-section"><!---
+## Run it!
+--->
+<h2 id="-">実行！</h2>
+<!---
+We need a static file server to serve our application to the browser.
+--->
+<p>ブラウザがアプリケーションを読み込むために、静的ファイルサーバが必要です。</p>
+<div class="l-sub-section"><!---
+Don't have a static file server handy?  Let's install one of our favorites
+called [live-server](https://www.npmjs.com/package/live-server "Live-server")
+with the **npm package manager**.
+--->
+<p>手元にファイルサーバがない？
+<strong>npmパッケージマネージャ</strong>を使って<a href="https://www.npmjs.com/package/live-server" title="Live-server">live-server</a>と呼ばれるお気に入りの中の一つをインストールしましょう。</p>
+<!---
+Don't have npm?
+[Get it now](https://docs.npmjs.com/getting-started/installing-node "Installing Node.js and updating npm")
+because we're going to use it now and repeatedly throughout this documentation.
+--->
+<p>npmをがない？
+今使うのと、このドキュメントを通して繰り返し使うので、
+<a href="https://docs.npmjs.com/getting-started/installing-node" title="Installing Node.js and updating npm">入手してください</a>。</p>
+<!---
+Once you have `npm` installed, open a terminal window and enter
+--->
+<p><code>npm</code>のインストールが終わったら、ターミナルを開いて、以下のように打ち込んでください。</p>
+<pre class="prettyprint lang-bash"><code>npm install -g live-server</code></pre></div><!---
+Open a terminal window and enter
+--->
+<p>ターミナルを開いて、以下のように打ち込んでください。</p>
+<pre class="prettyprint lang-bash"><code>live-server</code></pre><!---
+In a few moments, a browser tab should open and display
+--->
+<p>ちょっと待つと、ブラウザが立ち上がって表示されます。</p>
+<figure class="image-display"><img src="/resources/images/devguide/quickstart/my-first-app.png" alt="Output of quickstart app"></figure><!---
+Congratulations!  We are in business.
+--->
+<p>おめでとうございます！営業中です。</p>
+<div class="alert is-helpful"><!---
+If you see `Loading...` displayed instead, see the
+[Browser ES6 support appendix](#es6support).
+--->
+<p>代わりに<code>Loading...</code>が表示されている場合、
+<a href="#es6support">付録 ES6をサポートするブラウザ</a>を参照してください。</p>
+</div></div><div class="l-main-section"><!---
+## What's wrong with this?
+--->
+<h2 id="-">どうしました？</h2>
+<!---
+We were up and running in a hurry and we could explore Angular
+in this manner for quite some time.
+--->
+<p>大急ぎで稼動させましたが、こんなふうにかなり長い間Angularを調査することができます。</p>
+<!---
+For a number of reasons this isn't a good approach for building an application.
+--->
+<!-- TODO The formatting here is a little weird. Should improve readability. -->
+<p>いくつもの理由から、これはアプリケーションの構築には良い方法ではありません。</p>
+<!---
+* Transpiling TypeScript in the browser becomes tediously slow when our
+app grows beyond a few files. We certainly won't do that in production. We should learn to
+compile locally and push the generated JavaScript to the server. We'll need some tools for that.
+--->
 <ul>
-<li>Transpiling TypeScript in the browser becomes tediously slow when our
-app grows beyond a few files. We certainly won&#39;t do that in production. We should learn to
-compile locally and push the generated JavaScript to the server. We&#39;ll need some tools for that.</li>
+<li>アプリのファイルが増えると、ブラウザ上でTypeScriptをコンパイルするのはうんざりするほど遅くなります。
+もちろんプロダクション環境ではやらないでしょう。
+ローカルでコンパイルし、生成されたJavaScriptをサーバに配置することを学ばなければなりません。
+そのためにツールが必要になるでしょう。</li>
 </ul>
-<ul>
-<li>Downloading JavaScript libraries from the web is OK for demos but
+<!---
+* Downloading JavaScript libraries from the web is OK for demos but
 it slows our development. Every time our app reloads, it must refetch these libraries.
-Don&#39;t count on browser caching.
+Don't count on browser caching.
 Our debugging and live-reload techniques will bust the browser cache. Loading libraries
 from the web also prevents us from developing our application offline or where connectivity is
-poor. Let&#39;s learn to download the libraries to our machine and serve them locally.</li>
-</ul>
+poor. Let's learn to download the libraries to our machine and serve them locally.
+--->
 <ul>
-<li>We want our development cycle to be as fast and friction-free as possible.
-When we change our code, we want to see the results in the browser immediately.
-We have tools and procedures for that.</li>
+<li>ウェブからJavaScriptライブラリをダウンロードするのはデモには良いですが、開発を遅くします。
+毎回アプリがリロードすると、これらのライブラリを再取得します。
+ブラウザのキャッシュを当てにしてはいけません。
+デバッグとライブリロードの技術でブラウザキャッシュは使えないでしょう。
+また、ウェブからライブラリをロードするのはオフラインでの開発や接続が貧弱な環境での開発ができなくなります。
+マシンにライブラリを落としてきて、ローカルで使うことを学びましょう。</li>
 </ul>
-</div><div class="l-main-section"><h2 id="upping-our-game">Upping our game</h2>
-<p>  Let&#39;s take a few more steps to put our development on a better foundation. We will</p>
+<!---
+* We want our development cycle to be as fast and friction-free as possible.
+When we change our code, we want to see the results in the browser immediately.
+We have tools and procedures for that.
+--->
+<ul>
+<li>開発サイクルをできるだけ早く、できるだけ摩擦なしにしたいです。
+コードを変更する際、ブラウザで結果をすぐに確認したいです。
+このためのツールと手順があります。</li>
+</ul>
+</div><div class="l-main-section"><!---
+## Upping our game
+--->
+<h2 id="-">一生懸命やる</h2>
+  <!---
+  Let's take a few more steps to put our development on a better foundation. We will
+  --->
+<p>  開発をよりよい基礎にするため、いくつかのステップが必要です。</p>
+  <!---
+  1. Revise the application project structure for future growth
+  1. Install a few tools and packages
+  1. Revise the **`index.html`** to use local library resources
+  1. Compile the TypeScript locally and watch for changes
+  --->
 <ol>
-<li>Revise the application project structure for future growth</li>
-<li>Install a few tools and packages</li>
-<li>Revise the <strong><code>index.html</code></strong> to use local library resources</li>
-<li>Compile the TypeScript locally and watch for changes</li>
+<li>将来の成長のためアプリケーションプロジェクトの構造を見直す</li>
+<li>いくつかのツールとパッケージをインストールする</li>
+<li>ローカルのライブラリを使うように<strong><code>index.html</code></strong>を変更する</li>
+<li>TypeScriptのコンパイルをローカルで行う、また変更を見張る</li>
 </ol>
-<p>Shut down the <code>live-server</code> running in the terminal window (Ctrl-C) and proceed as follows.</p>
-</div><div class="l-main-section"><h2 id="revise-the-application-project-structure">Revise the application project structure</h2>
-<p>At the moment we&#39;re dumping everything into the &quot;angular2-quickstart&quot; <strong>root folder</strong>.
-Not bad when there are only two files. Not good as our application evolves.</p>
-<p>Let&#39;s give our project a little structure.</p>
-<p>We&#39;ll add a sub-folder - <code>src</code> - to hold project source code and a sub-sub-folder - <code>src/app</code> -
-to hold the application source code.</p>
-<p>In OS/X and Linux:</p>
-<pre class="prettyprint lang-bash"><code>mkdir src/app</code></pre><p>In Windows:</p>
-<pre class="prettyprint lang-bash"><code>mkdir src\app</code></pre><p><strong>Move <code>index.html</code></strong> into the <strong><code>src</code></strong> folder.</p>
-<p><strong>Move <code>app.ts</code></strong> into the <strong><code>src/app</code></strong> folder.</p>
-<p>Our project folders should look like this.</p>
+<!---
+Shut down the `live-server` running in the terminal window (Ctrl-C) and proceed as follows.
+--->
+<p>ターミナルで動いている<code>live-server</code>を止め(Ctrl-C)、以下の手順を始めます。</p>
+</div><div class="l-main-section"><!---
+## Revise the application project structure
+--->
+<h2 id="-">将来の成長のためアプリケーションプロジェクトの構造を見直す</h2>
+<!---
+At the moment we're dumping everything into the "angular2-quickstart" **root folder**.
+Not bad when there are only two files. Not good as our application evolves.
+--->
+<p>今のところ、全部を &quot;angular2-quickstart&quot; の<strong>ルートフォルダ</strong>に置いています。
+ファイルが2つだったら悪くはありません。
+アプリケーションが発展するには良くはありません。</p>
+<!---
+Let's give our project a little structure.
+--->
+<p>プロジェクトに少し構造を与えましょう。</p>
+<!---
+We'll add a sub-folder - `src` - to hold project source code and a sub-sub-folder - `src/app` -
+to hold the application source code.
+--->
+<p>プロジェクトのソースコードを配置するため <code>src</code> というサブフォルダと、
+アプリケーションのソースコードを配置するため <code>src/app</code> というサブサブフォルダを追加します。</p>
+<!---
+In OS/X and Linux:
+--->
+<p>OS/XとLinuxでは:</p>
+<pre class="prettyprint lang-bash"><code>mkdir src/app</code></pre><!---
+In Windows:
+--->
+<p>Windowsでは:</p>
+<pre class="prettyprint lang-bash"><code>mkdir src\app</code></pre><!---
+**Move `index.html`** into the **`src`** folder.
+--->
+<p><strong><code>index.html</code></strong>を<strong><code>src</code></strong>フォルダに<strong>移動</strong>します。</p>
+<!---
+**Move `app.ts`** into the **`src/app`** folder.
+--->
+<p><strong><code>app.ts</code></strong>を<strong><code>src/app</code></strong>フォルダに<strong>移動</strong>します。</p>
+<!---
+Our project folders should look like this.
+--->
+<p>プロジェクトのフォルダはこんな風に見えるはずです。</p>
 <pre><code>angular2-quickstart
 └── src
     ├── app
     │   └── app.ts
     └── index.html
-</code></pre></div><div class="l-main-section"><h2 id="install-npm-packages-locally">Install npm packages locally</h2>
-<p>We&#39;ll replace the web-based scripts in our <code>index.html</code> with
+</code></pre></div><div class="l-main-section"><!---
+## Install npm packages locally
+--->
+<h2 id="npm-">npmパッケージのローカルインストール</h2>
+<!---
+We'll replace the web-based scripts in our `index.html` with
 scripts resident on our local machine.
-We get those scripts by installing two runtime <code>npm</code> packages into our project.</p>
+We get those scripts by installing two runtime `npm` packages into our project.
+--->
+<p><code>index.html</code>のウェブベースのスクリプトをローカルマシンのスクリプトと置き換えていきます。</p>
+<!---
+>**angular2** - the Angular 2 library.
+--->
 <blockquote>
-<p><strong>angular2</strong> - the Angular 2 library.</p>
-<p><strong>systemjs</strong> - an open-source library that provides module loading.</p>
+<p><strong>angular2</strong> - Angular2ライブラリ</p>
 </blockquote>
-<p>We&#39;ll also install two development tools:</p>
+<!---
+>**systemjs** - an open-source library that provides module loading.
+--->
 <blockquote>
-<p><strong>typescript</strong> - the TypeScript compiler</p>
-<p><strong><a href="https://www.npmjs.com/package/live-server" title="Live-server">live-server</a></strong> - the static file server that reloads the browser when files change.
-We may have loaded it earlier. We&#39;re doing it again
+<p><strong>systemjs</strong> - モジュールローディングを提供するオープンソースライブラリ</p>
+</blockquote>
+<!---
+We'll also install two development tools:
+--->
+<p>また、二つの開発ツールもインストールします:</p>
+<!---
+>**typescript** - the TypeScript compiler
+--->
+<blockquote>
+<p><strong>typescript</strong> - TypeScriptコンパイラ</p>
+</blockquote>
+<!---
+>**[live-server](https://www.npmjs.com/package/live-server "Live-server")** - the static file server that reloads the browser when files change.
+--->
+<blockquote>
+<p><strong><a href="https://www.npmjs.com/package/live-server" title="Live-server">live-server</a></strong> - ファイルの変更時にブラウザをリロードする静的ファイルサーバ
+<!---
+We may have loaded it earlier. We're doing it again
 locally in our project so we are no longer vulnerable to
-a global uninstall or version change.</p>
+a global uninstall or version change.
+--->
+以前はロードできました。
+もう一度プロジェクト内でローカルに置くことで、
+グローバルサーバからのアンインストールやバージョンの変更があっても脆弱ではなくなります。</p>
 </blockquote>
-<p><strong>Open</strong> a terminal window at our application&#39;s <strong>root folder</strong></p>
-<p>Enter these commands:</p>
+<!---
+**Open** a terminal window at our application's **root folder**
+--->
+<p>アプリケーションの<strong>ルートフォルダ</strong>でターミナルを<strong>開いてください</strong>。</p>
+<!---
+Enter these commands:
+--->
+<p>これらのコマンドを入力:</p>
 <pre><code>npm init -y
 npm i angular2@2.0.0-alpha.44 systemjs@0.19.2 --save --save-exact
 npm i typescript live-server --save-dev
-</code></pre><p>These commands both <em>install</em> the packages and <em>create</em> an npm <code>package.json</code> that will
+</code></pre><!---
+These commands both *install* the packages and *create* an npm `package.json` that will
 help us develop and maintain our application in future.
-The essence of our <code>package.json</code> should look like this:</p>
-<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>There is also a <code>scripts</code> section. <strong>Find and replace</strong> it with the following:</p>
-<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><p>We&#39;ve just extended our project world with script commands
-that we&#39;ll be running very soon.</p>
-</div><div class="l-main-section"><h2 id="update-index-html-">Update <code>index.html</code></h2>
-<p><strong>Replace</strong> the library scripts section with references to
-scripts in the packages we just installed.</p>
-<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-libraries.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><p><strong>Update</strong> the <code>System</code> configuration script as follows.</p>
-<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-systemjs.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="l-sub-section"><p>We won&#39;t be transpiling TypeScript in the browser anymore.
-We&#39;ll do that on our machine and ship the generated JavaScript
-files to the server.</p>
-<p>We have to re-configure <code>system.js</code> to expect JavaScript files
-with a <code>.js</code> extension by default.
-Someday we might add a <code>Foo</code> class to our application in a <code>foo.ts</code>
-file and import it like this</p>
-<pre class="prettyprint lang-bash"><code>import {Foo} from './app/foo'</code></pre><p><code>system.js</code>will know to look for a file named <code>foo.js</code> in the <code>src/app</code> folder.</p>
-<p>That&#39;s exactly what we&#39;re doing in the last line. We&#39;re
-importing our main application file <code>app</code> (the generated <code>app.js</code> to be precise)
-from the <code>src/app/</code> folder (we moved it there, remember?)</p>
-</div><p>Here&#39;s the final version</p>
-<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example></div><div class="l-main-section"><h2 id="prepare-for-typescript-compilation">Prepare for TypeScript Compilation</h2>
-<h3 id="add-the-typescript-configuration-file">Add the TypeScript configuration file</h3>
-<p>We&#39;ll add a configuration file named <strong><code>tsconfig.json</code></strong>
+The essence of our `package.json` should look like this:
+--->
+<p>これらのパッケージ<em>インストール</em>コマンドとnpmの<code>package.json</code><em>作成</em>コマンドは、
+アプリケーションの開発と将来のメンテナンスに役立ちます。
+<code>package.json</code>の本質は次のようなものです:</p>
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><!---
+There is also a `scripts` section. **Find and replace** it with the following:
+--->
+<p>また、<code>script</code>セクションがあります。以下のように<strong>書き換えてみましょう</strong>。</p>
+<code-example language="json" format="linenums"><err>ERROR: Unable to extract json using config: "[object Object]"</err></code-example><!---
+We've just extended our project world with script commands
+that we'll be running very soon.
+--->
+<p>ちょうどプロジェクトをこれからすぐに実行するであろうスクリプトコマンドで拡張し終えました。</p>
+</div><div class="l-main-section"><!---
+## Update `index.html`
+--->
+<h2 id="-index-html-"><code>index.html</code>の更新</h2>
+<!---
+**Replace** the library scripts section with references to
+scripts in the packages we just installed.
+--->
+<p>ライブラリスクリプトセクションの参照をにインストールしたパッケージのスクリプトに<strong>置き換えましょう</strong>。</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-libraries.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><!---
+**Update** the `System` configuration script as follows.
+--->
+<p><code>System</code>スクリプトの設定を以下のように<strong>更新しましょう</strong>。</p>
+<code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index-systemjs.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="l-sub-section"><!---
+We won't be transpiling TypeScript in the browser anymore.
+We'll do that on our machine and ship the generated JavaScript
+files to the server.
+--->
+<p>ブラウザ上でTypeScriptのコンパイルはこれ以上行いません。
+マシン上で行い、生成されたJavaScriptファイルをサーバに配置します。</p>
+<!---
+We have to re-configure `system.js` to expect JavaScript files
+with a `.js` extension by default.
+Someday we might add a `Foo` class to our application in a `foo.ts`
+file and import it like this
+--->
+<p>JavaScriptファイルの拡張子がデフォルトで<code>.js</code>となるよう、<code>system.js</code>を設定しなおさなくてはいけません。
+いつか、<code>Foo</code>クラスを<code>foo.ts</code>というファイルで追加し、このようにインポートするかもしれません。</p>
+<pre class="prettyprint lang-bash"><code>import {Foo} from './app/foo'</code></pre><!---
+`system.js`will know to look for a file named `foo.js` in the `src/app` folder.
+--->
+<p><code>system.js</code>は<code>src/app</code>フォルダで<code>foo.js</code>というファイルを探せばよいことを知っています。</p>
+<!---
+That's exactly what we're doing in the last line. We're
+importing our main application file `app` (the generated `app.js` to be precise)
+from the `src/app/` folder (we moved it there, remember?)
+--->
+<p>最後の行で行ったのがこれになります。
+メインのアプリケーションファイル<code>app</code>(正確に言うと生成された<code>app.js</code>)を<code>src/app</code>フォルダ(移動させたのを覚えてますか？)からインポートしています。</p>
+</div><!---
+Here's the final version
+--->
+<p>これが最終版です</p>
+<div class="example-title">index.html</div><code-example language="html" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/index.html.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example></div><div class="l-main-section"><!---
+## Prepare for TypeScript Compilation
+--->
+<h2 id="typescript-">TypeScriptのコンパイルの準備</h2>
+<!---
+### Add the TypeScript configuration file
+--->
+<h3 id="typescript-">TypeScript設定ファイルの追加</h3>
+<!---
+We'll add a configuration file named **`tsconfig.json`**
 to tell the editor how to interpret our TypeScript code and
-to simplify the TypeScript compilation command that we&#39;ll run very soon.</p>
-<p><strong>Change to the <code>src</code> folder and create a <code>tsconfig.json</code></strong> file with the following content:</p>
-<div class="example-title">tsconfig.json</div><code-example language="json" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/tsconfig.json.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="alert is-helpful"><p>See the <a href="#tsconfig">TypeScript configuration appendix</a> to learn more about
-this file and these settings.</p>
-</div></div><div class="l-main-section"><h2 id="final-structure">Final structure</h2>
-<p>Our final project folder structure should look like this:</p>
+to simplify the TypeScript compilation command that we'll run very soon.
+--->
+<p>エディタにTypeScriptコードの解析方法を伝えるため、
+またこれからすぐに実行するであろうTypeScriptのコンパイルコマンドを単純化するために、
+<strong><code>tsconfig.json</code></strong>という設定ファイルを追加します</p>
+<!---
+**Change to the `src` folder and create a `tsconfig.json`** file with the following content:
+--->
+<p><strong><code>src</code>フォルダに行き、以下の内容で<code>tsconfig.json</code>ファイルを作ってください</strong>:</p>
+<div class="example-title">tsconfig.json</div><code-example language="json" format="linenums">BAD FILENAME: ../../_fragments/quickstart/ts/src/tsconfig.json.md   Current path: docs,ts,latest,quickstart PathToDocs: ../../</code-example><div class="alert is-helpful"><!---
+See the [TypeScript configuration appendix](#tsconfig) to learn more about
+this file and these settings.
+--->
+<p>このファイルとこれらの設定についてより詳しい内容は<a href="#tsconfig">付録 TypeScriptの設定</a>を参照してください。</p>
+</div></div><div class="l-main-section"><!---
+## Final structure
+--->
+<h2 id="-">最終的な構成</h2>
+<!---
+Our final project folder structure should look like this:
+--->
+<p>プロジェクトフォルダの構成はこうなります:</p>
 <pre><code>angular2-quickstart
 ├── node_modules
 ├── src
@@ -202,89 +508,228 @@ this file and these settings.</p>
 │    ├── index.html
 │    └── tsconfig.json
 └── package.json
-</code></pre></div><div class="l-main-section"><h2 id="compile-the-typescript-to-javascript">Compile the TypeScript to JavaScript</h2>
-<p>We no longer transpile TypeScript to JavaScript in the browser.
-We run the <strong>T</strong>ype<strong>S</strong>cript <strong>C</strong>ompiler (TSC) on our machine instead.</p>
-<p>Open a terminal window in the <strong>root of the application folder</strong> and enter:</p>
-<pre class="prettyprint lang-bash"><code>npm run tsc</code></pre><p>When it&#39;s done we should find the generated <em>app.js</em> file in the <em>src</em> folder and also an <em>app.map.js</em> file that
-helps debuggers navigate between the JavaScript and the TypeScript source.</p>
-<p>Our script set the compiler watch option (<code>-w</code>) so the
-compiler stays alive when it&#39;s finished.
-It watches for changes to our <strong><code>.ts</code></strong> files
-and recompiles them automatically.</p>
-<p>Leave this command running in the terminal window.
-You can stop it anytime with <code>Ctrl-C</code>.</p>
-</div><div class="l-main-section"><h2 id="run-the-app-">Run the app!</h2>
-<p>Now we are ready to see our app in action.</p>
-<p>Open another terminal window in the <strong>root of the application folder</strong> and
-launch <code>live-server</code> again although this time we&#39;ll do it with
-one of our <code>npm</code> script commands:</p>
-<pre class="prettyprint lang-bash"><code>npm start</code></pre><p><strong>live-server</strong> loads the browser for us, serves the HTML and JavaScript files,
-and displays our application message once more:</p>
-<figure class="image-display"><img src="/resources/images/devguide/quickstart/my-first-app.png" alt="Output of quickstart app"></figure><h3 id="make-some-changes">Make some changes</h3>
-<p><strong><code>live-server</code></strong> detects changes to our files and refreshes the browser page for us automatically.</p>
-<p>Try changing the message to &quot;My SECOND Angular 2 app&quot;.</p>
-<p>The TypeScript compiler in the first terminal window is watching our source code. It recompiles and produces
-the revised <em>app.js</em>.  The <code>live-server</code> sees that change and reloads the browser.</p>
-<p>Keep <code>live-server</code> running in this terminal window. You can stop it anytime with <code>Ctrl-C</code>.</p>
-</div><div class="l-main-section"><h2 id="what-have-we-done-">What have we done?</h2>
-<p>Our first application doesn&#39;t do much. It&#39;s basically &quot;Hello, World&quot; for Angular 2.</p>
-<p>We kept it simple in our first pass: we wrote a little Angular component,
-we added some JavaScript libraries to <code>index.html</code>, and launched with a
-static file server. That&#39;s about all we&#39;d expect to do for a &quot;Hello, World&quot; app.</p>
-<p><strong>We have greater ambitions.</strong></p>
-<p>We won&#39;t ask Angular to build &quot;Hello, World&quot;.
-We are asking it to help us build sophisticated applications with sophisticated requirements.</p>
-<p>So we made some strategic technology investments to reach our larger goals</p>
+</code></pre></div><div class="l-main-section"><!---
+## Compile the TypeScript to JavaScript
+--->
+<h2 id="typescript-javascript-">TypeScriptからJavaScriptへのコンパイル</h2>
+<!---
+We no longer transpile TypeScript to JavaScript in the browser.
+We run the **T**ype**S**cript **C**ompiler (TSC) on our machine instead.
+--->
+<p>もはやブラウザ上でTypeScriptからJavaScriptへのコンパイルは行いません。
+マシン上で<strong>T</strong>ype<strong>S</strong>cript <strong>C</strong>ompiler (TSC)を実行します。</p>
+<!---
+Open a terminal window in the **root of the application folder** and enter:
+--->
+<p><strong>アプリケーションのルートフォルダで</strong>ターミナルウィンドウを開いて、入力します:</p>
+<pre class="prettyprint lang-bash"><code>npm run tsc</code></pre><!---
+When it's done we should find the generated *app.js* file in the *src* folder and also an *app.map.js* file that
+helps debuggers navigate between the JavaScript and the TypeScript source.
+--->
+<p>終わったら<em>src</em>フォルダに生成された<em>app.js</em>ファイルが見つかります。
+またデバッガがJavaScriptとTypeScript間をナビゲートするのに役立つ<em>app.map.js</em>ファイルも見つかります。</p>
+<!---
+Our script set the compiler watch option (`-w`) so the
+compiler stays alive when it's finished.
+It watches for changes to our **`.ts`** files
+and recompiles them automatically.
+--->
+<p>スクリプトにコンパイラ監視オプション(<code>-w</code>)をセットしていたので、
+コンパイルが終わったときにコンパイラが生き続けます。
+コンパイラは<strong><code>.ts</code></strong>ファイルの変化を監視し、自動的に再コンパイルします。</p>
+<!---
+Leave this command running in the terminal window.
+You can stop it anytime with `Ctrl-C`.
+--->
+<p>実行中のターミナルは放置しておきましょう。
+<code>Ctrl-C</code>でいつでも止められます。</p>
+</div><div class="l-main-section"><!---
+## Run the app!
+--->
+<h2 id="-">アプリの実行！</h2>
+<!---
+Now we are ready to see our app in action.
+--->
+<p>今、作業中のアプリを見る準備ができました。</p>
+<!---
+Open another terminal window in the **root of the application folder** and
+launch `live-server` again although this time we'll do it with
+one of our `npm` script commands:
+--->
+<p><strong>アプリケーションフォルダのルート</strong>で別のウィンドウを立上げ<code>live-server</code>をもう一度起動しますが、
+今回は<code>npm</code>スクリプトコマンドでやっていきます:</p>
+<pre class="prettyprint lang-bash"><code>npm start</code></pre><!---
+**live-server** loads the browser for us, serves the HTML and JavaScript files,
+and displays our application message once more:
+--->
+<p><strong>live-server</strong>はブラウザを立上げ、HTMLとJavaScriptを配信し、
+もう一度アプリケーションメッセージを表示します。</p>
+<figure class="image-display"><img src="/resources/images/devguide/quickstart/my-first-app.png" alt="Output of quickstart app"></figure><!---
+### Make some changes
+--->
+<p>変更する
+<!---
+**`live-server`** detects changes to our files and refreshes the browser page for us automatically.
+--->
+<strong><code>live-server</code></strong>はファイルの変更を検出し、自動的にブラウザをリフレッシュします。</p>
+<!---
+Try changing the message to "My SECOND Angular 2 app".
+--->
+<p>メッセージを&quot;My SECOND Angular 2 app&quot;に変更してみましょう。</p>
+<!---
+The TypeScript compiler in the first terminal window is watching our source code. It recompiles and produces
+the revised *app.js*.  The `live-server` sees that change and reloads the browser.
+--->
+<p>最初のターミナルウィンドウのTypeScriptコンパイラがソースコードを監視しています。
+これが再コンパイルを行い、<em>app.js</em>を更新します。
+<code>live-server</code>はその変更を検出し、ブラウザをリロードさせます。</p>
+<!---
+Keep `live-server` running in this terminal window. You can stop it anytime with `Ctrl-C`.
+--->
+<p>ターミナルの<code>live-server</code>は実行し続けます。<code>Ctrl-C</code>で止めることができます。</p>
+</div><div class="l-main-section"><!---
+## What have we done?
+--->
+<h2 id="-">何をしましたか？</h2>
+<!---
+Our first application doesn't do much. It's basically "Hello, World" for Angular 2.
+--->
+<p>最初のアプリケーションはあまり良くありません。
+基本的にAngular2の&quot;Hello, World&quot;です。</p>
+<!---
+We kept it simple in our first pass: we wrote a little Angular component,
+we added some JavaScript libraries to `index.html`, and launched with a
+static file server. That's about all we'd expect to do for a "Hello, World" app.
+--->
+<p>最初はシンプルにしました: 小さいAngularのコンポーネントを書き、
+<code>index.html</code>にJavaScriptライブラリを追加し、
+静的ファイルサーバを使って起動しました。
+これが&quot;Hello, World&quot;アプリに期待したすべてです。</p>
+<!---
+**We have greater ambitions.**
+--->
+<p><strong>もっと大きい野心があります。</strong></p>
+<!---
+We won't ask Angular to build "Hello, World".
+We are asking it to help us build sophisticated applications with sophisticated requirements.
+--->
+<p>Angularに&quot;Hello, World&quot;アプリを作るよう依頼しませんでした。
+洗練された要求で洗練されたアプリケーションを作るのに役立つよう依頼しました。</p>
+<!---
+So we made some strategic technology investments to reach our larger goals
+--->
+<p>そのため、より大きいゴールに近づくための戦略的な技術投資を得ることができました。</p>
+<!---
+* our application loads faster with libraries installed locally and
+we can develop offline if we wish.
+
+* we're pre-compiling our TypeScript.
+
+* we're running the compiler and live-server with commands that give us immediate feedback as we make changes.
+--->
 <ul>
-<li><p>our application loads faster with libraries installed locally and
-we can develop offline if we wish.</p>
+<li><p>ローカルにインストールされたライブラリを使って高速に起動し、
+希望すればオフライン環境でも開発ができます。</p>
 </li>
-<li><p>we&#39;re pre-compiling our TypeScript.</p>
+<li><p>TypeScriptをプリコンパイルしています。</p>
 </li>
-<li><p>we&#39;re running the compiler and live-server with commands that give us immediate feedback as we make changes.</p>
+<li><p>コンパイラやlive-serverをコマンドで実行しており、変更したらすぐにフィードバックを得ることができます。</p>
 </li>
 </ul>
-<p>The good news is that the overhead of setup is (mostly) behind us.
-We&#39;re about to build a small application that demonstrates the great things
-we can build with Angular 2.</p>
+<!---
+The good news is that the overhead of setup is (mostly) behind us.
+We're about to build a small application that demonstrates the great things
+we can build with Angular 2.
+--->
+<p>セットアップのオーバーヘッドが(大部分は)後ろに隠れている、ということは良いニュースです。
+今まさに、Angular2で構築できるすばらしい点をデモする小さいアプリケーションを構築しょうとしています。</p>
 <!--TODO: Join us on the [Tour of Heroes](./toh-pt1.html) -->
-</div><!-- Move this to the Style Guide when we have one --><div class="l-main-section"><p><a id="tsconfig"></a></p>
-<h3 id="appendix-typescript-configuration">Appendix: TypeScript configuration</h3>
-<p>We added a TypeScript configuration file (<code>tsconfig.js</code>) to our project to
+</div><!-- Move this to the Style Guide when we have one --><div class="l-main-section"><!---
+<a id="tsconfig"></a>
+### Appendix: TypeScript configuration
+We added a TypeScript configuration file (`tsconfig.js`) to our project to
 guide the compiler as it generates JavaScript files.
-Get details about <code>tsconfig.js</code> from the official
-<a href="https://github.com/Microsoft/TypeScript/wiki/tsconfig.json">TypeScript wiki</a>.</p>
-<p>We&#39;d like a moment to discuss the <code>noImplicitAny</code> flag.
-TypeScript developers disagree about whether it should be <code>true</code> or <code>false</code>.
+Get details about `tsconfig.js` from the official
+[TypeScript wiki](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json).
+--->
+<p><a id="tsconfig"></a></p>
+<h3 id="-typescript-">付録: TypeScriptの設定</h3>
+<p>コンパイラにJavaScriptファイルを生成させるため、<br>TypeScript設定ファイル(<code>tsconfig.js</code>)をプロジェクトに追加しました。
+公式の<a href="https://github.com/Microsoft/TypeScript/wiki/tsconfig.json">TypeScript wiki</a>で、
+<code>tscnfig.js</code>について詳細を知ることができます。</p>
+<!---
+We'd like a moment to discuss the `noImplicitAny` flag.
+TypeScript developers disagree about whether it should be `true` or `false`.
 There is no correct answer and we can change the flag later.
 But our choice now can make a difference in larger projects so it merits
-discussion.</p>
-<p>When the <code>noImplicitAny</code> flag is <code>false</code>,
-the compiler silently defaults the type of a variable to <code>any</code> if it cannot infer
-the type based on how the variable is used. That&#39;s what we mean by &quot;implicitly <code>any</code>&quot;.</p>
-<p>When the <code>noImplicitAny</code> flag is <code>true</code> and the TypeScript compiler cannot infer
+discussion.
+--->
+<p><code>noImplicitAny</code>フラグについてちょっと議論したいと思います。
+TypeScript開発者は<code>true</code>にすべきか<code>false</code>にすべきか意見があいませんでした。
+正解はありませんし、フラグは後から変更できます。
+しかし、大規模プロジェクトでは現時点の選択が違いを生み出すので、議論に値します。</p>
+<!---
+When the `noImplicitAny` flag is `false`,
+the compiler silently defaults the type of a variable to `any` if it cannot infer
+the type based on how the variable is used. That's what we mean by "implicitly `any`".
+--->
+<p><code>noImplicitAny</code>フラグが<code>false</code>としたとき、
+変数の使われ方から型推論ができない場合は、
+コンパイラは黙って型を<code>any</code>にします。
+これが&quot;暗黙の<code>any</code>&quot;という意味です。</p>
+<!---
+When the `noImplicitAny` flag is `true` and the TypeScript compiler cannot infer
 the type, it still generates the JavaScript files but
-it also reports an error.</p>
-<p>For this project and the other examples in this Developer Guide
-we set the <code>noImplicitAny</code> flag to <code>false</code>.
-Developers who prefer stricter type checking should set the <code>noImplicitAny</code> flag to <code>true</code>.
-We can still set a variable&#39;s type to <code>any</code> if
-that seems like the best choice. We&#39;d be doing so explicitly after
-giving the matter some thought.</p>
-<p>If we set the <code>noImplicitAny</code> flag to <code>true</code>, we may get implicit index errors as well.
+it also reports an error.
+--->
+<p><code>noImplicitAny</code>フラグが<code>true</code>でTypeScriptコンパイラが型を推論できなかったとき、
+それでもJavaScriptファイルは生成しますが、エラー報告も行います。</p>
+<!---
+For this project and the other examples in this Developer Guide
+we set the `noImplicitAny` flag to `false`.
+Developers who prefer stricter type checking should set the `noImplicitAny` flag to `true`.
+We can still set a variable's type to `any` if
+that seems like the best choice. We'd be doing so explicitly after
+giving the matter some thought.
+--->
+<p>このプロジェクトやこの開発者ガイドのほかの例では、<code>noImplicitAny</code>フラグを<code>false</code>にセットしています。
+厳格な型チェックを好む開発者は<code>noImplicitAny</code>フラグを<code>true</code>にセットすべきでしょう。
+それがベストな選択に見えても、私たちは依然として変数の型を<code>any</code>にセットします。
+問題について検討した後で、明確化するかもしれません。</p>
+<!---
+If we set the `noImplicitAny` flag to `true`, we may get implicit index errors as well.
 If we feel these are more annoying than helpful,
-we can suppress them with the following additional flag.</p>
+we can suppress them with the following additional flag.
+```
+"suppressImplicitAnyIndexErrors":true
+```
+--->
+<p>もし<code>noImplicitAny</code>フラグを<code>true</code>にした場合、同様に暗黙的なインデックスエラーとなるでしょう。
+もしそれらの情報で役立つよりイライラさせられたら、
+このフラグをつけることで抑制することができます。</p>
 <pre><code>&quot;suppressImplicitAnyIndexErrors&quot;:true
-</code></pre></div><div class="l-main-section"><p><a id="es6support"></a></p>
-<h3 id="appendix-browser-es6-support">Appendix: Browser ES6 support</h3>
-<p>Angular 2 requires ES6 support, such as can be found in most modern
+</code></pre></div><div class="l-main-section"><!---
+<a id="es6support"></a>
+### Appendix: Browser ES6 support
+Angular 2 requires ES6 support, such as can be found in most modern
 browsers. For older browsers (including IE 11) you can use a shim to get
-the needed functionality.</p>
-<p>After creating <code>package.json</code> (halfway through the quickguide), run this
-command to add a shim to the project:</p>
+the needed functionality.
+--->
+<p><a id="es6support"></a></p>
+<h3 id="-es6-">付録 ES6をサポートするブラウザ</h3>
+<p>Angular2は、最もモダンなブラウザで見られるような、ES6サポートが必要です。
+古いブラウザ(IE11を含む)は、必要な機能を得るためにshim(クサビ)を使うことができます。</p>
+<!---
+After creating `package.json` (halfway through the quickguide), run this
+command to add a shim to the project:
+--->
+<p><code>package.json</code>を作ったあと(クイックガイドの中間くらい)、
+このコマンドを実行してプロジェクトにshimを追加します。</p>
 <code-example language="sh" format=".">npm install es6-shim --save
-</code-example><p>Now you can load the shim in your <code>index.html</code> before the other scripts:</p>
+</code-example><!---
+Now you can load the shim in your `index.html` before the other scripts:
+--->
+<p><code>index.html</code>で他のスクリプトの前でshimを読み込むことができます。</p>
 <code-example language="html" format=".">&lt;script src=&quot;../node_modules/es6-shim/es6-shim.js&quot;&gt;&lt;/script&gt;</code-example></div></article><div class="main-footer"><nav class="background-silver grid-fluid"><div class="c3 main-footer-branding"><div class="logo-inverse-large"></div></div><div class="c2"><h3 class="text-headline">LIBRARIES</h3><ul class="text-body"><li><a href="/"> Angular 2.0</a></li><li><a href="https://angularjs.org/"> Angular 1 for JS</a></li><li><a href="https://angulardart.org/"> Angular 1 for Dart</a></li><li><a href="https://material.angularjs.org"> Angular Material</a></li><li><a href="https://www.firebase.com/docs/web/libraries/angular/"> AngularFire</a></li></ul></div><div class="c2"><h3 class="text-headline">LEARN</h3><ul class="text-body"><li><a href="/docs/ts/latest/quickstart.html"> 5 Min Quickstart</a></li><li><a href="/docs/ts/latest/guide/"> Step by Step Guide</a></li><li><a href="/docs/ts/latest/api/"> Full API</a></li><li><a href="/docs/ts/latest/resources.html"> Resources</a></li><li><a href="http://goo.gl/sj0Nk1">Design Docs &amp; Notes</a></li></ul></div><div class="c2"><h3 class="text-headline">HELP</h3><ul class="text-body"><li><a href="https://groups.google.com/forum/#!forum/angular"> Google Group</a></li><li><a href="https://gitter.im/angular/angular"> Chat Room</a></li><li><a href="https://github.com/angular/angular/issues"> Report an Issue</a></li></ul></div><div class="c3"><h3 class="text-headline">COMMUNITY</h3><ul class="text-body"><li><a href="https://blog.angularjs.org/"> Blog</a></li><li><a href="https://plus.sandbox.google.com/+AngularJS/posts"> Google+</a></li><li><a href="https://twitter.com/angularjs"> Twitter</a></li><li><a href="https://github.com/angular/angular"> GitHub</a></li></ul></div></nav><footer class="background-steel"><small class="text-caption">Powered by Google ©2010-2015. Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" class="text-snow">Apache License, Version 2.0</a>. Documentation licensed under <a class="text-snow" href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</small><a aria-label="View Style Guide" href="/docs/styleguide.html" title="Style Guide" md-button="md-button" class="styleguide-trigger text-snow"><span class="icon-favorite"></span></a></footer></div><!-- VENDORS --><script src="/resources/js/vendor/prettify.js"></script><script src="/resources/js/vendor/lang-basic.js"></script><script src="/resources/js/vendor/lang-dart.js"></script><script src="/resources/js/vendor/lodash.js"></script><!-- Angular Material Dependencies --><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-animate.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular-aria.min.js"></script><script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.8.3/angular-material.min.js"></script><!-- Angular.io Site JS --><script src="/resources/js/site.js"></script><script src="/resources/js/controllers/app-controller.js"></script><script src="/resources/js/directives/bio.js"></script><script src="/resources/js/directives/code-tabs.js"></script><script src="/resources/js/directives/code-pane.js"></script><script src="/resources/js/directives/code-example.js"></script><!-- GA --><script>(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
 m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
