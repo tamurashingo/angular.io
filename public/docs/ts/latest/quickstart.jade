@@ -1,98 +1,192 @@
 include ../../../_includes/_util-fns
 
 :marked
+  <!---
   Let's start from zero and build a super simple Angular 2 application in TypeScript.
+  --->
+  ごくシンプルなAngular2アプリケーションをTypeScriptでゼロから作ってみましょう。
 
 .callout.is-helpful
-  header Don't want TypeScript?
+  // header Don't want TypeScript?
+  header TypeScriptは欲しくない？
   :marked
+    <!---
     Although we're getting started in TypeScript, you can also write Angular 2 apps
     in JavaScript and Dart by selecting either of those languages from the combo-box in the banner.
+    --->
+    ここではTypeScriptで始めますが、バナーのコンボボックスから言語を選択することで、
+    JavaScriptやDartでAngular2アプリを書くことができます。
 
 .l-main-section
   :marked
+    <!---
     ## The shortest, quickest ...
+    --->
+    ## もっとも短くて、もっとも早く ...
 
+    <!---
     Let's put something on the screen in Angular 2 as quickly as we can.
+    --->
+    できるだけ早くAngular2で画面に何か表示してみましょう。
+
 
   .l-sub-section
     :marked
+      <!---
       While we are about to describe steps to take on your development machine,
       you could take these same steps in an interactive, online coding environment
       such as [plunker](http://plnkr.co/ "Plunker"). You won't have to
       install a static server to run the app there.
+      --->
+      今まさに開発マシン上で行う手順について説明しようとしていますが、
+      同じ手順を[plunker](http://plnkr.co/ "Plunker")のようなインタラクティブで、
+      オンラインな環境で行うことができます。
+      アプリを動かすためにサーバをインストールする必要はありません。
 
+      <!---
       If you like what you see - and we think you will - you can repeat this
       exercise on your own machine later.
+      --->
+
+      もし気に入った場合は、そして気に入るだろうと思いますが、後で実際のマシン上で繰り返して行うことができます。
+
 
   :marked
+    <!---
     **Create a new folder** to hold our application project, perhaps like this:
+    --->
+    アプリケーションプロジェクトのための**新しいフォルダを作ります**。
+    こんな感じです。
     ```
     mkdir angular2-quickstart
     cd    angular2-quickstart
     ```
 .l-main-section
   :marked
+    <!---
     ## Our first Angular component
+    --->
+    ## 最初のAngularコンポーネント
 
+    <!---
     **Add a new file** called **`app.ts`** and paste the following lines:
+    --->
+    **`app.ts`**という**新しいファイルを作成し**、以下のコードをコピペします。
 
   +makeExample('quickstart/ts/src/app/app.ts', null, 'app.ts')
 
   :marked
+    <!---
     We've just defined an Angular 2 **component**,
     one of the most important Angular 2 features.
     Components are our primary means of creating application views
     and supporting them with application logic.
+    --->
+    最も重要なAngular2の機能の一つであるAngular2**コンポーネント**を定義しました。
+    コンポーネントは
+    アプリケーションビューを作って、アプリケーションロジックでサポートする、
+    基本的な手法です。
 
+    <!---
     Ours is an empty, do-nothing class class named `AppComponent`.
     It would expand with properties and application
     logic when we're ready to build a substantive application.
+    --->
 
+    空の何もしないクラス`AppComponent`です。
+    実際のアプリケーション開発をする準備ができたら、
+    プロパティとアプリケーションロジックで膨らんでいくでしょう。
+
+    <!---
     Above the class we see the `@Component` decoration.
+    --->
+    上記のクラスで、`@Component`デコレータを確認できます。
 
   .l-sub-section
     :marked
+      <!---
       The `@` symbol before the method name identifies `Component` as a decoration.
       A "decoration" is a TypeScript language feature
       for creating metadata about the class. Angular finds this metadata
       in the transpiled JavaScript and responds appropriately.
+      --->
+      メソッド名の前にある`@`は、`Component`をデコレータとしてみなします。
+      "デコレータ"はTypeScriptの機能で、クラスのメタデータを作るためにあります。
+      AngularはコンパイルされたJavaScriptからこのメタデータを探し、適切に応答します。
   :marked
+    <!---
     `@Component` tells Angular that this class *is an Angular component*.
     The configuration object passed to the `@Component` method has two
     field, a `selector` and a `template`.
+    --->
+    `@Component`はこのクラスが*Angularのコンポーネントである*ことをAngularに教えます。
+    `@Component`メソッドに移動した設定オブジェクトは、2つのフィールド、
+    `selector`と`template`を持ちます。
 
+    <!---
     The `selector` specifies a CSS selector for a host HTML element named `my-app`.
     Angular creates and displays an instance of our `AppComponent`
     wherever it encounters a `my-app` element.
+    --->
+    `selector`は、`my-app`と名づけられたHTML要素のためのCSSセレクタを定義します。
+    Angularは`my-app`要素に出くわしたら、`AppComponent`インスタンスを作成し、表示します。
 
+    <!---
     The `template` field is the component's companion template
     that tells Angular how to render a view.
     Our template is a single line of HTML announcing "My First Angular App".
+    --->
+    `template`フィールドはコンポーネントの仲間のテンプレートで、
+    Angularへどのようにビューをレンダリングするのかを伝えます。
+    このテンプレートは "My First Angular App" と話す一行のHTMLです。
 
+    <!---
     The `bootstrap` method tells Angular to start the application with this
     component at the application root.
     We'd be correct to guess that someday our application will
     consist of more components arising in tree-like fashion from this root.
-
+    --->
+    `bootstrap`メソッドは、アプリケーションルートでこのコンポーネントを使ってアプリケーションを開始することを、
+    Angularに伝えます。
+    そのうち、アプリケーションはこのルートからツリー状に発生するコンポーネントで構成されるであろうことが推測できるでしょう。
+    
+    <!---
     In the top line we imported the `Component` and `bootstrap` symbols
     from the Angular 2 library. That's the way we do things now.
     We no longer expect to find our code or any library code in a global namespace.
     We `import` exactly what we need, as we need it, from named file and library resources.
+    --->
+    先頭行で、`Component`と`bootstrap`をAngular2ライブラリからインポートしました。
+    今はそういうものです。
+    もはやグローバルな名前空間から自分のコードやライブラリのコードを探し出さなくてよいのです。
+    ファイルやライブラリから必要なときに必要なものを`import`します。
 
 .l-main-section
   :marked
+    <!---
     ## Add `index.html`
+    --->
+    ## `index.html`の追加
 
+    <!---
     **Create** an `index.html` file.
+    --->
+    `index.html`ファイルの**作成**
 
+    <!---
     **Paste** the following lines into it ... and we'll discuss them:
+    --->
+    下記のコードをコピペして ... 議論しましょう:
 
   +makeExample('quickstart/ts/src/index.1.html', null, 'index.html')
 
   :marked
+    <!---
     We see three noteworthy sections of HTML:
+    --->
+    3つの特筆すべきHTMLのセクションを見ていきます:
 
+    <!---
     1. We load JavaScript libraries from the web.
     Let's take them on faith without further discussion.<br/><br/>
 
@@ -108,115 +202,238 @@ include ../../../_includes/_util-fns
     3. We note the `<my-app>` tag in the `<body>`.
     That's the custom HTML element we identified in the `@Component` decoration
     adorning our `AppComponent` class.
+    --->
+
+    1. ウェブからJavaScriptライブラリを読み込みます。
+    議論なしでそのまま信用しましょう。<br/><br/>
+
+    2. `System`と呼ばれるもので設定を行い、
+    先ほど書いた`AppComponent`のアプリケーションファイルをインポートするよう依頼しています。
+    `System`はモジュールローダー(`system.js`ライブラリから読み込み)で、
+    コードを`import`できるツールです;
+    `import`文が`AppComponent`にあったのを覚えていますか？
+    
+      また、ブラウザのまさしくここでTypeScriptソースコードからJavaScriptへ"トランスパイル" (別名"コンパイル") 
+      するよう`system.js`に依頼しています。
+      
+    3. `<body>`の`<my-app>`タグに気付きます。
+    それはカスタムHTML要素であり、
+    先ほど定義した`@Component`デコレータで装飾された`AppComponent`クラスです。
+
 
 .l-main-section
   :marked
+    <!---
     ## Run it!
+    --->
+    ## 実行！
 
+    <!---
     We need a static file server to serve our application to the browser.
+    --->
+    ブラウザがアプリケーションを読み込むために、静的ファイルサーバが必要です。
 
   .l-sub-section
     :marked
+      <!---
       Don't have a static file server handy?  Let's install one of our favorites
       called [live-server](https://www.npmjs.com/package/live-server "Live-server")
       with the **npm package manager**.
+      --->
+      手元にファイルサーバがない？
+      **npmパッケージマネージャ**を使って[live-server](https://www.npmjs.com/package/live-server "Live-server")と呼ばれるお気に入りの中の一つをインストールしましょう。
 
+      <!---
       Don't have npm?
       [Get it now](https://docs.npmjs.com/getting-started/installing-node "Installing Node.js and updating npm")
       because we're going to use it now and repeatedly throughout this documentation.
-
+      --->
+      npmをがない？
+      今使うのと、このドキュメントを通して繰り返し使うので、
+      [入手してください](https://docs.npmjs.com/getting-started/installing-node "Installing Node.js and updating npm")。
+      
+ 
+      <!---
       Once you have `npm` installed, open a terminal window and enter
+      --->
+      `npm`のインストールが終わったら、ターミナルを開いて、以下のように打ち込んでください。
 
     pre.prettyprint.lang-bash
       code npm install -g live-server
 
   :marked
+    <!---
     Open a terminal window and enter
+    --->
+    ターミナルを開いて、以下のように打ち込んでください。
 
   pre.prettyprint.lang-bash
       code live-server
   :marked
+    <!---
     In a few moments, a browser tab should open and display
+    --->
+    
+    ちょっと待つと、ブラウザが立ち上がって表示されます。
 
   figure.image-display
     img(src='/resources/images/devguide/quickstart/my-first-app.png' alt="Output of quickstart app")
 
   :marked
+    <!---
     Congratulations!  We are in business.
+    --->
+    おめでとうございます！営業中です。
 
   .alert.is-helpful
     :marked
+      <!---
       If you see `Loading...` displayed instead, see the
       [Browser ES6 support appendix](#es6support).
+      --->
+      代わりに`Loading...`が表示されている場合、
+      [付録 ES6をサポートするブラウザ](#es6support)を参照してください。
 
 .l-main-section
   :marked
+    <!---
     ## What's wrong with this?
+    --->
+    ## どうしました？
 
+    <!---
     We were up and running in a hurry and we could explore Angular
     in this manner for quite some time.
+    --->
+    大急ぎで稼動させましたが、こんなふうにかなり長い間Angularを調査することができます。
 
+    <!---
     For a number of reasons this isn't a good approach for building an application.
+    --->
     <!-- TODO The formatting here is a little weird. Should improve readability. -->
+    いくつもの理由から、これはアプリケーションの構築には良い方法ではありません。
 
+    <!---
     * Transpiling TypeScript in the browser becomes tediously slow when our
     app grows beyond a few files. We certainly won't do that in production. We should learn to
     compile locally and push the generated JavaScript to the server. We'll need some tools for that.
+    --->
+    * アプリのファイルが増えると、ブラウザ上でTypeScriptをコンパイルするのはうんざりするほど遅くなります。
+    もちろんプロダクション環境ではやらないでしょう。
+    ローカルでコンパイルし、生成されたJavaScriptをサーバに配置することを学ばなければなりません。
+    そのためにツールが必要になるでしょう。
 
 
+    <!---
     * Downloading JavaScript libraries from the web is OK for demos but
     it slows our development. Every time our app reloads, it must refetch these libraries.
     Don't count on browser caching.
     Our debugging and live-reload techniques will bust the browser cache. Loading libraries
     from the web also prevents us from developing our application offline or where connectivity is
     poor. Let's learn to download the libraries to our machine and serve them locally.
+    --->
+    * ウェブからJavaScriptライブラリをダウンロードするのはデモには良いですが、開発を遅くします。
+    毎回アプリがリロードすると、これらのライブラリを再取得します。
+    ブラウザのキャッシュを当てにしてはいけません。
+    デバッグとライブリロードの技術でブラウザキャッシュは使えないでしょう。
+    また、ウェブからライブラリをロードするのはオフラインでの開発や接続が貧弱な環境での開発ができなくなります。
+    マシンにライブラリを落としてきて、ローカルで使うことを学びましょう。
 
-
+    <!---
     * We want our development cycle to be as fast and friction-free as possible.
     When we change our code, we want to see the results in the browser immediately.
     We have tools and procedures for that.
-
+    --->
+    * 開発サイクルをできるだけ早く、できるだけ摩擦なしにしたいです。
+    コードを変更する際、ブラウザで結果をすぐに確認したいです。
+    このためのツールと手順があります。
+    
 .l-main-section
   :marked
+    <!---
     ## Upping our game
+    --->
+    ## 一生懸命やる
+      <!---
       Let's take a few more steps to put our development on a better foundation. We will
+      --->
+      開発をよりよい基礎にするため、いくつかのステップが必要です。
 
+      <!---
       1. Revise the application project structure for future growth
       1. Install a few tools and packages
       1. Revise the **`index.html`** to use local library resources
       1. Compile the TypeScript locally and watch for changes
+      --->
+      1. 将来の成長のためアプリケーションプロジェクトの構造を見直す
+      1. いくつかのツールとパッケージをインストールする
+      1. ローカルのライブラリを使うように**`index.html`**を変更する
+      1. TypeScriptのコンパイルをローカルで行う、また変更を見張る
 
+    <!---
     Shut down the `live-server` running in the terminal window (Ctrl-C) and proceed as follows.
+    --->
+    ターミナルで動いている`live-server`を止め(Ctrl-C)、以下の手順を始めます。
 
 .l-main-section
   :marked
+    <!---
     ## Revise the application project structure
+    --->
+    ## 将来の成長のためアプリケーションプロジェクトの構造を見直す
 
+    <!---
     At the moment we're dumping everything into the "angular2-quickstart" **root folder**.
     Not bad when there are only two files. Not good as our application evolves.
+    --->
+    今のところ、全部を "angular2-quickstart" の**ルートフォルダ**に置いています。
+    ファイルが2つだったら悪くはありません。
+    アプリケーションが発展するには良くはありません。
 
+    <!---
     Let's give our project a little structure.
+    --->
+    プロジェクトに少し構造を与えましょう。
 
+    <!---
     We'll add a sub-folder - `src` - to hold project source code and a sub-sub-folder - `src/app` -
     to hold the application source code.
+    --->
+    プロジェクトのソースコードを配置するため `src` というサブフォルダと、
+    アプリケーションのソースコードを配置するため `src/app` というサブサブフォルダを追加します。
 
+    <!---
     In OS/X and Linux:
+    --->
+    OS/XとLinuxでは:
 
   pre.prettyprint.lang-bash
     code mkdir src/app
 
   :marked
+    <!---
     In Windows:
+    --->
+    Windowsでは:
 
   pre.prettyprint.lang-bash
     code mkdir src\app
 
   :marked
+    <!---
     **Move `index.html`** into the **`src`** folder.
+    --->
+    **`index.html`**を**`src`**フォルダに**移動**します。
 
+    <!---
     **Move `app.ts`** into the **`src/app`** folder.
+    --->
+    **`app.ts`**を**`src/app`**フォルダに**移動**します。
 
+    <!---
     Our project folders should look like this.
+    --->
+    プロジェクトのフォルダはこんな風に見えるはずです。
     ```
     angular2-quickstart
     └── src
@@ -227,109 +444,202 @@ include ../../../_includes/_util-fns
 
 .l-main-section
   :marked
+    <!---
     ## Install npm packages locally
+    --->
+    ## npmパッケージのローカルインストール
 
+    <!---
     We'll replace the web-based scripts in our `index.html` with
     scripts resident on our local machine.
     We get those scripts by installing two runtime `npm` packages into our project.
+    --->
+    `index.html`のウェブベースのスクリプトをローカルマシンのスクリプトと置き換えていきます。
 
+    <!---
     >**angular2** - the Angular 2 library.
+    --->
+    >**angular2** - Angular2ライブラリ
 
+    <!---
     >**systemjs** - an open-source library that provides module loading.
+    --->
+    >**systemjs** - モジュールローディングを提供するオープンソースライブラリ
 
+    <!---
     We'll also install two development tools:
+    --->
+    また、二つの開発ツールもインストールします:
 
+    <!---
     >**typescript** - the TypeScript compiler
+    --->
+    >**typescript** - TypeScriptコンパイラ
 
+    <!---
     >**[live-server](https://www.npmjs.com/package/live-server "Live-server")** - the static file server that reloads the browser when files change.
+    --->
+    >**[live-server](https://www.npmjs.com/package/live-server "Live-server")** - ファイルの変更時にブラウザをリロードする静的ファイルサーバ
+    <!---
     We may have loaded it earlier. We're doing it again
     locally in our project so we are no longer vulnerable to
     a global uninstall or version change.
+    --->
+    以前はロードできました。
+    もう一度プロジェクト内でローカルに置くことで、
+    グローバルサーバからのアンインストールやバージョンの変更があっても脆弱ではなくなります。
 
+    <!---
     **Open** a terminal window at our application's **root folder**
+    --->
+    アプリケーションの**ルートフォルダ**でターミナルを**開いてください**。
 
+    <!---
     Enter these commands:
+    --->
+    これらのコマンドを入力:
     ```
     npm init -y
     npm i angular2@2.0.0-alpha.44 systemjs@0.19.2 --save --save-exact
     npm i typescript live-server --save-dev
     ```
 
+    <!---
     These commands both *install* the packages and *create* an npm `package.json` that will
     help us develop and maintain our application in future.
     The essence of our `package.json` should look like this:
+    --->
+    これらのパッケージ*インストール*コマンドとnpmの`package.json`*作成*コマンドは、
+    アプリケーションの開発と将来のメンテナンスに役立ちます。
+    `package.json`の本質は次のようなものです:
 
   +makeJson('quickstart/ts/package.json', { paths: 'name, version, dependencies, devDependencies'})
 
   :marked
+    <!---
     There is also a `scripts` section. **Find and replace** it with the following:
+    --->
+    また、`script`セクションがあります。以下のように**書き換えてみましょう**。
 
   +makeJson('quickstart/ts/package.json', { paths: 'scripts'})
 
   :marked
+    <!---
     We've just extended our project world with script commands
     that we'll be running very soon.
+    --->
+    ちょうどプロジェクトをこれからすぐに実行するであろうスクリプトコマンドで拡張し終えました。
 
 .l-main-section
   :marked
+    <!---
     ## Update `index.html`
+    --->
+    ## `index.html`の更新
 
+    <!---
     **Replace** the library scripts section with references to
     scripts in the packages we just installed.
+    --->
+    ライブラリスクリプトセクションの参照をにインストールしたパッケージのスクリプトに**置き換えましょう**。
 
   +makeExample('quickstart/ts/src/index.html', 'libraries')
 
   :marked
+    <!---
     **Update** the `System` configuration script as follows.
+    --->
+    `System`スクリプトの設定を以下のように**更新しましょう**。
 
   +makeExample('quickstart/ts/src/index.html', 'systemjs')
 
   .l-sub-section
     :marked
+      <!---
       We won't be transpiling TypeScript in the browser anymore.
       We'll do that on our machine and ship the generated JavaScript
       files to the server.
+      --->
+      ブラウザ上でTypeScriptのコンパイルはこれ以上行いません。
+      マシン上で行い、生成されたJavaScriptファイルをサーバに配置します。
 
+      <!---
       We have to re-configure `system.js` to expect JavaScript files
       with a `.js` extension by default.
       Someday we might add a `Foo` class to our application in a `foo.ts`
       file and import it like this
+      --->
+      JavaScriptファイルの拡張子がデフォルトで`.js`となるよう、`system.js`を設定しなおさなくてはいけません。
+      いつか、`Foo`クラスを`foo.ts`というファイルで追加し、このようにインポートするかもしれません。
 
     pre.prettyprint.lang-bash
       code import {Foo} from './app/foo'
     :marked
+       <!---
        `system.js`will know to look for a file named `foo.js` in the `src/app` folder.
+       --->
+       `system.js`は`src/app`フォルダで`foo.js`というファイルを探せばよいことを知っています。
 
+       <!---
        That's exactly what we're doing in the last line. We're
        importing our main application file `app` (the generated `app.js` to be precise)
        from the `src/app/` folder (we moved it there, remember?)
+       --->
+       最後の行で行ったのがこれになります。
+       メインのアプリケーションファイル`app`(正確に言うと生成された`app.js`)を`src/app`フォルダ(移動させたのを覚えてますか？)からインポートしています。
   :marked
+    <!---
     Here's the final version
+    --->
+    これが最終版です
 
   +makeExample('quickstart/ts/src/index.html', null, 'index.html')
 
 .l-main-section
   :marked
+    <!---
     ## Prepare for TypeScript Compilation
+    --->
+    ## TypeScriptのコンパイルの準備
 
+    <!---
     ### Add the TypeScript configuration file
+    --->
+    ### TypeScript設定ファイルの追加
 
+    <!---
     We'll add a configuration file named **`tsconfig.json`**
     to tell the editor how to interpret our TypeScript code and
     to simplify the TypeScript compilation command that we'll run very soon.
+    --->
+    エディタにTypeScriptコードの解析方法を伝えるため、
+    またこれからすぐに実行するであろうTypeScriptのコンパイルコマンドを単純化するために、
+    **`tsconfig.json`**という設定ファイルを追加します
 
+    <!---
     **Change to the `src` folder and create a `tsconfig.json`** file with the following content:
+    --->
+    **`src`フォルダに行き、以下の内容で`tsconfig.json`ファイルを作ってください**:
   +makeJson('quickstart/ts/src/tsconfig.json', null, 'tsconfig.json')
 
   .alert.is-helpful
     :marked
+      <!---
       See the [TypeScript configuration appendix](#tsconfig) to learn more about
       this file and these settings.
+      --->
+      このファイルとこれらの設定についてより詳しい内容は[付録 TypeScriptの設定](#tsconfig)を参照してください。
 
 .l-main-section
   :marked
+    <!---
     ## Final structure
+    --->
+    ## 最終的な構成
+    <!---
     Our final project folder structure should look like this:
+    --->
+    プロジェクトフォルダの構成はこうなります:
     ```
     angular2-quickstart
     ├── node_modules
@@ -343,85 +653,178 @@ include ../../../_includes/_util-fns
 
 .l-main-section
   :marked
+    <!---
     ## Compile the TypeScript to JavaScript
+    --->
+    ## TypeScriptからJavaScriptへのコンパイル
 
+    <!---
     We no longer transpile TypeScript to JavaScript in the browser.
     We run the **T**ype**S**cript **C**ompiler (TSC) on our machine instead.
+    --->
+    もはやブラウザ上でTypeScriptからJavaScriptへのコンパイルは行いません。
+    マシン上で**T**ype**S**cript **C**ompiler (TSC)を実行します。
 
+    <!---
     Open a terminal window in the **root of the application folder** and enter:
+    --->
+    **アプリケーションのルートフォルダで**ターミナルウィンドウを開いて、入力します:
 
   pre.prettyprint.lang-bash
     code npm run tsc
 
   :marked
+    <!---
     When it's done we should find the generated *app.js* file in the *src* folder and also an *app.map.js* file that
     helps debuggers navigate between the JavaScript and the TypeScript source.
+    --->
+    終わったら*src*フォルダに生成された*app.js*ファイルが見つかります。
+    またデバッガがJavaScriptとTypeScript間をナビゲートするのに役立つ*app.map.js*ファイルも見つかります。
 
+    <!---
     Our script set the compiler watch option (`-w`) so the
     compiler stays alive when it's finished.
     It watches for changes to our **`.ts`** files
     and recompiles them automatically.
+    --->
+    スクリプトにコンパイラ監視オプション(`-w`)をセットしていたので、
+    コンパイルが終わったときにコンパイラが生き続けます。
+    コンパイラは**`.ts`**ファイルの変化を監視し、自動的に再コンパイルします。
 
+    <!---
     Leave this command running in the terminal window.
     You can stop it anytime with `Ctrl-C`.
+    --->
+    実行中のターミナルは放置しておきましょう。
+    `Ctrl-C`でいつでも止められます。
 
 .l-main-section
   :marked
+    <!---
     ## Run the app!
+    --->
+    ## アプリの実行！
 
+    <!---
     Now we are ready to see our app in action.
+    --->
+    今、作業中のアプリを見る準備ができました。
 
+    <!---
     Open another terminal window in the **root of the application folder** and
     launch `live-server` again although this time we'll do it with
     one of our `npm` script commands:
+    --->
+    **アプリケーションフォルダのルート**で別のウィンドウを立上げ`live-server`をもう一度起動しますが、
+    今回は`npm`スクリプトコマンドでやっていきます:
+    
 
   pre.prettyprint.lang-bash
     code npm start
 
   :marked
+    <!---
     **live-server** loads the browser for us, serves the HTML and JavaScript files,
     and displays our application message once more:
+    --->
+    **live-server**はブラウザを立上げ、HTMLとJavaScriptを配信し、
+    もう一度アプリケーションメッセージを表示します。
 
   figure.image-display
     img(src='/resources/images/devguide/quickstart/my-first-app.png' alt="Output of quickstart app")
 
   :marked
+    <!---
     ### Make some changes
+    --->
+    変更する
+    <!---
     **`live-server`** detects changes to our files and refreshes the browser page for us automatically.
+    --->
+    **`live-server`**はファイルの変更を検出し、自動的にブラウザをリフレッシュします。
 
+    <!---
     Try changing the message to "My SECOND Angular 2 app".
+    --->
+    メッセージを"My SECOND Angular 2 app"に変更してみましょう。
 
+    <!---
     The TypeScript compiler in the first terminal window is watching our source code. It recompiles and produces
     the revised *app.js*.  The `live-server` sees that change and reloads the browser.
+    --->
+    最初のターミナルウィンドウのTypeScriptコンパイラがソースコードを監視しています。
+    これが再コンパイルを行い、*app.js*を更新します。
+    `live-server`はその変更を検出し、ブラウザをリロードさせます。
 
+    <!---
     Keep `live-server` running in this terminal window. You can stop it anytime with `Ctrl-C`.
+    --->
+    ターミナルの`live-server`は実行し続けます。`Ctrl-C`で止めることができます。
 
 .l-main-section
   :marked
+    <!---
     ## What have we done?
+    --->
+    ## 何をしましたか？
+    
+    <!---
     Our first application doesn't do much. It's basically "Hello, World" for Angular 2.
+    --->
+    最初のアプリケーションはあまり良くありません。
+    基本的にAngular2の"Hello, World"です。
 
+    <!---
     We kept it simple in our first pass: we wrote a little Angular component,
     we added some JavaScript libraries to `index.html`, and launched with a
     static file server. That's about all we'd expect to do for a "Hello, World" app.
+    --->
+    最初はシンプルにしました: 小さいAngularのコンポーネントを書き、
+    `index.html`にJavaScriptライブラリを追加し、
+    静的ファイルサーバを使って起動しました。
+    これが"Hello, World"アプリに期待したすべてです。
+    
 
+    <!---
     **We have greater ambitions.**
+    --->
+    **もっと大きい野心があります。**
 
+    <!---
     We won't ask Angular to build "Hello, World".
     We are asking it to help us build sophisticated applications with sophisticated requirements.
+    --->
+    Angularに"Hello, World"アプリを作るよう依頼しませんでした。
+    洗練された要求で洗練されたアプリケーションを作るのに役立つよう依頼しました。
 
+    <!---
     So we made some strategic technology investments to reach our larger goals
+    --->
+    そのため、より大きいゴールに近づくための戦略的な技術投資を得ることができました。
 
+    <!---
     * our application loads faster with libraries installed locally and
     we can develop offline if we wish.
 
     * we're pre-compiling our TypeScript.
 
     * we're running the compiler and live-server with commands that give us immediate feedback as we make changes.
+    --->
+    * ローカルにインストールされたライブラリを使って高速に起動し、
+    希望すればオフライン環境でも開発ができます。
 
+    * TypeScriptをプリコンパイルしています。
+
+    * コンパイラやlive-serverをコマンドで実行しており、変更したらすぐにフィードバックを得ることができます。
+
+
+    <!---
     The good news is that the overhead of setup is (mostly) behind us.
     We're about to build a small application that demonstrates the great things
     we can build with Angular 2.
+    --->
+    セットアップのオーバーヘッドが(大部分は)後ろに隠れている、ということは良いニュースです。
+    今まさに、Angular2で構築できるすばらしい点をデモする小さいアプリケーションを構築しょうとしています。
 
     <!--TODO: Join us on the [Tour of Heroes](./toh-pt1.html) -->
 
@@ -429,57 +832,111 @@ include ../../../_includes/_util-fns
 <!-- Move this to the Style Guide when we have one -->
 .l-main-section
   :marked
+    <!---
     <a id="tsconfig"></a>
     ### Appendix: TypeScript configuration
     We added a TypeScript configuration file (`tsconfig.js`) to our project to
     guide the compiler as it generates JavaScript files.
     Get details about `tsconfig.js` from the official
     [TypeScript wiki](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json).
+    --->
+  
+    <a id="tsconfig"></a>
+    ### 付録: TypeScriptの設定
+    コンパイラにJavaScriptファイルを生成させるため、    
+    TypeScript設定ファイル(`tsconfig.js`)をプロジェクトに追加しました。
+    公式の[TypeScript wiki](https://github.com/Microsoft/TypeScript/wiki/tsconfig.json)で、
+    `tscnfig.js`について詳細を知ることができます。
 
+    <!---
     We'd like a moment to discuss the `noImplicitAny` flag.
     TypeScript developers disagree about whether it should be `true` or `false`.
     There is no correct answer and we can change the flag later.
     But our choice now can make a difference in larger projects so it merits
     discussion.
+    --->
+    
+    `noImplicitAny`フラグについてちょっと議論したいと思います。
+    TypeScript開発者は`true`にすべきか`false`にすべきか意見があいませんでした。
+    正解はありませんし、フラグは後から変更できます。
+    しかし、大規模プロジェクトでは現時点の選択が違いを生み出すので、議論に値します。
 
+    <!---
     When the `noImplicitAny` flag is `false`,
     the compiler silently defaults the type of a variable to `any` if it cannot infer
     the type based on how the variable is used. That's what we mean by "implicitly `any`".
+    --->
+    `noImplicitAny`フラグが`false`としたとき、
+    変数の使われ方から型推論ができない場合は、
+    コンパイラは黙って型を`any`にします。
+    これが"暗黙の`any`"という意味です。
 
+    <!---
     When the `noImplicitAny` flag is `true` and the TypeScript compiler cannot infer
     the type, it still generates the JavaScript files but
     it also reports an error.
+    --->
+    `noImplicitAny`フラグが`true`でTypeScriptコンパイラが型を推論できなかったとき、
+    それでもJavaScriptファイルは生成しますが、エラー報告も行います。
 
+    <!---
     For this project and the other examples in this Developer Guide
     we set the `noImplicitAny` flag to `false`.
     Developers who prefer stricter type checking should set the `noImplicitAny` flag to `true`.
     We can still set a variable's type to `any` if
     that seems like the best choice. We'd be doing so explicitly after
     giving the matter some thought.
+    --->
+    このプロジェクトやこの開発者ガイドのほかの例では、`noImplicitAny`フラグを`false`にセットしています。
+    厳格な型チェックを好む開発者は`noImplicitAny`フラグを`true`にセットすべきでしょう。
+    それがベストな選択に見えても、私たちは依然として変数の型を`any`にセットします。
+    問題について検討した後で、明確化するかもしれません。
+    
 
+    <!---
     If we set the `noImplicitAny` flag to `true`, we may get implicit index errors as well.
     If we feel these are more annoying than helpful,
     we can suppress them with the following additional flag.
     ```
     "suppressImplicitAnyIndexErrors":true
     ```
+    --->
+    もし`noImplicitAny`フラグを`true`にした場合、同様に暗黙的なインデックスエラーとなるでしょう。
+    もしそれらの情報で役立つよりイライラさせられたら、
+    このフラグをつけることで抑制することができます。
+    ```
+    "suppressImplicitAnyIndexErrors":true
+    ```
 
 .l-main-section
   :marked
+    <!---
     <a id="es6support"></a>
     ### Appendix: Browser ES6 support
     Angular 2 requires ES6 support, such as can be found in most modern
     browsers. For older browsers (including IE 11) you can use a shim to get
     the needed functionality.
+    --->
+    <a id="es6support"></a>
+    ### 付録 ES6をサポートするブラウザ
+    Angular2は、最もモダンなブラウザで見られるような、ES6サポートが必要です。
+    古いブラウザ(IE11を含む)は、必要な機能を得るためにshim(クサビ)を使うことができます。
 
+    <!---
     After creating `package.json` (halfway through the quickguide), run this
     command to add a shim to the project:
+    --->
+    `package.json`を作ったあと(クイックガイドの中間くらい)、
+    このコマンドを実行してプロジェクトにshimを追加します。
 
   code-example(language="sh" format=".").
     npm install es6-shim --save
 
   :marked
+    <!---
     Now you can load the shim in your `index.html` before the other scripts:
+    --->
+    `index.html`で他のスクリプトの前でshimを読み込むことができます。
 
   code-example(language="html" format=".").
     &lt;script src=&quot;../node_modules/es6-shim/es6-shim.js&quot;&gt;&lt;/script&gt;
